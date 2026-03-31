@@ -2,6 +2,7 @@ import { headers } from "next/headers";
 import Image from "next/image";
 import { companies } from "@/data/companies";
 import { TestimonialsMasonryGrid } from "@/app/components/testimonials/TestimonialsMasonryGrid";
+import { LeadForm } from "@/app/components/LeadForm";
 
 const FALLBACK_SLUG = "alamo-air";
 
@@ -299,41 +300,11 @@ export default async function Home() {
       </div>
 
       {/* LEAD FORM */}
-      <section id="lead-form" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-lg mx-auto">
-          <p className="text-xs font-bold uppercase tracking-widest text-center mb-2" style={{ color: company.primaryColor }}>
-            Get In Touch
-          </p>
-          <h2 className="text-3xl font-black text-center mb-2">Request Service</h2>
-          <p className="text-gray-500 text-center mb-8">We&apos;ll contact you within minutes.</p>
-          <form className="flex flex-col gap-4 bg-white p-8 border border-gray-200 rounded shadow-sm">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="rounded border border-gray-200 px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-offset-1"
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="rounded border border-gray-200 px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-offset-1"
-            />
-            <select className="rounded border border-gray-200 px-5 py-4 text-base text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-1">
-              <option value="">Service Needed</option>
-              {company.services.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-            <button
-              type="submit"
-              className="rounded py-4 text-lg font-bold transition hover:opacity-90"
-              style={{ backgroundColor: company.primaryColor, color: "white" }}
-            >
-              Request Free Quote &rarr;
-            </button>
-            <p className="text-center text-xs text-gray-400">No obligation. No spam. We respect your privacy.</p>
-          </form>
-        </div>
-      </section>
+      <LeadForm
+        primaryColor={company.primaryColor}
+        accentColor={company.accentColor}
+        services={company.services}
+      />
 
       {/* TESTIMONIALS */}
       <section className="py-20 px-6" style={{ backgroundColor: company.primaryColor }}>
@@ -432,7 +403,7 @@ export default async function Home() {
           </div>
           <div className="relative h-72 md:h-96 rounded overflow-hidden border border-gray-100 shadow-sm">
             <Image
-              src="/san-antonio-city-drawing.png"
+              src="/young-hvac-technician-millennial-has-modern-equipment.jpg"
               alt={`HVAC service in ${company.city}`}
               fill
               className="object-cover"
