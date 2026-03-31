@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import Image from "next/image";
 import { companies } from "@/data/companies";
+import { TestimonialsMasonryGrid } from "@/app/components/testimonials/TestimonialsMasonryGrid";
 
 const FALLBACK_SLUG = "alamo-air";
 
@@ -339,6 +340,30 @@ export default async function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: company.accentColor }}>
+              What Our Customers Say
+            </p>
+            <h2 className="text-3xl font-medium tracking-tight text-neutral-100 sm:text-center">
+              Loved by thousands of people
+            </h2>
+          </div>
+          <TestimonialsMasonryGrid />
+          <div className="text-center mt-20">
+            <a
+              href="#lead-form"
+              className="inline-block rounded px-8 py-4 font-bold text-lg transition hover:opacity-90"
+              style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
+            >
+              Join Our Happy Customers
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      {/* <section className="py-20 px-6" style={{ backgroundColor: company.primaryColor }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: company.accentColor }}>
               Customer Reviews
             </p>
             <h2 className="text-3xl md:text-4xl font-black text-white">Over 5,000 Five-Star Reviews</h2>
@@ -369,7 +394,7 @@ export default async function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* SERVICE DETAIL */}
       <section className="py-20 px-6 bg-white">
