@@ -101,9 +101,9 @@ export default async function BookingDetailPage({ params }: BookingDetailPagePro
         >
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <div className="mb-5 h-14 w-36 relative mx-auto">
+            <a href="/" className="mb-5 h-14 w-36 relative mx-auto block">
               <Image src={company.logo} alt={`${company.name} logo`} fill className="object-contain" />
-            </div>
+            </a>
             <p
               className="text-xs font-bold uppercase tracking-[0.18em] mb-3"
               style={{ color: company.accentColor }}
@@ -160,9 +160,9 @@ export default async function BookingDetailPage({ params }: BookingDetailPagePro
         <footer className="py-10 px-6" style={{ backgroundColor: company.primaryColor }}>
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <div className="h-10 w-28 relative">
+              <a href="/" className="h-10 w-28 relative block">
                 <Image src={company.logo} alt={company.name} fill className="object-contain" />
-              </div>
+              </a>
               <p className="text-white/40 text-xs">
                 &copy; {new Date().getFullYear()} {company.name}. All rights reserved.
               </p>
