@@ -80,7 +80,7 @@ export function LeadForm({ primaryColor, accentColor, services }: LeadFormProps)
             placeholder="Phone Number"
             className="rounded border border-gray-200 px-5 py-4 text-base focus:outline-none focus:ring-2 focus:ring-offset-1"
           />
-          <select name="service" className="rounded border border-gray-200 px-5 py-4 text-base text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-1">
+          <select name="service" className="rounded border border-gray-200 px-5 py-4 text-base text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-1 min-h-[56px]">
             <option value="">Service Needed</option>
             {services.map((s) => (
               <option key={s} value={s}>{s}</option>
