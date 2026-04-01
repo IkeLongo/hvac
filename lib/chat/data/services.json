@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "AC Repair",
+    "short_description": "Fast diagnosis and repair of all air conditioning systems.",
+    "long_description": "Our certified technicians diagnose and repair all types of air conditioning systems. Services include refrigerant checks and recharging, electrical component repair, capacitor and contactor replacement, compressor diagnostics, and thermostat calibration.",
+    "starting_price": 89,
+    "pricing_notes": "Diagnostic fee starts at $89. Final cost depends on parts and labor. Upfront pricing provided before work begins.",
+    "ideal_for": "Homeowners with an AC unit that is not cooling, blowing warm air, or not turning on.",
+    "route_path": "/booking",
+    "is_active": true
+  },
+  {
+    "id": 2,
+    "name": "Heater & Furnace Repair",
+    "short_description": "Repair and tune-up for furnaces, heat pumps, and central heating systems.",
+    "long_description": "We repair gas furnaces, electric furnaces, heat pumps, and boilers. Services include igniter and flame sensor replacement, heat exchanger inspection, blower motor repair, gas valve diagnostics, and safety shutoff testing.",
+    "starting_price": 99,
+    "pricing_notes": "Diagnostic fee starts at $99. Parts and labor quoted before work begins.",
+    "ideal_for": "Homeowners whose heater or furnace is not turning on, not producing heat, or cycling on and off.",
+    "route_path": "/booking",
+    "is_active": true
+  },
+  {
+    "id": 3,
+    "name": "System Installation",
+    "short_description": "Full installation of new HVAC systems with free in-home estimates.",
+    "long_description": "We design and install central air conditioning systems, heat pumps, ductless mini-splits, and smart thermostats. Every installation includes load calculations, proper sizing, and a full system test. Financing available.",
+    "starting_price": 3500,
+    "pricing_notes": "Installation starts around $3,500 depending on system size and home requirements. Free in-home estimates available.",
+    "ideal_for": "Homeowners replacing an aging system, building a new home, or upgrading to a more efficient unit.",
+    "route_path": "/booking",
+    "is_active": true
+  },
+  {
+    "id": 4,
+    "name": "Seasonal Maintenance",
+    "short_description": "Annual tune-up to keep your system running efficiently year-round.",
+    "long_description": "Our maintenance visit includes filter replacement, coil cleaning, refrigerant level check, electrical connection tightening, thermostat calibration, and a full system performance report.",
+    "starting_price": 79,
+    "pricing_notes": "Starting at $79 per visit. Maintenance plans with priority scheduling available.",
+    "ideal_for": "Homeowners who want to prevent breakdowns, extend system life, and maintain manufacturer warranties.",
+    "route_path": "/booking",
+    "is_active": true
+  },
+  {
+    "id": 5,
+    "name": "Duct Cleaning & Air Quality",
+    "short_description": "Professional duct cleaning and indoor air quality solutions.",
+    "long_description": "We remove dust, debris, allergens, and mold from your ductwork using commercial-grade equipment. We also install UV air purifiers, HEPA filtration systems, and whole-home humidifiers to improve indoor air quality.",
+    "starting_price": 299,
+    "pricing_notes": "Duct cleaning starts at $299. Air quality add-ons priced separately.",
+    "ideal_for": "Homeowners with allergies, pets, older ductwork, or concerns about dust and indoor air quality.",
+    "route_path": "/booking",
+    "is_active": true
+  }
+]

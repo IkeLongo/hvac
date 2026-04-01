@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "label": "Home",
+    "path": "/",
+    "purpose": "Main landing page with services overview, company info, and customer testimonials.",
+    "is_active": true
+  },
+  {
+    "id": 2,
+    "label": "Contact",
+    "path": "/#lead-form",
+    "purpose": "Contact form for service requests, questions, or general inquiries.",
+    "is_active": true
+  },
+  {
+    "id": 3,
+    "label": "Book Service",
+    "path": "/booking",
+    "purpose": "Schedule a service appointment for HVAC repair, installation, or maintenance.",
+    "is_active": true
+  }
+]

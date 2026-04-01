@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "trigger_phrase": "AC not cooling",
+    "problem_summary": "Customer reports the air conditioner is not cooling.",
+    "recommendation": "Schedule an AC diagnostic. Repairs start at $89. If the unit is over 12 years old, we recommend discussing a replacement for better long-term efficiency.",
+    "recommended_service_id": 1
+  },
+  {
+    "id": 2,
+    "trigger_phrase": "heater not working",
+    "problem_summary": "Customer reports the furnace or heater is not working.",
+    "recommendation": "Book a heating diagnostic. Most furnace repairs start at $99. Annual maintenance helps prevent unexpected breakdowns.",
+    "recommended_service_id": 2
+  },
+  {
+    "id": 3,
+    "trigger_phrase": "high energy bills",
+    "problem_summary": "Customer has unusually high energy costs.",
+    "recommendation": "An efficiency inspection, duct cleaning, or system upgrade can significantly reduce energy costs. We can assess your current system.",
+    "recommended_service_id": 4
+  },
+  {
+    "id": 4,
+    "trigger_phrase": "new home",
+    "problem_summary": "Customer is moving into a new home or building.",
+    "recommendation": "Request a free estimate for a new HVAC system installation sized and designed for your space.",
+    "recommended_service_id": 3
+  },
+  {
+    "id": 5,
+    "trigger_phrase": "seasonal checkup",
+    "problem_summary": "Customer wants a routine maintenance check.",
+    "recommendation": "Book a seasonal tune-up starting at $79. We clean, inspect, and optimize your system before peak heating or cooling season.",
+    "recommended_service_id": 4
+  },
+  {
+    "id": 6,
+    "trigger_phrase": "strange noise",
+    "problem_summary": "Customer hears unusual sounds from their HVAC unit.",
+    "recommendation": "Unusual sounds often indicate a mechanical issue. Schedule a diagnostic before it becomes a larger repair.",
+    "recommended_service_id": 1
+  },
+  {
+    "id": 7,
+    "trigger_phrase": "bad air quality",
+    "problem_summary": "Customer is concerned about indoor air quality.",
+    "recommendation": "Duct cleaning and air quality assessments can help. We also install air purifiers and UV sanitizers.",
+    "recommended_service_id": 5
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "question": "What HVAC services do you offer?",
+    "answer": "We offer AC repair, furnace and heater repair, full system installation, seasonal maintenance tune-ups, and duct cleaning.",
+    "category": "general"
+  },
+  {
+    "id": 2,
+    "question": "How much does AC repair cost?",
+    "answer": "AC repair diagnostics start at $89. The final cost depends on the parts and labor required. We provide upfront pricing before any work begins.",
+    "category": "pricing"
+  },
+  {
+    "id": 3,
+    "question": "How much does a new HVAC system cost?",
+    "answer": "New system installation typically starts around $3,500 depending on the size of your home and the system selected. We offer free in-home estimates so you know exactly what to expect.",
+    "category": "pricing"
+  },
+  {
+    "id": 4,
+    "question": "Do you offer free estimates?",
+    "answer": "Yes, we provide free estimates for new system installations. Diagnostic fees may apply for repair calls.",
+    "category": "general"
+  },
+  {
+    "id": 5,
+    "question": "How often should I service my HVAC system?",
+    "answer": "We recommend a professional tune-up at least once a year - ideally in spring for your AC and fall for your heating system.",
+    "category": "maintenance"
+  },
+  {
+    "id": 6,
+    "question": "Are you licensed and insured?",
+    "answer": "Yes, all of our technicians are fully licensed, background-checked, and insured.",
+    "category": "general"
+  },
+  {
+    "id": 7,
+    "question": "Do you offer 24/7 emergency service?",
+    "answer": "Yes, we provide 24/7 emergency HVAC repair. If your system breaks down in the middle of the night or on a weekend, we have a technician available.",
+    "category": "emergency"
+  },
+  {
+    "id": 8,
+    "question": "How long does a typical repair take?",
+    "answer": "Most repairs are completed same-day. Complex jobs requiring special-order parts may take 1-2 additional days.",
+    "category": "general"
+  },
+  {
+    "id": 9,
+    "question": "What brands do you service?",
+    "answer": "We service all major HVAC brands including Carrier, Trane, Lennox, Goodman, Rheem, York, and more.",
+    "category": "general"
+  },
+  {
+    "id": 10,
+    "question": "Do you offer financing?",
+    "answer": "Yes, we offer flexible financing options for new system installations so you can get the comfort you need without delay.",
+    "category": "pricing"
+  },
+  {
+    "id": 11,
+    "question": "What areas do you serve?",
+    "answer": "We serve the local area and surrounding communities. Contact us to confirm service availability in your area.",
+    "category": "location"
+  },
+  {
+    "id": 12,
+    "question": "How do I schedule a service appointment?",
+    "answer": "You can book online through our booking page or give us a call. We offer flexible scheduling including same-day and next-day appointments.",
+    "category": "getting-started"
+  }
+]

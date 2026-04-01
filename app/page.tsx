@@ -508,13 +508,13 @@ export default async function Home() {
       </footer>
 
       {/* FLOATING CTA */}
-      <a
+      {/* <a
         href="/booking"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded px-6 py-4 text-sm font-bold shadow-2xl transition hover:scale-105"
         style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
       >
         Get Instant Quote
-      </a>
+      </a> */}
 
     </main>
   );
