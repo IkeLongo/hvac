@@ -53,7 +53,7 @@ export default async function Home() {
         />
         <div className="absolute inset-0" style={{ backgroundColor: company.primaryColor, opacity: 0.83 }} />
 
-        <div className="mb-5 h-14 w-36 relative z-10">
+        <div className="mb-5 h-32 w-48 relative z-10">
           <Image src={company.logo} alt={`${company.name} logo`} fill className="object-contain" />
         </div>
 

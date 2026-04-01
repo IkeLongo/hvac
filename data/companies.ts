@@ -10,13 +10,13 @@ export type Company = {
 
 export const companies: Record<string, Company> = {
   "alamo-air": {
-    name: "Alamo Air Solutions",
+    name: "RiverSide HVAC Solutions",
     phone: "(210) 730-6232",
     city: "San Antonio",
     services: ["AC Repair", "Installation", "Maintenance", "System Inspection"],
     primaryColor: "#0c2244",
     accentColor: "#bfee3c",
-    logo: "/logos/alamo-air.png",
+    logo: "/riverside-hvac-logo.png",
   },
   "cool-breeze": {
     name: "Cool Breeze HVAC",

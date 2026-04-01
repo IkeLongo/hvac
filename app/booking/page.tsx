@@ -14,8 +14,9 @@ async function getCompany() {
 }
 
 export const metadata: Metadata = {
-  title: "Book Your Session",
-  description: "Schedule your HVAC service. Choose from our available booking options.",
+  title: "Book an Appointment",
+  description:
+    "Schedule your HVAC service appointment online. Choose from AC repair, heating, installation, maintenance, and more. Same-day and next-day availability.",
 };
 
 export default async function BookingPage() {
