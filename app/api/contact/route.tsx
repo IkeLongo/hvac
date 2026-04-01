@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 export async function POST(request: Request) {
 	try {
 		const body = await request.json();
-		console.log("[LEAD API] Received request body:", body);
+		// // console.log("[LEAD API] Received request body:", body);
 		
 		const { name, email, phone, service, source, tags } = body;
 
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       if (!webhookUrl) {
         throw new Error("GHL_WEBHOOK_URL_CONTACT_FORM is not set");
       }
-      console.log("[LEAD API] Sending to GHL webhook:", webhookPayload);
+      // // console.log("[LEAD API] Sending to GHL webhook:", webhookPayload);
       
       const webhookRes = await fetch(webhookUrl, {
         method: "POST",

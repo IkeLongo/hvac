@@ -81,7 +81,7 @@ export default async function Home() {
             Call Now: {company.phone}
           </a>
           <a
-            href="#lead-form"
+            href="/booking"
             className="rounded border-2 border-white/50 px-8 py-4 text-lg font-bold hover:bg-white/10 transition"
           >
             Request Service Online
@@ -183,7 +183,7 @@ export default async function Home() {
                 <h3 className="text-xl font-black">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed flex-1">{desc}</p>
                 <a
-                  href="#lead-form"
+                  href="/booking"
                   className="text-sm font-bold inline-flex items-center gap-1 transition-all hover:gap-2"
                   style={{ color: company.primaryColor }}
                 >
@@ -220,7 +220,7 @@ export default async function Home() {
               Over 25 years of experience, thousands of satisfied customers, and a reputation built on honest pricing and quality workmanship &mdash; that&apos;s the {company.name} difference.
             </p>
             <a
-              href="#lead-form"
+              href="/booking"
               className="inline-block rounded px-7 py-3.5 font-bold transition hover:opacity-90"
               style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
             >
@@ -394,7 +394,7 @@ export default async function Home() {
               ))}
             </ul>
             <a
-              href="#lead-form"
+              href="/booking"
               className="inline-block rounded px-7 py-3.5 font-bold transition hover:opacity-90"
               style={{ backgroundColor: company.primaryColor, color: "white" }}
             >
@@ -509,7 +509,7 @@ export default async function Home() {
 
       {/* FLOATING CTA */}
       <a
-        href="#lead-form"
+        href="/booking"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded px-6 py-4 text-sm font-bold shadow-2xl transition hover:scale-105"
         style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
       >

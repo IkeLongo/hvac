@@ -26,7 +26,7 @@ export function LeadForm({ primaryColor, accentColor, services }: LeadFormProps)
       source: "Website Contact Form - Inquiry",
       tags: ["website-lead-form"],
     };
-    console.log("[LeadForm] Submitting payload:", payload);
+    // console.log("[LeadForm] Submitting payload:", payload);
 
     try {
       const res = await fetch("/api/contact", {
@@ -36,8 +36,8 @@ export function LeadForm({ primaryColor, accentColor, services }: LeadFormProps)
       });
 
       const resData = await res.json();
-      console.log("[LeadForm] Response status:", res.status);
-      console.log("[LeadForm] Response body:", resData);
+      // console.log("[LeadForm] Response status:", res.status);
+      // console.log("[LeadForm] Response body:", resData);
 
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
