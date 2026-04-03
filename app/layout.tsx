@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ChatWidget } from "./components/chat/ChatWidget";
 import { companies } from "@/data/companies";
 
 const FALLBACK_SLUG = "alamo-air";
+
+async function getCompany() {
+  const headersList = await headers();
+  const slug = headersList.get("x-company-slug") ?? FALLBACK_SLUG;
+  return companies[slug] ?? companies[FALLBACK_SLUG];
+}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,50 +23,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Alamo Air Solutions | HVAC Repair & Installation in San Antonio",
-    template: "%s | Alamo Air Solutions",
-  },
-  description:
-    "Trusted HVAC repair, installation, and maintenance in San Antonio, TX. Licensed & insured technicians. 24/7 emergency service. Call (210) 730-6232.",
-  keywords: [
-    "HVAC San Antonio",
-    "AC repair San Antonio",
-    "furnace repair San Antonio",
-    "air conditioning installation",
-    "HVAC maintenance",
-    "emergency HVAC",
-    "San Antonio heating and cooling",
-  ],
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: "Alamo Air Solutions",
-    title: "Alamo Air Solutions | HVAC Repair & Installation in San Antonio",
-    description:
-      "Fast, honest, and professional HVAC services in San Antonio, TX. Licensed & insured. 24/7 emergency service available.",
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Alamo Air Solutions – HVAC Repair & Installation in San Antonio",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const company = await getCompany();
+  return {
+    title: {
+      default: `${company.name} | HVAC Repair & Installation in ${company.city}`,
+      template: `%s | ${company.name}`,
+    },
+    description: `Trusted HVAC repair, installation, and maintenance in ${company.city}, TX. Licensed & insured technicians. 24/7 emergency service. Call ${company.phone}.`,
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      siteName: company.name,
+      title: `${company.name} | HVAC Repair & Installation in ${company.city}`,
+      description: `Fast, honest, and professional HVAC services in ${company.city}, TX. Licensed & insured. 24/7 emergency service available.`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const company = companies[FALLBACK_SLUG];
+  const company = await getCompany();
   return (
     <html
       lang="en"
