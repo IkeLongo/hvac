@@ -3,6 +3,8 @@ import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ChatWidget } from "./components/chat/ChatWidget";
+import { Navbar } from "./components/layout/navbar/Navbar";
+import { Footer } from "./components/layout/Footer";
 import { companies } from "@/data/companies";
 
 const FALLBACK_SLUG = "alamo-air";
@@ -57,7 +59,9 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Navbar company={company} />
         {children}
+        <Footer company={company} />
         <ChatWidget company={company} />
       </body>
     </html>

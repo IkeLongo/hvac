@@ -18,26 +18,6 @@ export default async function Home() {
   return (
     <main className="font-sans text-gray-900">
 
-      {/* TOP BAR */}
-      <div
-        className="flex flex-col md:flex-row items-center justify-between gap-2 px-4 md:px-8 py-3 md:py-2.5 text-sm border-b border-white/10"
-        style={{ backgroundColor: company.primaryColor }}
-      >
-        <span className="text-white/60 text-center md:text-left">Serving {company.city} &amp; surrounding areas &middot; Licensed &amp; Insured</span>
-        <div className="flex items-center gap-4">
-          <a href={`tel:${company.phone}`} className="font-bold text-white hover:opacity-80 transition">
-            {company.phone}
-          </a>
-          <a
-            href="#lead-form"
-            className="rounded px-4 py-1.5 text-sm font-bold transition hover:opacity-90"
-            style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
-          >
-            Request Service
-          </a>
-        </div>
-      </div>
-
       {/* HERO */}
       <section
         className="relative flex flex-col items-center justify-center px-6 py-28 text-white text-center"
@@ -462,63 +442,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="py-10 px-6" style={{ backgroundColor: company.primaryColor }}>
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <div className="h-10 w-28 relative">
-              <Image src={company.logo} alt={company.name} fill className="object-contain" />
-            </div>
-            <p className="text-white/40 text-xs">
-              &copy; {new Date().getFullYear()} {company.name}. All rights reserved.
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <a href={`tel:${company.phone}`} className="text-white font-bold text-lg hover:opacity-80 transition">
-              {company.phone}
-            </a>
-            <a
-              href="#"
-              className="text-xs font-bold rounded px-4 py-2 transition hover:opacity-90"
-              style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
-            >
-              Leave a Review
-            </a>
-          </div>
-          <div className="flex items-center gap-5">
-            <a href="#" className="text-white/50 hover:text-white transition" aria-label="Facebook">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </a>
-            <a href="#" className="text-white/50 hover:text-white transition" aria-label="Instagram">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-            </a>
-            <a href="#" className="text-white/50 hover:text-white transition" aria-label="Google Reviews">
-              <svg className="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </footer>
-
-      {/* FLOATING CTA */}
-      {/* <a
-        href="/booking"
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded px-6 py-4 text-sm font-bold shadow-2xl transition hover:scale-105"
-        style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
-      >
-        Get Instant Quote
-      </a> */}
 
     </main>
   );

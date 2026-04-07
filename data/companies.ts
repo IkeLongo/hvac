@@ -33,6 +33,11 @@ export type CompanyWhyChooseUs = {
   description: string;
 };
 
+export type ServiceArea = {
+  name: string;
+  slug: string;
+};
+
 export type CompanyStat = {
   label: string;
   value: string;
@@ -69,6 +74,9 @@ export type Company = {
 
   // Headline stats bar (about & homepage)
   statsBar: CompanyStat[];
+
+  // Service areas listed in footer and future SEO pages
+  serviceAreas: ServiceArea[];
 };
 
 export const companies: Record<string, Company> = {
@@ -170,6 +178,18 @@ export const companies: Record<string, Company> = {
       { value: "24/7", label: "Emergency Service" },
       { value: "100%", label: "Satisfaction Guarantee" },
     ],
+
+    // Service areas
+    serviceAreas: [
+      { name: "San Antonio", slug: "san-antonio" },
+      { name: "Boerne", slug: "boerne" },
+      { name: "Helotes", slug: "helotes" },
+      { name: "Stone Oak", slug: "stone-oak" },
+      { name: "Leon Springs", slug: "leon-springs" },
+      { name: "Bulverde", slug: "bulverde" },
+      { name: "Live Oak", slug: "live-oak" },
+      { name: "Leon Valley", slug: "leon-valley" },
+    ],
   },
 
   "cool-breeze": {
@@ -270,6 +290,18 @@ export const companies: Record<string, Company> = {
       { value: "< 2hr", label: "Avg Emergency Response" },
       { value: "4.9★", label: "Average Review Rating" },
     ],
+
+    // Service areas
+    serviceAreas: [
+      { name: "San Antonio", slug: "san-antonio" },
+      { name: "Helotes", slug: "helotes" },
+      { name: "Leon Springs", slug: "leon-springs" },
+      { name: "Stone Oak", slug: "stone-oak" },
+      { name: "Shavano Park", slug: "shavano-park" },
+      { name: "Hollywood Park", slug: "hollywood-park" },
+      { name: "Universal City", slug: "universal-city" },
+      { name: "Converse", slug: "converse" },
+    ],
   },
 
   "allstarairconditioning": {
@@ -368,6 +400,18 @@ export const companies: Record<string, Company> = {
       { value: "6,200+", label: "Jobs Completed" },
       { value: "All", label: "Major Brands Serviced" },
       { value: "4.8★", label: "Average Review Rating" },
+    ],
+
+    // Service areas
+    serviceAreas: [
+      { name: "San Antonio", slug: "san-antonio" },
+      { name: "NW Military Hwy Corridor", slug: "nw-military-hwy-corridor" },
+      { name: "Balcones Heights", slug: "balcones-heights" },
+      { name: "Windcrest", slug: "windcrest" },
+      { name: "Kirby", slug: "kirby" },
+      { name: "Schertz", slug: "schertz" },
+      { name: "Seguin", slug: "seguin" },
+      { name: "New Braunfels", slug: "new-braunfels" },
     ],
   },
 };
