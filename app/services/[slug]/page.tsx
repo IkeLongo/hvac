@@ -19,57 +19,24 @@ async function getCompany() {
   return companies[slug] ?? companies[FALLBACK_SLUG];
 }
 
-// Per-service "signs you need this" content
-const SIGNS_BY_SLUG: Record<string, string[]> = {
-  "ac-repair": [
-    "AC is blowing warm or room-temperature air",
-    "System is running but the house won't cool down",
-    "You hear unusual noises like grinding, banging, or squealing",
-    "Your energy bills have spiked without explanation",
-    "The unit is constantly cycling on and off",
-    "There's ice on the refrigerant lines or outdoor unit",
-    "You notice water pooling around the indoor unit",
-  ],
-  "heater-furnace-repair": [
-    "Heater turns on but produces little or no heat",
-    "Pilot light is out or won't stay lit",
-    "You smell unusual odors, especially burning or gas",
-    "System makes banging, rattling, or popping sounds",
-    "Certain rooms stay cold while others are warm",
-    "Thermostat is unresponsive or inaccurate",
-    "Heating bills are noticeably higher than usual",
-  ],
-  "system-installation": [
-    "Your HVAC system is 12 or more years old",
-    "Repair costs are approaching or exceeding the system's value",
-    "Your system requires frequent repairs throughout the season",
-    "Your home has inconsistent temperatures room to room",
-    "You're building a new home or addition",
-    "Your current system doesn't have zoning or smart thermostat support",
-    "Energy bills continue rising despite regular maintenance",
-  ],
-  "seasonal-maintenance": [
-    "Your system hasn't been serviced in over a year",
-    "Airflow from vents feels weaker than usual",
-    "You notice more dust in the home than normal",
-    "Your system seems to work harder to reach set temperatures",
-    "Your manufacturer warranty requires annual maintenance",
-    "You want to prevent unexpected breakdowns during peak season",
-  ],
-  "duct-cleaning-air-quality": [
-    "Family members experience allergy or asthma symptoms at home",
-    "You notice excessive dust collecting on surfaces after cleaning",
-    "There are visible mold or debris at vent openings",
-    "The home has musty or stale odors from the vents",
-    "You have pets or recently completed a home renovation",
-    "Your ductwork hasn't been inspected in more than 5 years",
-  ],
-};
-
 export async function generateStaticParams() {
-  return services
+  const jsonSlugs = services
     .filter((s) => s.is_active)
     .map((s) => ({ slug: s.slug }));
+
+  const categorySlugs = Object.values(companies).flatMap(
+    (company) =>
+      company.serviceCategories?.flatMap((cat) =>
+        cat.services.map((s) => ({ slug: s.slug }))
+      ) ?? []
+  );
+
+  const seen = new Set<string>();
+  return [...jsonSlugs, ...categorySlugs].filter(({ slug }) => {
+    if (seen.has(slug)) return false;
+    seen.add(slug);
+    return true;
+  });
 }
 
 export async function generateMetadata({
@@ -78,12 +45,17 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const service = services.find((s) => s.slug === slug && s.is_active);
-  if (!service) return {};
   const company = await getCompany();
+  const serviceItem = company.serviceCategories
+    ?.flatMap((cat) => cat.services)
+    .find((s) => s.slug === slug);
+  const jsonService = services.find((s) => s.slug === slug && s.is_active);
+  if (!serviceItem && !jsonService) return {};
+  const name = serviceItem?.name ?? jsonService!.name;
+  const description = serviceItem?.description ?? jsonService!.short_description;
   return {
-    title: `${service.name} in ${company.city}, TX`,
-    description: `${service.short_description} Licensed & insured technicians. Upfront pricing. Serving ${company.city}, TX. Call ${company.phone}.`,
+    title: `${name} in ${company.city}, TX`,
+    description: `${description} Licensed & insured technicians. Upfront pricing. Serving ${company.city}, TX. Call ${company.phone}.`,
   };
 }
 
@@ -93,20 +65,34 @@ export default async function ServiceDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const service = services.find((s) => s.slug === slug && s.is_active);
-  if (!service) notFound();
-
   const company = await getCompany();
-  const signs = SIGNS_BY_SLUG[slug] ?? [];
+
+  // Resolve from serviceCategories first, fall back to JSON
+  const serviceItem = company.serviceCategories
+    ?.flatMap((cat) => cat.services)
+    .find((s) => s.slug === slug);
+  const jsonService = services.find((s) => s.slug === slug && s.is_active);
+
+  if (!serviceItem && !jsonService) notFound();
+
+  // Merged data — serviceItem takes priority, JSON fills gaps
+  const name = serviceItem?.name ?? jsonService!.name;
+  const shortDescription = serviceItem?.description ?? jsonService!.short_description;
+  const longDescription = jsonService?.long_description ?? shortDescription;
+  const benefits = serviceItem?.benefits ?? jsonService?.benefits ?? [];
+  const process = serviceItem?.process ?? [];
+  const signsYouNeed = serviceItem?.signsYouNeed ?? [];
+  const pricingNote = serviceItem?.pricingNote ?? jsonService?.pricing_notes;
+  const idealFor = jsonService?.ideal_for;
 
   return (
     <main className="font-sans text-gray-900">
 
       <PageHeader
-        title={service.name}
+        title={name}
         breadcrumbs={[
           { label: "Services", href: "/services" },
-          { label: service.name },
+          { label: name },
         ]}
         company={company}
       />
@@ -124,10 +110,10 @@ export default async function ServiceDetailPage({
             {company.city}, TX — Licensed &amp; Insured
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-5">
-            {service.name} in {company.city}
+            {name} in {company.city}
           </h1>
           <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto leading-relaxed">
-            {service.short_description}
+            {shortDescription}
           </p>
 
           {/* CTAs */}
@@ -178,23 +164,56 @@ export default async function ServiceDetailPage({
             What We Do
           </p>
           <h2 className="text-2xl md:text-3xl font-black mb-5 leading-snug">
-            About Our {service.name} Service
+            About Our {name} Service
           </h2>
           <p className="text-gray-500 leading-relaxed text-base">
-            {service.long_description}
+            {longDescription}
           </p>
-          {service.pricing_notes && (
+          {pricingNote && (
             <div className="mt-6 border border-gray-200 rounded p-5 bg-gray-50 text-sm text-gray-600 leading-relaxed">
               <span className="font-bold text-gray-800">Pricing: </span>
-              {service.pricing_notes}
+              {pricingNote}
             </div>
           )}
         </div>
       </section>
 
-      {/* Signs You Need This Service */}
-      {signs.length > 0 && (
+      {/* Our Process */}
+      {process.length > 0 && (
         <section className="bg-gray-50 py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-3"
+              style={{ color: company.primaryColor }}
+            >
+              How It Works
+            </p>
+            <h2 className="text-2xl md:text-3xl font-black mb-8 leading-snug">
+              Our {name} Process
+            </h2>
+            <ol className="flex flex-col gap-4">
+              {process.map((item, i) => (
+                <li key={item.step} className="flex items-start gap-4">
+                  <span
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black shrink-0 mt-0.5"
+                    style={{ backgroundColor: company.primaryColor, color: "white" }}
+                  >
+                    {i + 1}
+                  </span>
+                  <div>
+                    <span className="font-bold text-gray-900">{item.step}: </span>
+                    <span className="text-gray-500 text-sm leading-relaxed">{item.detail}</span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
+      {/* Signs You Need This Service */}
+      {signsYouNeed.length > 0 && (
+        <section className={`${process.length > 0 ? "bg-white" : "bg-gray-50"} py-16 md:py-20 px-4 sm:px-6 lg:px-8`}>
           <div className="max-w-3xl mx-auto">
             <p
               className="text-xs font-bold uppercase tracking-widest mb-3"
@@ -203,10 +222,10 @@ export default async function ServiceDetailPage({
               Watch for These
             </p>
             <h2 className="text-2xl md:text-3xl font-black mb-8 leading-snug">
-              Signs You Need {service.name}
+              Signs You Need {name}
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {signs.map((sign) => (
+              {signsYouNeed.map((sign) => (
                 <li
                   key={sign}
                   className="flex items-start gap-3 bg-white border border-gray-200 rounded p-4 shadow-sm"
@@ -226,7 +245,7 @@ export default async function ServiceDetailPage({
       )}
 
       {/* What's Included */}
-      {service.benefits.length > 0 && (
+      {benefits.length > 0 && (
         <section className="bg-white py-16 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <p
@@ -239,7 +258,7 @@ export default async function ServiceDetailPage({
               What&apos;s Included
             </h2>
             <ul className="flex flex-col gap-3">
-              {service.benefits.map((benefit) => (
+              {benefits.map((benefit) => (
                 <li key={benefit} className="flex items-center gap-3">
                   <span
                     className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0"
@@ -258,7 +277,7 @@ export default async function ServiceDetailPage({
       <WhyChooseUs company={company} />
 
       {/* Ideal For */}
-      {service.ideal_for && (
+      {idealFor && (
         <section className="bg-gray-50 py-16 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <p
@@ -271,7 +290,7 @@ export default async function ServiceDetailPage({
               Ideal For
             </h2>
             <p className="text-gray-500 leading-relaxed text-base bg-white border border-gray-200 rounded p-6 shadow-sm">
-              {service.ideal_for}
+              {idealFor}
             </p>
           </div>
         </section>
@@ -281,7 +300,7 @@ export default async function ServiceDetailPage({
 
       <CtaBanner
         company={company}
-        headline={`Need ${service.name}?`}
+        headline={`Need ${name}?`}
         subtext="Book your service today in under 60 seconds — or give us a call right now."
         features={[
           "Same-day appointments available",

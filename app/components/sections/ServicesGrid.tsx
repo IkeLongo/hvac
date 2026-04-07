@@ -49,6 +49,9 @@ interface ServicesGridProps {
 }
 
 export function ServicesGrid({ company }: ServicesGridProps) {
+  const hasCategories =
+    company.serviceCategories && company.serviceCategories.length > 0;
+
   return (
     <section className="bg-gray-50 py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -65,32 +68,97 @@ export function ServicesGrid({ company }: ServicesGridProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activeServices.map((service) => (
-            <div
-              key={service.slug}
-              className="bg-white rounded border border-gray-200 p-7 flex flex-col gap-4 shadow-sm"
-            >
-              <div
-                className="w-14 h-14 flex items-center justify-center rounded"
-                style={{ backgroundColor: company.primaryColor, color: company.accentColor }}
-              >
-                {SERVICE_ICONS[service.slug] ?? FALLBACK_ICON}
+        {hasCategories ? (
+          <div className="flex flex-col gap-14">
+            {company.serviceCategories!.map((category) => (
+              <div key={category.slug}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div
+                    className="w-1 h-8 rounded-full"
+                    style={{ backgroundColor: company.primaryColor }}
+                  />
+                  <h3 className="text-2xl font-black">{category.name}</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {category.services.map((service) => (
+                    <div
+                      key={service.slug}
+                      className={`bg-white rounded p-7 flex flex-col gap-4 shadow-sm relative ${
+                        service.isFeatured
+                          ? "border-2"
+                          : "border border-gray-200"
+                      }`}
+                      style={
+                        service.isFeatured
+                          ? { borderColor: company.primaryColor }
+                          : undefined
+                      }
+                    >
+                      {service.isFeatured && (
+                        <span
+                          className="absolute top-4 right-4 text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded"
+                          style={{
+                            backgroundColor: company.primaryColor,
+                            color: "white",
+                          }}
+                        >
+                          Popular
+                        </span>
+                      )}
+                      <div
+                        className="w-14 h-14 flex items-center justify-center rounded"
+                        style={{
+                          backgroundColor: company.primaryColor,
+                          color: company.accentColor,
+                        }}
+                      >
+                        {SERVICE_ICONS[service.slug] ?? FALLBACK_ICON}
+                      </div>
+                      <h4 className="text-xl font-black">{service.name}</h4>
+                      <p className="text-gray-500 text-sm leading-relaxed flex-1">
+                        {service.description}
+                      </p>
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="text-sm font-bold inline-flex items-center gap-1 transition-all hover:gap-2"
+                        style={{ color: company.primaryColor }}
+                      >
+                        Learn More &rarr;
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-xl font-black">{service.name}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed flex-1">
-                {service.short_description}
-              </p>
-              <Link
-                href={`/services/${service.slug}`}
-                className="text-sm font-bold inline-flex items-center gap-1 transition-all hover:gap-2"
-                style={{ color: company.primaryColor }}
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {activeServices.map((service) => (
+              <div
+                key={service.slug}
+                className="bg-white rounded border border-gray-200 p-7 flex flex-col gap-4 shadow-sm"
               >
-                Learn More &rarr;
-              </Link>
-            </div>
-          ))}
-        </div>
+                <div
+                  className="w-14 h-14 flex items-center justify-center rounded"
+                  style={{ backgroundColor: company.primaryColor, color: company.accentColor }}
+                >
+                  {SERVICE_ICONS[service.slug] ?? FALLBACK_ICON}
+                </div>
+                <h3 className="text-xl font-black">{service.name}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed flex-1">
+                  {service.short_description}
+                </p>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="text-sm font-bold inline-flex items-center gap-1 transition-all hover:gap-2"
+                  style={{ color: company.primaryColor }}
+                >
+                  Learn More &rarr;
+                </Link>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
