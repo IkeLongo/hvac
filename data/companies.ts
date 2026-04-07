@@ -1,3 +1,18 @@
+export type ServiceAreaDetail = {
+  headline: string;
+  subheadline: string;
+  intro: string;
+  areaContext: string;
+  commonProblems: string[];
+  serviceHighlights: string[];
+  whyChooseUs: string[];
+  nearbyAreas: string[];
+  faqs: { question: string; answer: string }[];
+  ctaHeading: string;
+  ctaText: string;
+  metaTitle?: string;
+  metaDescription?: string;
+};
 export type CompanyAddress = {
   street: string;
   city: string;
@@ -82,8 +97,12 @@ export type Company = {
   // Headline stats bar (about & homepage)
   statsBar: CompanyStat[];
 
+
   // Service areas listed in footer and future SEO pages
   serviceAreas: ServiceArea[];
+
+  // Area-specific SEO and content for dynamic pages
+  serviceAreaDetails?: Record<string, ServiceAreaDetail>;
 
   // Credentials displayed on the About page trust strip
   certifications: string[];
@@ -593,5 +612,302 @@ export const companies: Record<string, Company> = {
       "Fully Insured",
       "Residential & Commercial Service",
     ],
+
+    serviceAreaDetails: {
+      "san-antonio": {
+        headline: "HVAC Service Across San Antonio, TX",
+        subheadline: "Your AC Shouldn't Quit When You Need It Most",
+        intro:
+          "When temperatures push past 100°F, a broken AC isn't an inconvenience — it's a health concern. We're based here in San Antonio and we keep our schedule open for same-day calls because we know how fast things can go sideways in a Texas summer.",
+        areaContext:
+          "San Antonio is a big city with a huge range of housing stock — 1950s bungalows on the South Side, 1980s brick homes in the northwest, new construction off 1604. We've worked in all of them. That variety means we don't assume anything when we show up. We diagnose what's actually wrong and explain it before we touch a thing.",
+        commonProblems: [
+          "Systems that ran fine in spring but can't keep up once July hits",
+          "Two-story homes where the upstairs is always 5–8 degrees warmer",
+          "AC running constantly but never reaching the set temperature",
+          "Older R-22 systems that are expensive to recharge and hard to source parts for",
+        ],
+        serviceHighlights: [
+          "Same-day AC repair for most San Antonio calls",
+          "Full system replacements with same-week installation",
+          "Preventative maintenance that actually extends equipment life",
+          "Indoor air quality assessments for homes with allergy or asthma concerns",
+        ],
+        whyChooseUs: [
+          "We give you the diagnosis in plain language, not industry jargon",
+          "Upfront written estimate before any work starts — no verbal surprises",
+          "We stock common parts so most repairs don't require a second visit",
+          "No commission-based upselling — our techs are paid to fix things, not sell things",
+        ],
+        nearbyAreas: ["Helotes", "Leon Valley", "Stone Oak", "Boerne", "Live Oak"],
+        faqs: [
+          {
+            question: "How quickly can you get to me in San Antonio?",
+            answer:
+              "For repair calls, we usually have same-day availability. During peak summer weeks we're busiest midday, so calling early in the morning gets you the fastest slot.",
+          },
+          {
+            question: "My system is older — will you try to talk me into replacing it?",
+            answer:
+              "Only if replacement genuinely makes more sense for your budget. We'll show you the numbers and let you decide. A lot of older systems have years of life left with the right repair.",
+          },
+          {
+            question: "Do you service both central AC and ductless systems?",
+            answer:
+              "Yes. We work on central split systems, package units, and ductless mini-splits across all major brands.",
+          },
+        ],
+        ctaHeading: "AC or Heating Issue in San Antonio?",
+        ctaText: "Call now for same-day availability or book online and we'll confirm your slot within the hour.",
+        metaTitle: "HVAC Repair & Installation in San Antonio, TX | Conquer All Mechanical",
+        metaDescription:
+          "Same-day HVAC repair in San Antonio, TX. Honest diagnostics, upfront pricing, and local technicians who know the city. Call Conquer All Mechanical.",
+      },
+      "boerne": {
+        headline: "HVAC Repair & Maintenance in Boerne, TX",
+        subheadline: "Hill Country Summers Are Beautiful — Until Your AC Goes Out",
+        intro:
+          "Boerne gets hot, but it also gets genuinely cold in winter — something newer residents sometimes underestimate. We service both sides of the equation: AC tune-ups before the heat arrives and heating checks before the first cold front rolls through in November.",
+        areaContext:
+          "Boerne's housing stock is diverse. There are limestone homes built in the 1970s along the older streets near Main Plaza, newer subdivisions off Herff Road and IH-10, and large properties on acreage outside of town. Each comes with different HVAC challenges — older homes with original ductwork, new builds with variable-speed equipment, and rural properties where the nearest tech might be 45 minutes away otherwise.",
+        commonProblems: [
+          "AC units that sit idle all winter and then struggle when first turned on in spring",
+          "Heating systems that work fine but cycle too frequently on cold nights",
+          "Cedar and oak pollen clogging filters and reducing airflow faster than expected",
+          "Older homes where ductwork was never properly sized for the system installed",
+        ],
+        serviceHighlights: [
+          "AC and heating repair for all major brands",
+          "Pre-season tune-ups before summer and winter",
+          "Ductless mini-split installation for additions, sunrooms, and detached structures",
+          "Honest repair-vs-replace assessments with no pressure either way",
+        ],
+        whyChooseUs: [
+          "We schedule Boerne calls in advance so you're not waiting on a vague arrival window",
+          "Familiar with the specific systems common in Hill Country new builds",
+          "We don't pad quotes — you see exactly what you're paying for",
+          "Fully licensed and insured for residential and light commercial work",
+        ],
+        nearbyAreas: ["Fair Oaks Ranch", "Leon Springs", "Helotes", "Comfort", "San Antonio"],
+        faqs: [
+          {
+            question: "Is Boerne a regular stop for your team or more of an occasional trip?",
+            answer:
+              "We run Boerne calls on a regular basis. It's not a stretch for us — we have customers out there and schedule efficiently so wait times stay reasonable.",
+          },
+          {
+            question: "We have a large property with a detached guest house. Can you handle that too?",
+            answer:
+              "Yes. We can assess and service separate structures. Ductless mini-splits are often the right fit for detached buildings where running new ductwork isn't practical.",
+          },
+          {
+            question: "What's the best time of year to schedule a maintenance visit in Boerne?",
+            answer:
+              "March or April for AC, and October for heating. Both windows are before the system gets stressed, which means we can catch small issues before they become expensive ones.",
+          },
+        ],
+        ctaHeading: "Schedule HVAC Service in Boerne",
+        ctaText: "We run regular routes out to Boerne — call or book online and we'll get you on the schedule.",
+        metaTitle: "HVAC Repair & Maintenance in Boerne, TX | Conquer All Mechanical",
+        metaDescription:
+          "HVAC repair, installation, and seasonal maintenance in Boerne, TX. Serving Hill Country homes with honest service and reliable scheduling.",
+      },
+      "helotes": {
+        headline: "HVAC Service in Helotes, TX",
+        subheadline: "Ranch Homes, New Builds, and Everything In Between",
+        intro:
+          "Helotes has a split personality when it comes to housing — there are established ranch-style homes that have been here for decades and newer subdivisions that have gone up in the last several years. The HVAC needs are completely different between them, and we're comfortable with both.",
+        areaContext:
+          "The older homes in Helotes often have ductwork that was sized for smaller systems, and over the decades that mismatch causes airflow problems and uneven cooling. The newer homes tend to have more efficient equipment but can run into setup and calibration issues, especially with smart thermostats and zoned systems. We diagnose before we recommend — we don't assume.",
+        commonProblems: [
+          "Original ductwork that's restrictive or leaking, causing weak airflow in back bedrooms",
+          "Systems short-cycling — turning on and off every few minutes instead of running full cycles",
+          "Heavy cedar pollen season accelerating filter clogging and reducing system efficiency",
+          "Heat pump systems that aren't properly calibrated for the area's temperature swings",
+        ],
+        serviceHighlights: [
+          "Ductwork inspection, sealing, and rebalancing",
+          "AC and heating repair for all equipment types",
+          "Smart thermostat installation and troubleshooting",
+          "Whole-home air quality improvements including filtration upgrades",
+        ],
+        whyChooseUs: [
+          "We explain what we find before we recommend anything",
+          "Evening and weekend availability for homeowners with tight weekday schedules",
+          "We leave the work area clean — no debris, no footprints, no mess",
+          "No upsells on parts or services you don't need",
+        ],
+        nearbyAreas: ["Grey Forest", "Leon Valley", "San Antonio", "Boerne", "Leon Springs"],
+        faqs: [
+          {
+            question: "Our back bedrooms are always hotter than the front of the house — what causes that?",
+            answer:
+              "Usually airflow. The most common culprits are undersized or leaky ducts, a dirty filter reducing static pressure, or a blower that's not moving enough air. We can measure the airflow at each vent and trace the issue.",
+          },
+          {
+            question: "How often should we change our filters out here?",
+            answer:
+              "During cedar and oak season — roughly November through March — every 4–6 weeks if you have a standard 1-inch filter. A thicker media filter can go longer, and we can show you what fits your system.",
+          },
+          {
+            question: "Our system is only 7 years old but keeps breaking down. Is that normal?",
+            answer:
+              "No. Frequent repairs on a system that age usually point to either an installation problem or a maintenance gap. We can do a full diagnostic and give you an honest read on whether repair makes sense or if there's an underlying issue.",
+          },
+        ],
+        ctaHeading: "HVAC Issues in Helotes? Let's Fix It.",
+        ctaText: "Call or book online — we'll diagnose the problem and give you straight answers.",
+        metaTitle: "HVAC Repair & Service in Helotes, TX | Conquer All Mechanical",
+        metaDescription:
+          "Helotes HVAC repair and maintenance for ranch homes and new builds. Ductwork, AC, heating, and air quality services. Call Conquer All Mechanical.",
+      },
+      "stone-oak": {
+        headline: "HVAC Service in Stone Oak, TX",
+        subheadline: "Modern Homes Need Equipment That Keeps Up",
+        intro:
+          "Stone Oak homes are newer, nicer, and often more complex from an HVAC standpoint. Variable-speed equipment, multi-zone systems, and smart home integrations are common here — and when something goes wrong, it takes a tech who actually knows those systems, not someone who's going to guess.",
+        areaContext:
+          "Most Stone Oak homes were built in the 2000s and 2010s during rapid growth along US-281. They're larger, often two stories, and frequently have zoned HVAC setups to manage the temperature difference between floors. That complexity means standard repairs aren't always straightforward. We've worked on these systems enough to diagnose them efficiently — including the quirks that come with two-stage and variable-speed equipment.",
+        commonProblems: [
+          "Zoned systems where one zone isn't heating or cooling properly",
+          "Variable-speed equipment throwing fault codes that require manufacturer-specific diagnostics",
+          "Two-story homes where the upstairs zone is overworking in summer",
+          "Systems approaching 12–15 years old that are reaching the point of replacement vs. repair decisions",
+        ],
+        serviceHighlights: [
+          "Multi-zone and variable-speed system diagnostics and repair",
+          "High-efficiency system replacement with proper sizing for larger homes",
+          "Smart thermostat setup and app integration",
+          "Seasonal tune-ups to keep warranty-eligible equipment in spec",
+        ],
+        whyChooseUs: [
+          "Experienced with the equipment brands common in Stone Oak builds — no learning curve on your dime",
+          "We pull permits and size equipment correctly — not just whatever's cheapest to install",
+          "Punctual, professional, and respectful of your home",
+          "Honest replacement guidance when repair costs no longer make sense",
+        ],
+        nearbyAreas: ["Shavano Park", "Hollywood Park", "San Antonio", "Live Oak", "Bulverde"],
+        faqs: [
+          {
+            question: "Our downstairs is cool but the upstairs stays warm all afternoon — what's going on?",
+            answer:
+              "Heat rises and upper floors absorb more radiant heat from the roof. If it's severe, the usual causes are undersized equipment for the upper zone, damper issues in a zoned system, or insufficient return air. We can measure and diagnose.",
+          },
+          {
+            question: "My system throws an error code and then resets itself. Should I be worried?",
+            answer:
+              "Yes, eventually. Intermittent fault codes usually mean something is failing but hasn't failed completely yet. Catching it now is almost always cheaper than waiting for a full breakdown in July.",
+          },
+          {
+            question: "We want to upgrade to a smart thermostat — do you handle the full install?",
+            answer:
+              "Yes. We install, wire, and configure. We also make sure your system is compatible first, since some multi-stage or zoned setups require a specific thermostat type.",
+          },
+        ],
+        ctaHeading: "Stone Oak HVAC — Done Right the First Time",
+        ctaText: "Book a diagnostic or schedule a system assessment — we'll give you the full picture.",
+        metaTitle: "HVAC Repair & Installation in Stone Oak, TX | Conquer All Mechanical",
+        metaDescription:
+          "Stone Oak HVAC specialists for multi-zone, high-efficiency, and smart home systems. Honest diagnostics and upfront pricing. Call Conquer All Mechanical.",
+      },
+      "leon-valley": {
+        headline: "HVAC Repair & Service in Leon Valley, TX",
+        subheadline: "Straightforward Service for a No-Nonsense Neighborhood",
+        intro:
+          "Leon Valley homeowners don't need a sales pitch — they need a tech who shows up, figures out what's wrong, and fixes it without running up the bill. That's exactly how we work. We've been in plenty of the homes out here and we know what to look for.",
+        areaContext:
+          "Leon Valley's housing stock is largely from the 1960s through the 1980s — solid homes, but with HVAC systems that have been updated piecemeal over the decades. It's common to find a newer air handler paired with an older condenser, or a system that was replaced without addressing the ductwork. Those mismatches cause efficiency losses and comfort problems that are easy to overlook until something breaks.",
+        commonProblems: [
+          "Mismatched systems where the indoor and outdoor units aren't sized for each other",
+          "Ductwork that was never updated when the system was replaced",
+          "Refrigerant loss from fittings that have loosened over years of thermal cycling",
+          "Capacitors and contactors failing on condensers that are 10+ years old",
+        ],
+        serviceHighlights: [
+          "AC and heating repair with same-day availability for most calls",
+          "Refrigerant leak detection and recharge",
+          "Ductwork evaluation and targeted repairs",
+          "Honest system assessments when it's time to decide between repair and replacement",
+        ],
+        whyChooseUs: [
+          "We tell you what we find, not what generates the biggest invoice",
+          "Familiar with the older system configurations common in Leon Valley homes",
+          "We show up in the agreed window — we don't leave you guessing all afternoon",
+          "Financing available for replacements so you're not forced into a bad repair",
+        ],
+        nearbyAreas: ["Helotes", "Balcones Heights", "San Antonio", "Grey Forest", "Lackland area"],
+        faqs: [
+          {
+            question: "My AC isn't cooling well but the technician last year just recharged the refrigerant. It's happening again — why?",
+            answer:
+              "Refrigerant doesn't disappear on its own — if it needs recharging again, there's a leak somewhere. A recharge without finding and fixing the leak is a temporary fix. We'll locate the source and repair it properly.",
+          },
+          {
+            question: "Is it worth repairing a system that's 15 years old?",
+            answer:
+              "It depends on the repair. A capacitor or contactor swap on a 15-year-old unit is often worth doing. A compressor replacement usually isn't. We'll give you the honest math and let you decide.",
+          },
+          {
+            question: "Can you work on window units or just central systems?",
+            answer:
+              "Our focus is central HVAC — split systems and package units. For window units we'd point you elsewhere, but for any whole-home system we're the right call.",
+          },
+        ],
+        ctaHeading: "Need Honest HVAC Help in Leon Valley?",
+        ctaText: "Call or book online — no pressure, no upsells, just straight answers and good work.",
+        metaTitle: "HVAC Repair & Service in Leon Valley, TX | Conquer All Mechanical",
+        metaDescription:
+          "Dependable HVAC repair in Leon Valley, TX. Experienced with older home systems, honest diagnostics, and upfront pricing. Call Conquer All Mechanical.",
+      },
+      "live-oak": {
+        headline: "HVAC Service in Live Oak, TX",
+        subheadline: "Reliable Heating & Cooling Near Randolph and Beyond",
+        intro:
+          "Live Oak sits just northeast of San Antonio with a mix of long-established neighborhoods and areas that have grown up around Randolph AFB. It's a community that values reliability — people here have schedules to keep and don't have time for a HVAC company that doesn't show up when they say they will. We do.",
+        areaContext:
+          "A significant portion of Live Oak's housing was built in the 1970s and 1980s, and those homes have seen multiple HVAC system changes over the years. Humidity is a consistent issue in this part of the metro — the area sits lower and tends to trap moisture, which puts extra load on AC systems and contributes to air quality problems if equipment isn't maintained. We factor that in when we diagnose.",
+        commonProblems: [
+          "High indoor humidity even when the AC is running, pointing to an oversized or poorly maintained system",
+          "Older homes where the ductwork runs through unconditioned attic space, losing efficiency in summer",
+          "Systems that have been repaired multiple times and are losing reliability",
+          "Air quality issues — musty smells, visible mold at vents — tied to humidity and poor filtration",
+        ],
+        serviceHighlights: [
+          "AC repair and full system replacement",
+          "Humidity control solutions including dehumidifiers and ventilation improvements",
+          "Ductwork evaluation for homes with attic-run duct systems",
+          "Air quality testing and filtration upgrades",
+        ],
+        whyChooseUs: [
+          "We keep our arrival windows tight — you're not clearing your whole afternoon for us",
+          "We address the root cause, not just the symptom",
+          "Respectful service — we treat your home like we'd want ours treated",
+          "Clear communication from booking through invoice, no surprises",
+        ],
+        nearbyAreas: ["Universal City", "Converse", "Selma", "Schertz", "San Antonio"],
+        faqs: [
+          {
+            question: "My house feels clammy even when the AC keeps the temperature right. What's going on?",
+            answer:
+              "That's a humidity problem. AC removes moisture as a byproduct of cooling, but an oversized system short-cycles and doesn't run long enough to dehumidify properly. A standalone dehumidifier or a properly sized system can fix it.",
+          },
+          {
+            question: "We're getting a musty smell from the vents when the AC kicks on. Is that mold?",
+            answer:
+              "It could be mold or mildew on the evaporator coil or inside the air handler — both are common when humidity is high and filters are infrequently changed. We can inspect, clean, and advise on prevention.",
+          },
+          {
+            question: "We've had three different companies out in two years and nothing has fully fixed the problem. Can you help?",
+            answer:
+              "That's frustrating, and it usually means the root cause hasn't been identified. We'll do a full diagnostic and give you a clear explanation of what we find — not just a quick patch.",
+          },
+        ],
+        ctaHeading: "Live Oak HVAC — We'll Be There When We Say We Will",
+        ctaText: "Book your repair or tune-up online, or give us a call to talk through what you're experiencing.",
+        metaTitle: "HVAC Repair & Service in Live Oak, TX | Conquer All Mechanical",
+        metaDescription:
+          "HVAC repair and maintenance in Live Oak, TX. Humidity control, air quality, and reliable same-day service. Call Conquer All Mechanical.",
+      },
+    },
   },
 };

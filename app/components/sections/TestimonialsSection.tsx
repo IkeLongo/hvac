@@ -26,7 +26,11 @@ export async function TestimonialsSection({ company }: TestimonialsSectionProps)
           </h2>
         </div>
 
-        <TestimonialsMasonryGrid testimonials={testimonials} />
+        <TestimonialsMasonryGrid
+          testimonials={testimonials}
+          primaryColor={company.primaryColor}
+          accentColor={company.accentColor}
+        />
 
         <div className="text-center mt-20">
           <a

@@ -63,6 +63,18 @@ export function Footer({ company }: FooterProps) {
                 <FaYelp className="w-5 h-5" />
               </a>
             )}
+            {company.social.birdeye && (
+              <a
+                href={company.social.birdeye}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="BirdEye"
+                className="text-white/40 hover:text-white transition flex items-center"
+                style={{ lineHeight: 0 }}
+              >
+                <Image src="/bird-eye-logo.svg" alt="BirdEye" width={20} height={20} className="w-5 h-5 object-contain" />
+              </a>
+            )}
           </div>
         </div>
 

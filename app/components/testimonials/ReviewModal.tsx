@@ -8,9 +8,11 @@ import type { Testimonial } from "./TestimonialsMasonryGrid";
 interface ReviewModalProps {
   testimonial: Testimonial;
   onClose: () => void;
+  primaryColor?: string;
+  accentColor?: string;
 }
 
-export function ReviewModal({ testimonial, onClose }: ReviewModalProps) {
+export function ReviewModal({ testimonial, onClose, primaryColor = "#0c2244", accentColor }: ReviewModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
 
   // Close on Escape
@@ -41,7 +43,7 @@ export function ReviewModal({ testimonial, onClose }: ReviewModalProps) {
         role="dialog"
         aria-modal="true"
         className="relative flex flex-col w-full max-w-lg max-h-[85vh] rounded-2xl shadow-2xl"
-        style={{ backgroundColor: "#0c2244", border: "1px solid rgba(255,255,255,0.15)" }}
+        style={{ backgroundColor: primaryColor, border: "1px solid rgba(255,255,255,0.15)" }}
       >
         {/* Header — fixed, never scrolls */}
         <div className="flex-shrink-0 flex items-center gap-3 px-8 pt-8 pb-5 border-b border-white/10">

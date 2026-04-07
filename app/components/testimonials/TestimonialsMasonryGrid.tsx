@@ -14,7 +14,15 @@ function truncateReview(text: string, max: number): { display: string; isTruncat
   return { display: text.slice(0, cut > 0 ? cut : max) + "…", isTruncated: true };
 }
 
-export function TestimonialsMasonryGrid({ testimonials: reviewsProp }: { testimonials?: Testimonial[] } = {}) {
+export function TestimonialsMasonryGrid({
+  testimonials: reviewsProp,
+  primaryColor,
+  accentColor,
+}: {
+  testimonials?: Testimonial[];
+  primaryColor?: string;
+  accentColor?: string;
+} = {}) {
   const data = reviewsProp ?? dummyTestimonials;
   const [selected, setSelected] = useState<Testimonial | null>(null);
 
@@ -91,7 +99,14 @@ export function TestimonialsMasonryGrid({ testimonials: reviewsProp }: { testimo
         ))}
       </div>
 
-      {selected && <ReviewModal testimonial={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <ReviewModal
+          testimonial={selected}
+          onClose={() => setSelected(null)}
+          primaryColor={primaryColor}
+          accentColor={accentColor}
+        />
+      )}
     </div>
   );
 }
