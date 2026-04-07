@@ -29,7 +29,7 @@ export default async function BookingPage() {
     <main className="font-sans text-gray-900">
 
       {/* TOP BAR */}
-      <div
+      {/* <div
         className="hidden md:flex items-center justify-between px-8 py-2.5 text-sm border-b border-white/10"
         style={{ backgroundColor: company.primaryColor }}
       >
@@ -46,7 +46,7 @@ export default async function BookingPage() {
             Request Service
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* HERO HEADER */}
       <section
