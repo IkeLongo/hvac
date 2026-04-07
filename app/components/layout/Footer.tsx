@@ -19,8 +19,8 @@ export function Footer({ company }: FooterProps) {
 
         {/* Column 1 — Logo + tagline + social */}
         <div className="flex flex-col gap-5">
-          <div className="relative h-12 w-36">
-            <Image src={company.logo} alt={company.name} fill className="object-contain object-left" />
+          <div className="relative h-16 w-48">
+            <Image src={company.logoHorizontal} alt={company.name} fill className="object-contain object-left" />
           </div>
           <p className="text-white/55 text-sm leading-relaxed">{company.tagline}</p>
           <div className="flex items-center gap-4">

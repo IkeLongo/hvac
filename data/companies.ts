@@ -92,6 +92,7 @@ export type Company = {
   /** Mid neutral — used as a secondary base layer in shader and dividers */
   neutral2: string;
   logo: string;
+  logoHorizontal: string;
 
   // Extended brand & contact
   tagline: string;
@@ -144,6 +145,7 @@ export const companies: Record<string, Company> = {
     neutral1: "#e6f0fb",
     neutral2: "#c8dff5",
     logo: "/riverside-hvac-logo.png",
+    logoHorizontal: "/riverside-hvac-logo.png",
     googlePlaceId: "ChIJbxPRT5n3XIYRarQ1akEeXvc",
 
     // Extended brand & contact
@@ -269,6 +271,7 @@ export const companies: Record<string, Company> = {
     neutral1: "#e8f3fb",
     neutral2: "#fce8e8",
     logo: "/cool-breeze.png",
+    logoHorizontal: "/cool-breeze.png",
 
     // Extended brand & contact
     tagline: "Comfort You Can Count On — Day or Night",
@@ -393,6 +396,7 @@ export const companies: Record<string, Company> = {
     neutral1: "#f5ece6",
     neutral2: "#e8edf5",
     logo: "/allstar-heating-and-air-conditioning.png",
+    logoHorizontal: "/allstar-heating-and-air-conditioning.png",
 
     // Extended brand & contact
     tagline: "All Star Service on Every Call",
@@ -523,6 +527,7 @@ export const companies: Record<string, Company> = {
     neutral1: "#f4f7fb",         // light background (clean, modern)
     neutral2: "#d6e2f0",         // soft border / card background
     logo: "/conquer-all-mechanical-services-logo.png",
+    logoHorizontal: "/conquer-all-mechanical-services-logo-2.png",
     googlePlaceId: "ChIJbxPRT5n3XIYRarQ1akEeXvc", // you should grab this like you did before
 
     // Extended brand & contact

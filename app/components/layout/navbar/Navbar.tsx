@@ -195,8 +195,8 @@ const MobileNav = ({ company }: NavbarProps) => {
 // ─── Shared sub-components ────────────────────────────────────────────────────
 
 const CompanyLogo = ({ company }: NavbarProps) => (
-  <Link href="/" className="relative h-10 w-32 shrink-0 block">
-    <Image src={company.logo} alt={`${company.name} logo`} fill className="object-contain object-left" />
+  <Link href="/" className="relative h-14 w-44 shrink-0 block">
+    <Image src={company.logoHorizontal} alt={`${company.name} logo`} fill className="object-contain object-left" />
   </Link>
 );
 
