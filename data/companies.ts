@@ -83,6 +83,9 @@ export type Company = {
 
   // Service areas listed in footer and future SEO pages
   serviceAreas: ServiceArea[];
+
+  // Credentials displayed on the About page trust strip
+  certifications: string[];
 };
 
 export const companies: Record<string, Company> = {
@@ -199,6 +202,15 @@ export const companies: Record<string, Company> = {
       { name: "Live Oak", slug: "live-oak" },
       { name: "Leon Valley", slug: "leon-valley" },
     ],
+
+    certifications: [
+      "NATE Certified Technicians",
+      "EPA 608 Certified",
+      "TACLA Licensed & Bonded",
+      "BBB Accredited Business",
+      "ENERGY STAR® Partner",
+      "90-Day Labor Warranty",
+    ],
   },
 
   "cool-breeze": {
@@ -314,6 +326,15 @@ export const companies: Record<string, Company> = {
       { name: "Universal City", slug: "universal-city" },
       { name: "Converse", slug: "converse" },
     ],
+
+    certifications: [
+      "NATE Certified Technicians",
+      "EPA 608 Certified",
+      "TACLA Licensed & Bonded",
+      "1-Year Parts Warranty",
+      "5-Star Rated on Google",
+      "Same-Day Emergency Service",
+    ],
   },
 
   "allstarairconditioning": {
@@ -427,6 +448,15 @@ export const companies: Record<string, Company> = {
       { name: "Schertz", slug: "schertz" },
       { name: "Seguin", slug: "seguin" },
       { name: "New Braunfels", slug: "new-braunfels" },
+    ],
+
+    certifications: [
+      "NATE Certified Technicians",
+      "EPA 608 Certified",
+      "TACLA Licensed & Bonded",
+      "All Major Brands Serviced",
+      "4.8★ Google Rating",
+      "90-Day Labor Warranty",
     ],
   },
 };
