@@ -6,6 +6,7 @@ import { ChatWidget } from "./components/chat/ChatWidget";
 import { Navbar } from "./components/layout/navbar/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { companies } from "@/data/companies";
+import CookieBanner from "./components/cookies/components/CookieBanner";
 
 const FALLBACK_SLUG = "alamo-air";
 
@@ -58,11 +59,19 @@ export default async function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      {/* Inject company theme colors as CSS variables for cookie components */}
+      <style>{`
+        :root {
+          --cookie-primary: ${company.primaryColor};
+          --cookie-accent: ${company.accentColor};
+        }
+      `}</style>
       <body className="min-h-full flex flex-col">
         <Navbar company={company} />
         {children}
         <Footer company={company} />
         <ChatWidget company={company} />
+        <CookieBanner />
       </body>
     </html>
   );
