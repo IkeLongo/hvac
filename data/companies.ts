@@ -52,6 +52,12 @@ export type Company = {
   services: string[];
   primaryColor: string;
   accentColor: string;
+  /** Second accent — a complementary pop color for depth in gradients / shader */
+  accentColor2: string;
+  /** Light neutral — used as a soft background tint in shader and section fills */
+  neutral1: string;
+  /** Mid neutral — used as a secondary base layer in shader and dividers */
+  neutral2: string;
   logo: string;
 
   // Extended brand & contact
@@ -88,6 +94,9 @@ export const companies: Record<string, Company> = {
     services: ["AC Repair", "Installation", "Maintenance", "System Inspection"],
     primaryColor: "#0c2244",
     accentColor: "#bfee3c",
+    accentColor2: "#1a6fd4",
+    neutral1: "#e6f0fb",
+    neutral2: "#c8dff5",
     logo: "/riverside-hvac-logo.png",
 
     // Extended brand & contact
@@ -200,6 +209,9 @@ export const companies: Record<string, Company> = {
     services: ["Emergency Repair", "AC Tune-Ups", "Duct Cleaning"],
     primaryColor: "#0d55c2",
     accentColor: "#f8a7a7",
+    accentColor2: "#30a8e0",
+    neutral1: "#e8f3fb",
+    neutral2: "#fce8e8",
     logo: "/cool-breeze.png",
 
     // Extended brand & contact
@@ -312,6 +324,9 @@ export const companies: Record<string, Company> = {
     services: ["Emergency Repair", "AC Tune-Ups", "Duct Cleaning"],
     primaryColor: "#0F1D36",
     accentColor: "#e7632b",
+    accentColor2: "#1e4a8a",
+    neutral1: "#f5ece6",
+    neutral2: "#e8edf5",
     logo: "/allstar-heating-and-air-conditioning.png",
 
     // Extended brand & contact
