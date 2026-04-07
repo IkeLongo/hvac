@@ -86,6 +86,9 @@ export type Company = {
 
   // Credentials displayed on the About page trust strip
   certifications: string[];
+
+  // Google Reviews integration
+  googlePlaceId?: string;
 };
 
 export const companies: Record<string, Company> = {
@@ -101,6 +104,7 @@ export const companies: Record<string, Company> = {
     neutral1: "#e6f0fb",
     neutral2: "#c8dff5",
     logo: "/riverside-hvac-logo.png",
+    googlePlaceId: "ChIJbxPRT5n3XIYRarQ1akEeXvc",
 
     // Extended brand & contact
     tagline: "San Antonio's Trusted HVAC Experts Since 1999",

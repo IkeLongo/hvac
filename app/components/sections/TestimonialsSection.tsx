@@ -1,11 +1,13 @@
 import { TestimonialsMasonryGrid } from "@/app/components/testimonials/TestimonialsMasonryGrid";
+import { getTestimonials } from "@/lib/reviews/get-testimonials";
 import type { Company } from "@/data/companies";
 
 interface TestimonialsSectionProps {
   company: Company;
 }
 
-export function TestimonialsSection({ company }: TestimonialsSectionProps) {
+export async function TestimonialsSection({ company }: TestimonialsSectionProps) {
+  const testimonials = await getTestimonials(company);
   return (
     <section
       className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
@@ -24,7 +26,7 @@ export function TestimonialsSection({ company }: TestimonialsSectionProps) {
           </h2>
         </div>
 
-        <TestimonialsMasonryGrid />
+        <TestimonialsMasonryGrid testimonials={testimonials} />
 
         <div className="text-center mt-20">
           <a
