@@ -5,6 +5,7 @@ import recommendationsData from "@/lib/chat/data/recommendations.json";
 
 export type ChatServiceRow = {
   id: number;
+  slug: string;
   name: string;
   short_description: string;
   long_description: string | null;
@@ -12,6 +13,7 @@ export type ChatServiceRow = {
   pricing_notes: string | null;
   timeline_notes: string | null;
   ideal_for: string | null;
+  benefits: string[];
   cta_text: string | null;
   route_id: number | null;
   route_label: string | null;
@@ -53,7 +55,8 @@ export type ChatRouteRow = {
 };
 
 // Typed casts of the imported JSON
-const services = servicesData as (ChatServiceRow & { is_active: boolean; sort_order: number })[];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const services = servicesData as unknown as (ChatServiceRow & { is_active: boolean; sort_order: number })[];
 const faqs = faqsData as (ChatFaqRow & { is_active?: boolean })[];
 const routes = routesData as (ChatRouteRow & { is_active: boolean })[];
 
