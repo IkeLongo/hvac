@@ -9,6 +9,7 @@ export type CompanySocial = {
   facebook?: string;
   instagram?: string;
   yelp?: string;
+  birdeye?: string;
 };
 
 export type CompanyHero = {
@@ -461,6 +462,136 @@ export const companies: Record<string, Company> = {
       "All Major Brands Serviced",
       "4.8★ Google Rating",
       "90-Day Labor Warranty",
+    ],
+  },
+
+  "conquer-all-mechanical": {
+    // Core
+    name: "Conquer All Mechanical Services",
+    phone: "(210) 438-4558", // replace if you confirm exact
+    city: "San Antonio",
+    services: [
+      "AC Repair",
+      "Heating Repair",
+      "HVAC Installation",
+      "Preventative Maintenance",
+      "Indoor Air Quality"
+    ],
+    primaryColor: "#23262b",     // deep navy from shield (stronger than your default)
+    accentColor: "#ff7a1a",      // fire orange (MAIN CTA color)
+    accentColor2: "#2f8cff",     // bright cooling blue (secondary actions / highlights)
+
+    neutral1: "#f4f7fb",         // light background (clean, modern)
+    neutral2: "#d6e2f0",         // soft border / card background
+    logo: "/conquer-all-mechanical-services-logo.png",
+    googlePlaceId: "ChIJbxPRT5n3XIYRarQ1akEeXvc", // you should grab this like you did before
+
+    // Extended brand & contact
+    tagline: "Reliable HVAC Solutions You Can Count On",
+    email: "info@conquerallmechanicalservices.com",
+    address: {
+      street: "", // not clearly listed — confirm if needed
+      city: "San Antonio",
+      state: "TX",
+      zip: "",
+    },
+    social: {
+      facebook: "https://www.facebook.com/p/Conquer-All-Mechanical-Services-100094743332315/",
+      instagram: "",
+      yelp: "https://www.yelp.com/biz/conquer-all-mechanical-and-services-san-antonio",
+      birdeye: "https://reviews.birdeye.com/conquer-all-mechanical-and-services-167506820915056"
+    },
+
+    // Homepage hero
+    hero: {
+      headline: "Your Trusted HVAC Experts in San Antonio",
+      subheadline:
+        "Professional heating and cooling services designed to keep your home comfortable year-round. Fast response times, honest service, and reliable results you can depend on.",
+    },
+
+    // About page content
+    about: {
+      headline: "Dedicated to Quality HVAC Service",
+      body:
+        "Conquer All Mechanical Services is committed to delivering dependable HVAC solutions across San Antonio. With a focus on customer satisfaction, quality workmanship, and honest communication, their team ensures every job is done right the first time. Whether it's a repair, installation, or routine maintenance, they approach every project with professionalism and care.",
+      yearsExperience: 10, // adjust if you confirm
+    },
+
+    // "How It Works" process steps
+    process: [
+      {
+        step: 1,
+        title: "Request Service",
+        description:
+          "Call or submit a request online to schedule your HVAC service at a time that works best for you.",
+      },
+      {
+        step: 2,
+        title: "Inspection & Diagnosis",
+        description:
+          "A technician will inspect your system, identify the issue, and explain the solution in clear terms.",
+      },
+      {
+        step: 3,
+        title: "Transparent Pricing",
+        description:
+          "Receive an upfront quote before any work begins so you know exactly what to expect.",
+      },
+      {
+        step: 4,
+        title: "Service Completion",
+        description:
+          "We complete the repair or installation efficiently and ensure your system is running properly before we leave.",
+      },
+    ],
+
+    // Trust signals
+    whyChooseUs: [
+      {
+        title: "Fast & Reliable Service",
+        description:
+          "Quick response times and dependable service to restore your comfort as soon as possible.",
+      },
+      {
+        title: "Honest Recommendations",
+        description:
+          "We provide straightforward advice without upselling unnecessary services.",
+      },
+      {
+        title: "Experienced Technicians",
+        description:
+          "Skilled professionals trained to handle all types of HVAC systems.",
+      },
+      {
+        title: "Customer-First Approach",
+        description:
+          "We prioritize your comfort and satisfaction on every job we take.",
+      },
+    ],
+
+    // Stats bar
+    statsBar: [
+      { value: "10+", label: "Years Experience" },
+      { value: "1,000+", label: "Projects Completed" },
+      { value: "24/7", label: "Availability" },
+      { value: "100%", label: "Customer Focused" },
+    ],
+
+    // Service areas
+    serviceAreas: [
+      { name: "San Antonio", slug: "san-antonio" },
+      { name: "Boerne", slug: "boerne" },
+      { name: "Helotes", slug: "helotes" },
+      { name: "Stone Oak", slug: "stone-oak" },
+      { name: "Leon Valley", slug: "leon-valley" },
+      { name: "Live Oak", slug: "live-oak" },
+    ],
+
+    certifications: [
+      "Licensed HVAC Technicians",
+      "EPA Certified",
+      "Fully Insured",
+      "Residential & Commercial Service",
     ],
   },
 };
