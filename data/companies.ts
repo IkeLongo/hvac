@@ -1339,4 +1339,242 @@ export const companies: Record<string, Company> = {
       },
     },
   },
+  "flo-aire-service": {
+    name: "Flo-Aire Service Inc",
+    phone: "(210) 655-1738",
+    city: "San Antonio",
+    services: [
+      "AC Repair",
+      "Heating Repair",
+      "HVAC Installation",
+      "Preventative Maintenance",
+      "Commercial HVAC"
+    ],
+
+    primaryColor: "#2b2a2a",   // deep professional blue
+    accentColor: "#c52727",    // bright cooling blue
+    accentColor2: "#e9c4c4",   // warm orange contrast
+
+    neutral1: "#f5f7fa",
+    neutral2: "#dce3ea",
+
+    logo: "/flo-aire-service.png",
+    logoHorizontal: "/flo-aire-service.png",
+
+    tagline: "Keeping San Antonio Comfortable Since Day One",
+
+    email: "service@floaireservice.com",
+
+    address: {
+      street: "",
+      city: "San Antonio",
+      state: "TX",
+      zip: "",
+    },
+
+    hero: {
+      headline: "Reliable HVAC Service in San Antonio",
+      subheadline:
+        "From emergency AC repairs to full system replacements, Flo-Aire delivers dependable comfort solutions backed by years of experience.",
+    },
+
+    about: {
+      headline: "A Team You Can Trust",
+      body:
+        "Flo-Aire Service Inc has built a strong reputation in San Antonio for dependable HVAC service and honest work. Their team focuses on delivering long-term solutions, not quick fixes, ensuring every customer gets lasting comfort and peace of mind.",
+      yearsExperience: 15,
+    },
+
+    social: {},
+
+    process: [
+      { step: 1, title: "Schedule Service", description: "Call us or book online to schedule your HVAC service at a time that works for you." },
+      { step: 2, title: "Diagnose & Explain", description: "Our technician inspects your system and walks you through exactly what's needed before any work begins." },
+      { step: 3, title: "Upfront Quote", description: "You receive a clear, written quote before we start. No surprise charges, no hidden fees." },
+      { step: 4, title: "Service & Follow-Up", description: "We complete the work, test the system, and make sure you're satisfied before we leave." },
+    ],
+
+    whyChooseUs: [
+      { title: "Experienced Team", description: "Years of hands-on HVAC experience across residential and commercial systems in San Antonio." },
+      { title: "Honest Pricing", description: "Straightforward written quotes before any work begins — no hidden fees or surprise charges." },
+      { title: "Reliable Service", description: "We show up on time and get the job done right the first time." },
+      { title: "Local & Trusted", description: "A San Antonio business committed to the community we serve." },
+    ],
+
+    statsBar: [
+      { value: "15+", label: "Years in Business" },
+      { value: "24/7", label: "Emergency Service" },
+      { value: "100%", label: "Satisfaction Focus" },
+      { value: "All", label: "Major Brands Serviced" },
+    ],
+
+    serviceAreas: [
+      { name: "San Antonio", slug: "san-antonio" },
+    ],
+
+    certifications: [
+      "Licensed HVAC Technicians",
+      "EPA Certified",
+      "Fully Insured",
+    ],
+  },
+  "air-dynamics-mechanical": {
+    name: "Air Dynamics Mechanical",
+    phone: "(210) 852-3535",
+    city: "San Antonio",
+    services: [
+      "AC Repair",
+      "Heating Repair",
+      "HVAC Installation",
+      "Commercial HVAC",
+      "System Design"
+    ],
+
+    primaryColor: "#0b2545",   // dark navy (premium feel)
+    accentColor: "#44b5f7",    // teal (modern/mechanical feel)
+    accentColor2: "#ff9f1c",   // orange pop for CTAs
+
+    neutral1: "#f7f9fb",
+    neutral2: "#d9e2ec",
+
+    logo: "/air-dynamics-mechanical.png",
+    logoHorizontal: "/air-dynamics-mechanical.png",
+
+    tagline: "Precision HVAC Solutions Built to Perform",
+
+    email: "info@airdynamicsmech.com",
+
+    address: {
+      street: "",
+      city: "San Antonio",
+      state: "TX",
+      zip: "",
+    },
+
+    hero: {
+      headline: "Engineered Comfort for Homes & Businesses",
+      subheadline:
+        "Air Dynamics Mechanical provides high-performance HVAC solutions designed for efficiency, reliability, and long-term value.",
+    },
+
+    about: {
+      headline: "Built on Precision & Performance",
+      body:
+        "Air Dynamics Mechanical specializes in delivering high-quality HVAC systems and services for both residential and commercial clients. Their focus on precision, system performance, and customer satisfaction sets them apart in the San Antonio market.",
+      yearsExperience: 12,
+    },
+
+    social: {},
+
+    process: [
+      { step: 1, title: "Schedule Service", description: "Call or request service online at a time that works for you." },
+      { step: 2, title: "System Assessment", description: "We evaluate your HVAC system thoroughly and explain our findings clearly before recommending any work." },
+      { step: 3, title: "Upfront Pricing", description: "Receive a detailed, written quote before any work begins — no surprises." },
+      { step: 4, title: "Precision Service", description: "We complete the job to the highest standard and verify everything is performing correctly before we leave." },
+    ],
+
+    whyChooseUs: [
+      { title: "Precision Installation", description: "Every system installed and serviced to exact manufacturer specifications for maximum performance." },
+      { title: "Commercial & Residential", description: "Experienced with both residential and commercial HVAC systems of all complexities." },
+      { title: "Transparent Pricing", description: "Written quotes before work begins — the price you approve is the price you pay." },
+      { title: "Performance Focused", description: "We optimize systems for efficiency and long-term reliability, not just a quick fix." },
+    ],
+
+    statsBar: [
+      { value: "12+", label: "Years in Business" },
+      { value: "100%", label: "Licensed & Insured" },
+      { value: "All", label: "Major Brands Serviced" },
+      { value: "24/7", label: "Emergency Availability" },
+    ],
+
+    serviceAreas: [
+      { name: "San Antonio", slug: "san-antonio" },
+    ],
+
+    certifications: [
+      "Licensed HVAC Technicians",
+      "EPA Certified",
+      "Fully Insured",
+      "Residential & Commercial Service",
+    ],
+  },
+  "felix-air-services": {
+    name: "Felix Air Services",
+    phone: "(726) 249-5961",
+    city: "San Antonio",
+    services: [
+      "AC Repair",
+      "Heating Repair",
+      "HVAC Installation",
+      "Maintenance",
+      "Indoor Air Quality"
+    ],
+
+    primaryColor: "#051a47",   // strong black/charcoal
+    accentColor: "#45bbff",    // bold red (attention grabbing)
+    accentColor2: "#457b9d",   // cool blue balance
+
+    neutral1: "#f8f9fa",
+    neutral2: "#dee2e6",
+
+    logo: "/felix-air-services.png",
+    logoHorizontal: "/felix-air-services.png",
+
+    tagline: "Fast, Honest HVAC Service You Can Count On",
+
+    email: "service@felixairservices.com",
+
+    address: {
+      street: "",
+      city: "San Antonio",
+      state: "TX",
+      zip: "",
+    },
+
+    hero: {
+      headline: "San Antonio HVAC Service Done Right",
+      subheadline:
+        "Felix Air Services delivers fast response times, honest pricing, and reliable HVAC solutions for homes across San Antonio.",
+    },
+
+    about: {
+      headline: "Focused on Service & Reliability",
+      body:
+        "Felix Air Services is known for quick turnaround times and dependable HVAC work. Their team prioritizes clear communication, fair pricing, and getting the job done right the first time.",
+      yearsExperience: 10,
+    },
+
+    social: {},
+
+    process: [
+      { step: 1, title: "Call or Book Online", description: "Reach us by phone or schedule online for fast, responsive service." },
+      { step: 2, title: "Fast Diagnosis", description: "A technician arrives ready to diagnose your system and explain what's wrong in plain terms." },
+      { step: 3, title: "Clear Quote", description: "We provide written pricing before starting — honest and upfront with no hidden charges." },
+      { step: 4, title: "Repair & Verify", description: "We complete the repair and confirm your system is running correctly before we leave." },
+    ],
+
+    whyChooseUs: [
+      { title: "Fast Response Times", description: "We prioritize quick scheduling so you're not left waiting in discomfort." },
+      { title: "Honest Pricing", description: "Fair, upfront quotes — the price you're given is the price you pay." },
+      { title: "Reliable Repairs", description: "We fix it right the first time and stand behind our work on every job." },
+      { title: "Clear Communication", description: "We keep you informed from the first call through the final invoice — no surprises." },
+    ],
+
+    statsBar: [
+      { value: "10+", label: "Years in Business" },
+      { value: "Fast", label: "Response Times" },
+      { value: "100%", label: "Satisfaction Guarantee" },
+      { value: "All", label: "Major Brands Serviced" },
+    ],
+
+    serviceAreas: [
+      { name: "San Antonio", slug: "san-antonio" },
+    ],
+
+    certifications: [
+      "Licensed HVAC Technicians",
+      "EPA Certified",
+      "Fully Insured",
+    ],
+  }
 };
