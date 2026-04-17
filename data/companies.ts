@@ -3720,6 +3720,8 @@ export const companies: Record<string, Company> = {
     logo: "/logos/tough-ac-logo-2.avif",
     logoHorizontal: "/logos/tough-ac-logo-1.avif",
 
+    googlePlaceId: "ChIJufHTGSlDnmsRcqQ_XkIWetI",
+
     tagline: "Fast, Honest HVAC Service You Can Count On",
 
     email: "office@toughac.com",

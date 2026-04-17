@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { companies } from "./data/companies";
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const host = req.headers.get("host") ?? "";
 
   // Extract subdomain: e.g. "alamo-air" from "alamo-air.mydomain.com"
