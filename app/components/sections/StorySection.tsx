@@ -15,7 +15,9 @@ export function StorySection({ company }: StorySectionProps) {
             src="/overhead-of-utility-workers-maintaining-outside-ai.jpg"
             alt="Our team serving the area"
             fill
+            sizes="(min-width: 1024px) 800px, 100vw"
             className="object-cover"
+            priority
           />
         </div>
 
