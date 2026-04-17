@@ -67,6 +67,20 @@ const DesktopNav = ({ company }: NavbarProps) => {
             </div>
           </div>
         </MenuItem>
+        <MenuItem setActive={setActive} active={active} item="Service Areas">
+          <div className="flex flex-col space-y-3 min-w-[220px] py-1">
+            {company.serviceAreas.map((a) => (
+              <HoveredLink key={a.slug} href={`/service-areas/${a.slug}`}>
+                {a.name}
+              </HoveredLink>
+            ))}
+            <div className="border-t border-gray-100 pt-2 mt-1">
+              <HoveredLink href="/service-areas">
+                <span className="font-semibold">View All Areas →</span>
+              </HoveredLink>
+            </div>
+          </div>
+        </MenuItem>
         <NavLink href="/about" label="About" />
         <NavLink href="/contact" label="Contact" />
       </Menu>
@@ -96,6 +110,7 @@ const DesktopNav = ({ company }: NavbarProps) => {
 const MobileNav = ({ company }: NavbarProps) => {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [serviceAreasOpen, setServiceAreasOpen] = useState(false);
 
   return (
     <div className="lg:hidden w-full" style={{ backgroundColor: company.primaryColor }}>
@@ -156,6 +171,48 @@ const MobileNav = ({ company }: NavbarProps) => {
                       <MobileNavLink
                         href="/services"
                         label="View All Services →"
+                        onClick={() => setOpen(false)}
+                        muted
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Service Areas accordion */}
+              <div>
+                <button
+                  onClick={() => setServiceAreasOpen(!serviceAreasOpen)}
+                  className="flex items-center justify-between w-full py-2.5 text-sm font-semibold text-white/90"
+                >
+                  Service Areas
+                  <IconChevronDown
+                    className={cn(
+                      "w-4 h-4 text-white/60 transition-transform",
+                      serviceAreasOpen && "rotate-180",
+                    )}
+                  />
+                </button>
+                <AnimatePresence>
+                  {serviceAreasOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden pl-3 border-l border-white/20"
+                    >
+                      {company.serviceAreas.map((a) => (
+                        <MobileNavLink
+                          key={a.slug}
+                          href={`/service-areas/${a.slug}`}
+                          label={a.name}
+                          onClick={() => setOpen(false)}
+                          muted
+                        />
+                      ))}
+                      <MobileNavLink
+                        href="/service-areas"
+                        label="View All Areas →"
                         onClick={() => setOpen(false)}
                         muted
                       />
