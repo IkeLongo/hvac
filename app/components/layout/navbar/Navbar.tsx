@@ -24,7 +24,7 @@ export function Navbar({ company }: NavbarProps) {
       {/* Top info bar */}
       <div className="hidden md:flex items-center justify-between px-6 py-2 text-xs border-b border-white/10">
         <span className="text-white/50">
-          Serving {company.city} &amp; surrounding areas &nbsp;&middot;&nbsp; Licensed &amp; Insured
+          Serving {company.city} &nbsp;&amp;&nbsp; surrounding areas &nbsp;&middot;&nbsp; Licensed &amp; Insured
         </span>
         <a
           href={`mailto:${company.email}`}
