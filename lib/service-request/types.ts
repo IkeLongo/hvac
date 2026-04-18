@@ -171,6 +171,8 @@ export interface ServiceRequestSuccessResponse {
     /** Sanitized, normalized form data — safe to log and forward downstream. */
     normalizedLead: Omit<ServiceRequestPayload, "spam">;
     routing: BookingDecision;
+    /** Deduplicated, kebab-case tags computed server-side for GHL and automation. */
+    tags: string[];
   };
 }
 

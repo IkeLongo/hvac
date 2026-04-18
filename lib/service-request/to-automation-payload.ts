@@ -139,6 +139,7 @@ function buildRouting(flags: RoutingFlags): AutomationRouting {
 export function toAutomationPayload(
   payload: ServiceRequestPayload,
   routing: RoutingFlags,
+  tags: string[] = [],
 ): AutomationPayload {
   return {
     submittedAt: new Date().toISOString(),
@@ -162,5 +163,6 @@ export function toAutomationPayload(
     access: buildAccess(payload),
     antiSpam: buildAntiSpam(payload),
     routing: buildRouting(routing),
+    tags,
   };
 }
