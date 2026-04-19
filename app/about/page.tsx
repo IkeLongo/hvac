@@ -9,6 +9,7 @@ import { ProcessSection } from "@/app/components/sections/ProcessSection";
 import { TestimonialsSection } from "@/app/components/sections/TestimonialsSection";
 import { FaqSection } from "@/app/components/sections/FaqSection";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
+import { TeamSectionWithLightBackground } from "../components/sections/TeamSection";
 
 const FALLBACK_SLUG = "alamo-air";
 
@@ -40,7 +41,7 @@ export default async function AboutPage() {
       />
 
       {/* 2. Mission hook — small accent strip above StorySection */}
-      <section className="bg-white border-b border-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+      {/* <section className="bg-white border-b border-gray-100 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <p className="text-lg sm:text-xl font-black text-gray-900 max-w-2xl leading-snug">
             Reliable HVAC Service Backed by{" "}
@@ -57,13 +58,14 @@ export default async function AboutPage() {
             {company.phone}
           </a>
         </div>
-      </section>
-
-      {/* 3. Story — who we are, body copy, years badge */}
-      <StorySection company={company} />
+      </section> */}
+      <TeamSectionWithLightBackground company={company} />
 
       {/* 4. Stats — trust metrics */}
       <StatsBar company={company} />
+
+      {/* 3. Story — who we are, body copy, years badge */}
+      <StorySection company={company} />
 
       {/* 5. Core commitments — 3 cards derived from company data */}
       <section className="bg-white py-16 md:py-20 px-4 sm:px-6 lg:px-8">

@@ -76,6 +76,14 @@ export type ServiceCategory = {
   services: ServiceItem[];
 };
 
+export type CompanyTeamMember = {
+  name: string;
+  title: string;
+  description: string;
+  imageSrc?: string;
+  alt?: string;
+};
+
 export type Company = {
   // Core (used by existing chatbot, metadata, booking)
   name: string;
@@ -130,6 +138,9 @@ export type Company = {
 
   // Google Reviews integration
   googlePlaceId?: string;
+
+  // Optional team members for the About page
+  teamMembers?: CompanyTeamMember[];
 };
 
 export const companies: Record<string, Company> = {
@@ -4179,6 +4190,25 @@ export const companies: Record<string, Company> = {
       "EPA Certified",
       "Fully Insured",
       "Residential & Commercial Service",
+    ],
+
+    teamMembers: [
+      {
+        name: "Fernando Garcia",
+        title: "Operations Manager",
+        description:
+          "With 12+ years of HVAC experience, Fernando started Tough AC to provide honest, reliable service. He’s a hands-on leader who loves meeting customers. Outside of work, he enjoys fishing and family time.",
+        imageSrc: "/team/tough-ac/Fernando-Garcia.avif",
+        alt: "Fernando Garcia, Operations Manager at Tough AC & Heating",
+      },
+      {
+        name: "Antonio Garcia",
+        title: "Operations Manager",
+        description:
+          "Antonio has oversees daily operations, ensuring efficiency and excellent service. With a decade in the HVAC field, he’s passionate about customer satisfaction. In his free time, he loves fishing.",
+        imageSrc: "/team/tough-ac/Antonio-Garcia.avif",
+        alt: "Antonio Garcia, Operations Manager at Tough AC & Heating",
+      },
     ],
 
     serviceCategories: [
