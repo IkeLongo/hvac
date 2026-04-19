@@ -1,6 +1,8 @@
 import Link from "next/link";
-import type { JSX } from "react";
-import type { Company } from "@/data/companies";
+import Image from "next/image";
+import { type JSX } from "react";
+import { cn } from "@/lib/utils";
+import type { Company, ServiceItem } from "@/data/companies";
 import type { Service } from "@/lib/types/service";
 import servicesData from "@/lib/chat/data/services.json";
 
@@ -44,6 +46,97 @@ const FALLBACK_ICON = (
 
 const activeServices = (servicesData as Service[]).filter((s) => s.is_active);
 
+/** Normalised shape used for rendering — works for both ServiceItem and Service */
+interface CardData {
+  slug: string;
+  name: string;
+  description: string;
+  isFeatured?: boolean;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+interface ServiceCardProps {
+  card: CardData;
+  company: Company;
+}
+
+function ServiceCard({ card, company }: ServiceCardProps) {
+  const hasImage = !!card.imageSrc;
+
+  return (
+    <div
+      className={cn(
+        "group relative overflow-hidden rounded flex flex-col shadow-sm",
+        card.isFeatured ? "border-2" : "border border-gray-200",
+        !hasImage && "bg-white",
+      )}
+      style={card.isFeatured ? { borderColor: company.primaryColor } : undefined}
+    >
+      {/* Background image + overlay */}
+      {hasImage && (
+        <>
+          <Image
+            src={card.imageSrc!}
+            alt={card.imageAlt ?? card.name}
+            fill
+            sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: company.primaryColor, opacity: 0.82 }}
+          />
+        </>
+      )}
+
+      {/* Featured badge */}
+      {card.isFeatured && (
+        <span
+          className="absolute top-4 right-4 z-10 text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded"
+          style={{
+            backgroundColor: hasImage ? company.accentColor : company.primaryColor,
+            color: hasImage ? company.primaryColor : "white",
+          }}
+        >
+          Popular
+        </span>
+      )}
+
+      {/* Card content */}
+      <div className="relative z-10 p-7 flex flex-col gap-4 flex-1">
+        <div
+          className="w-14 h-14 flex items-center justify-center rounded shrink-0"
+          style={{
+            backgroundColor: hasImage ? company.accentColor : company.primaryColor,
+            color: hasImage ? company.primaryColor : company.accentColor,
+          }}
+        >
+          {SERVICE_ICONS[card.slug] ?? FALLBACK_ICON}
+        </div>
+        <h4 className={cn("text-xl font-black", hasImage ? "text-white" : "text-gray-900")}>
+          {card.name}
+        </h4>
+        <p
+          className={cn(
+            "text-sm leading-relaxed flex-1",
+            hasImage ? "text-white/80" : "text-gray-500",
+          )}
+        >
+          {card.description}
+        </p>
+        <Link
+          href={`/services/${card.slug}`}
+          className="text-sm font-bold inline-flex items-center gap-1 transition-all hover:gap-2"
+          style={{ color: hasImage ? company.accentColor : company.primaryColor }}
+        >
+          Learn More &rarr;
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 interface ServicesGridProps {
   company: Company;
 }
@@ -80,52 +173,19 @@ export function ServicesGrid({ company }: ServicesGridProps) {
                   <h3 className="text-2xl font-black">{category.name}</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {category.services.map((service) => (
-                    <div
+                  {category.services.map((service: ServiceItem) => (
+                    <ServiceCard
                       key={service.slug}
-                      className={`bg-white rounded p-7 flex flex-col gap-4 shadow-sm relative ${
-                        service.isFeatured
-                          ? "border-2"
-                          : "border border-gray-200"
-                      }`}
-                      style={
-                        service.isFeatured
-                          ? { borderColor: company.primaryColor }
-                          : undefined
-                      }
-                    >
-                      {service.isFeatured && (
-                        <span
-                          className="absolute top-4 right-4 text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded"
-                          style={{
-                            backgroundColor: company.primaryColor,
-                            color: "white",
-                          }}
-                        >
-                          Popular
-                        </span>
-                      )}
-                      <div
-                        className="w-14 h-14 flex items-center justify-center rounded"
-                        style={{
-                          backgroundColor: company.primaryColor,
-                          color: company.accentColor,
-                        }}
-                      >
-                        {SERVICE_ICONS[service.slug] ?? FALLBACK_ICON}
-                      </div>
-                      <h4 className="text-xl font-black">{service.name}</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed flex-1">
-                        {service.description}
-                      </p>
-                      <Link
-                        href={`/services/${service.slug}`}
-                        className="text-sm font-bold inline-flex items-center gap-1 transition-all hover:gap-2"
-                        style={{ color: company.primaryColor }}
-                      >
-                        Learn More &rarr;
-                      </Link>
-                    </div>
+                      card={{
+                        slug: service.slug,
+                        name: service.name,
+                        description: service.description,
+                        isFeatured: service.isFeatured,
+                        imageSrc: service.imageSrc,
+                        imageAlt: service.imageAlt,
+                      }}
+                      company={company}
+                    />
                   ))}
                 </div>
               </div>
@@ -134,28 +194,17 @@ export function ServicesGrid({ company }: ServicesGridProps) {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {activeServices.map((service) => (
-              <div
+              <ServiceCard
                 key={service.slug}
-                className="bg-white rounded border border-gray-200 p-7 flex flex-col gap-4 shadow-sm"
-              >
-                <div
-                  className="w-14 h-14 flex items-center justify-center rounded"
-                  style={{ backgroundColor: company.primaryColor, color: company.accentColor }}
-                >
-                  {SERVICE_ICONS[service.slug] ?? FALLBACK_ICON}
-                </div>
-                <h3 className="text-xl font-black">{service.name}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed flex-1">
-                  {service.short_description}
-                </p>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="text-sm font-bold inline-flex items-center gap-1 transition-all hover:gap-2"
-                  style={{ color: company.primaryColor }}
-                >
-                  Learn More &rarr;
-                </Link>
-              </div>
+                card={{
+                  slug: service.slug,
+                  name: service.name,
+                  description: service.short_description,
+                  imageSrc: service.imageSrc,
+                  imageAlt: service.imageAlt,
+                }}
+                company={company}
+              />
             ))}
           </div>
         )}
@@ -163,3 +212,4 @@ export function ServicesGrid({ company }: ServicesGridProps) {
     </section>
   );
 }
+

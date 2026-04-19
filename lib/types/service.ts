@@ -11,4 +11,6 @@ export type Service = {
   benefits: string[];
   route_path: string;
   is_active: boolean;
+  imageSrc?: string;
+  imageAlt?: string;
 };

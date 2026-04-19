@@ -64,6 +64,8 @@ export type ServiceItem = {
   slug: string;
   description: string;
   isFeatured?: boolean;
+  imageSrc?: string;
+  imageAlt?: string;
   benefits?: string[];
   process?: { step: string; detail: string }[];
   signsYouNeed?: string[];
@@ -4148,7 +4150,7 @@ export const companies: Record<string, Company> = {
     about: {
       headline: "Focused on Service & Reliability",
       body:
-        "Tough AC & Heating is known for quick turnaround times and dependable HVAC work. Their team prioritizes clear communication, fair pricing, and getting the job done right the first time.",
+        "At Tough AC, our mission is to deliver reliable, high-quality air conditioning solutions with integrity, expertise, and a personal touch. We are committed to keeping our customers comfortable year-round by providing top-tier service, energy-efficient systems, and building lasting relationships based on trust and transparency.",
       yearsExperience: 10,
     },
 
@@ -4221,6 +4223,7 @@ export const companies: Record<string, Company> = {
             slug: "ac-repair",
             description: "Fast diagnosis and repair for all central AC and heat pump systems. Most repairs completed same-day.",
             isFeatured: true,
+            imageSrc: "/team/tough-ac/fernando-w-ac-3.avif",
             signsYouNeed: [
               "AC is blowing warm or room-temperature air",
               "System runs but the house won't cool down",
@@ -4337,6 +4340,7 @@ export const companies: Record<string, Company> = {
             slug: "heating-repair",
             description: "Diagnosis and repair for furnaces, heat pumps, and all residential heating systems.",
             isFeatured: true,
+            imageSrc: "/heating-repair.webp",
             signsYouNeed: [
               "Heater turns on but produces little or no heat",
               "Pilot light is out or won't stay lit",
@@ -4365,6 +4369,7 @@ export const companies: Record<string, Company> = {
             name: "Heating Installation & Replacement",
             slug: "heating-installation",
             description: "Full heating system installation and replacement with proper load calculations and equipment sizing.",
+            imageSrc: "/full-heating-system-install.webp",
             signsYouNeed: [
               "Furnace or heat pump is 15 or more years old",
               "Repair estimates are approaching the cost of a new system",
@@ -4392,6 +4397,7 @@ export const companies: Record<string, Company> = {
             name: "Heating Maintenance",
             slug: "heating-maintenance",
             description: "Fall heating check to ensure your system is ready before the first cold front of the season.",
+            imageSrc: "/heating-maintenance.webp",
             signsYouNeed: [
               "Heating system hasn't been serviced in over a year",
               "System has had intermittent starting issues",
@@ -4424,6 +4430,7 @@ export const companies: Record<string, Company> = {
             name: "Indoor Air Quality Assessment",
             slug: "indoor-air-quality",
             description: "Evaluation of filtration, ventilation, and humidity levels to improve air quality in your home.",
+            imageSrc: "/indorr-air-quality.webp",
             isFeatured: true,
             signsYouNeed: [
               "Family members experience allergy or asthma symptoms at home",
@@ -4451,6 +4458,7 @@ export const companies: Record<string, Company> = {
             name: "Filtration & Air Purification",
             slug: "air-filtration",
             description: "Upgrade to high-efficiency filters or whole-home air purifiers for cleaner indoor air.",
+            imageSrc: "/filtration-and-air-purification.webp",
             signsYouNeed: [
               "More dust or pet dander than usual throughout the home",
               "Family members with allergies or respiratory sensitivities",
@@ -4477,6 +4485,7 @@ export const companies: Record<string, Company> = {
             name: "Humidity Control",
             slug: "humidity-control",
             description: "Whole-home dehumidifier installation and service to address humidity issues common in the San Antonio area.",
+            imageSrc: "/humidity-control.webp",
             signsYouNeed: [
               "Interior humidity regularly above 55%",
               "Condensation on windows or interior walls",
@@ -4503,6 +4512,7 @@ export const companies: Record<string, Company> = {
             name: "Duct Cleaning & Sealing",
             slug: "duct-cleaning",
             description: "Professional ductwork inspection, cleaning, and sealing to improve airflow and reduce energy loss.",
+            imageSrc: "/duct-cleaning-and-sealing.webp",
             signsYouNeed: [
               "Ductwork hasn't been inspected in more than 5 years",
               "Visible dust or debris at vent openings",
@@ -4537,6 +4547,7 @@ export const companies: Record<string, Company> = {
             slug: "commercial-hvac-repair",
             description: "Repair and maintenance for light commercial HVAC systems in offices, retail spaces, and small facilities.",
             isFeatured: true,
+            imageSrc: "/commercial-hvac-repair.webp",
             signsYouNeed: [
               "Commercial system is not cooling or heating properly",
               "Unusual noises from the rooftop unit or air handler",
@@ -4564,6 +4575,8 @@ export const companies: Record<string, Company> = {
             name: "Commercial HVAC Installation",
             slug: "commercial-hvac-installation",
             description: "New system installation and replacement for commercial properties with proper load and zoning requirements.",
+            imageSrc: "/commercial-hvac-installation.webp",
+            imageAlt: "Commercial HVAC Installation",
             signsYouNeed: [
               "Existing commercial HVAC is aging and repairs are no longer cost-effective",
               "Building is under construction or undergoing major renovation",
@@ -4590,6 +4603,8 @@ export const companies: Record<string, Company> = {
             name: "Commercial Preventative Maintenance",
             slug: "commercial-maintenance",
             description: "Scheduled maintenance plans for commercial properties to minimize downtime and extend equipment life.",
+            imageSrc: "/commercial-preventitive-maintenance.webp",
+            imageAlt: "Commercial Preventative Maintenance",
             signsYouNeed: [
               "No current preventative maintenance plan in place",
               "System has had multiple unplanned failures in the past year",
