@@ -19,6 +19,7 @@ import type {
   AutomationAntiSpam,
   AutomationRouting,
 } from "./automation-payload";
+import type { RoutingOutput } from "./determine-routing";
 
 // ── Sub-object builders ───────────────────────────────────────────────────────
 
@@ -139,7 +140,7 @@ function buildRouting(flags: RoutingFlags): AutomationRouting {
 export function toAutomationPayload(
   payload: ServiceRequestPayload,
   routing: RoutingFlags,
-  tags: string[] = [],
+  ghlRouting: RoutingOutput,
 ): AutomationPayload {
   return {
     submittedAt: new Date().toISOString(),
@@ -163,6 +164,9 @@ export function toAutomationPayload(
     access: buildAccess(payload),
     antiSpam: buildAntiSpam(payload),
     routing: buildRouting(routing),
-    tags,
+
+    targetStage: ghlRouting.targetStage,
+    opportunity: ghlRouting.opportunity,
+    tags: ghlRouting.tags,
   };
 }

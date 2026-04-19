@@ -145,7 +145,7 @@ export function Footer({ company }: FooterProps) {
               {company.phone}
             </a>
             <Link
-              href="/booking"
+              href="/request-service"
               className="rounded px-4 py-1.5 text-xs font-bold transition hover:opacity-90"
               style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
             >

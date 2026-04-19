@@ -49,7 +49,7 @@ export function HeroSection({ company }: HeroSectionProps) {
           Call Now: {company.phone}
         </a>
         <a
-          href="/booking"
+          href="/request-service"
           className="rounded border-2 border-white/50 px-8 py-4 text-lg font-bold hover:bg-white/10 transition"
         >
           Request Service Online

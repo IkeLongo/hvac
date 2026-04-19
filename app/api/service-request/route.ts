@@ -10,7 +10,7 @@ import { MIN_HUMAN_ELAPSED_MS, type SpamMetadata } from "@/lib/spam/service-requ
 import { normalizeServiceRequest } from "@/lib/service-request/normalize";
 import { computeRoutingFlags, computeBookingDecision } from "@/lib/service-request/routing";
 import { toAutomationPayload } from "@/lib/service-request/to-automation-payload";
-import { buildLeadTags } from "@/lib/service-request/tags";
+import { determineRouting } from "@/lib/service-request/determine-routing";
 import { sendToGHLWebhook } from "@/lib/ghl/webhook";
 import type {
   ServiceRequestResponse,
@@ -147,16 +147,19 @@ export async function POST(request: Request): Promise<NextResponse<ServiceReques
   // 7. Compute routing flags ─────────────────────────────────────────────────────
   const routing = computeRoutingFlags(payload);
 
-  // 8. Compute booking decision ──────────────────────────────────────────────────
+  // 8. Compute booking decision (drives front-end UI) ────────────────────────────
+  // `bookingDecision` tells the client which calendar to embed and whether the
+  // user can self-schedule. It is returned in the API response but not sent to GHL.
   const bookingDecision = computeBookingDecision(payload, routing);
 
-  // 10. Generate lead tags ──────────────────────────────────────────────────
-  // Tags are computed server-side from validated data so GHL workflows never
-  // need to re-derive routing signals from raw form fields.
-  const tags = buildLeadTags(payload, routing, bookingDecision);
+  // 9. Determine GHL routing ─────────────────────────────────────────────────────
+  // `determineRouting` is the single source of truth for tags, pipeline stage,
+  // and opportunity fields sent to GHL. Logic is isolated here — not in the
+  // webhook layer and not scattered across the route.
+  const ghlRouting = determineRouting(payload);
 
-  // 11. Build standardized automation payload (now includes tags) ───────────────
-  const automation = toAutomationPayload(payload, routing, tags);
+  // 10. Build standardized automation payload ────────────────────────────────────
+  const automation = toAutomationPayload(payload, routing, ghlRouting);
 
   console.info("[service-request] Automation payload ready.", {
     submittedAt: automation.submittedAt,
@@ -164,16 +167,12 @@ export async function POST(request: Request): Promise<NextResponse<ServiceReques
     urgency: automation.urgency,
     propertyType: automation.propertyType,
     assignedFlow: automation.routing.assignedFlow,
-    pipelineStage: automation.routing.pipelineStage,
-    priority: automation.routing.priority,
-    bookingEligible: automation.routing.bookingEligible,
-    needsHumanReview: automation.routing.needsHumanReview,
-    spamScore: automation.routing.spamScore,
-    submissionQuality: automation.routing.submissionQuality,
-    tags,
+    targetStage: automation.targetStage,
+    tags: automation.tags,
+    bookingEligible: bookingDecision.bookingEligible,
   });
 
-  // 12. Forward to downstream services ───────────────────────────────────────
+  // 11. Forward to downstream services ───────────────────────────────────────
   // Send the standardized payload to the GHL inbound webhook. This creates or
   // updates a contact in GHL and triggers the configured workflow automation.
   // The call is fire-and-forget (errors are logged but don't fail the response).
@@ -188,7 +187,7 @@ export async function POST(request: Request): Promise<NextResponse<ServiceReques
   //     await createGHLBooking(automation);
   //   }
 
-  // 13. Build response ────────────────────────────────────────────────────────────────
+  // 12. Build response ─────────────────────────────────────────────────────────
   const { spam: _spam, ...normalizedLead } = payload;
 
   const message =
@@ -205,7 +204,7 @@ export async function POST(request: Request): Promise<NextResponse<ServiceReques
       data: {
         normalizedLead,
         routing: bookingDecision,
-        tags,
+        tags: ghlRouting.tags,
       },
     },
     { status: 200 },

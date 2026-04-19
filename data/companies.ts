@@ -257,6 +257,401 @@ export const companies: Record<string, Company> = {
       "ENERGY STAR® Partner",
       "90-Day Labor Warranty",
     ],
+
+    serviceAreaDetails: {
+      "san-antonio": {
+        headline: "HVAC Service Across San Antonio, TX",
+        subheadline: "25 Years Keeping San Antonio Homes Comfortable",
+        intro:
+          "RiverSide HVAC Solutions has been working in San Antonio homes since 1999. We know the city's housing stock — the 1950s bungalows near Southtown, the ranch homes off Culebra, the two-story builds along 1604 — and we know what HVAC problems show up in each. When you call us, you're getting a team that's been here longer than most of your neighbors.",
+        areaContext:
+          "San Antonio's heat is relentless from May through September, and the housing diversity here means no two service calls are exactly alike. We've worked in slab homes, pier-and-beam homes, new construction, and houses that haven't had a proper tune-up in fifteen years. That experience means we diagnose correctly on the first visit instead of guessing.",
+        commonProblems: [
+          "Systems that ran fine in spring but can't keep up when July temperatures hit 105°F",
+          "Two-story homes where the upstairs stays 8–10 degrees warmer than the thermostat setting",
+          "Older R-22 systems where refrigerant is expensive and parts are increasingly hard to source",
+          "AC running constantly without ever reaching the set temperature — usually a refrigerant or airflow problem",
+        ],
+        serviceHighlights: [
+          "Same-day AC repair for most San Antonio service calls",
+          "Full system replacement with same-week installation available",
+          "Pre-season tune-ups before summer and winter",
+          "Indoor air quality improvements for homes with allergy or respiratory concerns",
+        ],
+        whyChooseUs: [
+          "We've been in San Antonio since 1999 — this is our community, not just a market",
+          "Upfront written quote before we touch anything, no verbal estimates",
+          "Our trucks are stocked so most repairs don't require a follow-up visit",
+          "NATE-certified technicians who explain what's wrong in plain language",
+        ],
+        nearbyAreas: ["Helotes", "Leon Valley", "Stone Oak", "Boerne", "Live Oak"],
+        faqs: [
+          {
+            question: "How fast can you get to me in San Antonio?",
+            answer:
+              "For repair calls we typically have same-day availability. During peak summer weeks, calling early in the morning gives you the best shot at a morning window.",
+          },
+          {
+            question: "My system is older — will you push me to replace it?",
+            answer:
+              "Not unless replacement genuinely makes more financial sense. We'll show you the actual repair cost vs. replacement numbers and let you decide. A lot of older systems still have years of life left.",
+          },
+          {
+            question: "Do you service ductless mini-splits as well as central systems?",
+            answer:
+              "Yes. We work on central split systems, package units, and ductless mini-splits across all major brands.",
+          },
+        ],
+        ctaHeading: "HVAC Issue in San Antonio? We're Ready.",
+        ctaText: "Call for same-day availability or book online and we'll confirm your slot within the hour.",
+        metaTitle: "HVAC Repair & Installation in San Antonio, TX | RiverSide HVAC Solutions",
+        metaDescription:
+          "25+ years of HVAC service in San Antonio, TX. Same-day repair, honest diagnostics, and upfront pricing from a team that knows the city. Call RiverSide HVAC.",
+      },
+      "boerne": {
+        headline: "HVAC Repair & Maintenance in Boerne, TX",
+        subheadline: "Hill Country Summers Are Tough on AC — We Keep Up",
+        intro:
+          "Boerne homeowners deal with both ends of the Texas climate — scorching summers and genuinely cold winter nights that catch people off guard. We service both. Whether you need a pre-season AC check in April or a heating diagnostic in December, we run regular routes out to Boerne and keep wait times reasonable.",
+        areaContext:
+          "Boerne's housing mix is wider than most people realize. There are limestone homes built in the 1960s and 70s near the historic district, larger newer subdivisions off Herff Road and IH-10, and significant acreage properties outside of town. Each comes with different HVAC challenges — older homes with original undersized ductwork, new builds with variable-speed equipment, and rural properties where any wait for a technician is genuinely disruptive.",
+        commonProblems: [
+          "AC units that sit idle all winter and then struggle when first turned on in March or April",
+          "Heating systems that cycle too frequently on cold nights, wearing down components faster",
+          "Heavy cedar and oak pollen seasons clogging filters and reducing airflow noticeably",
+          "Older homes where ductwork was never properly sized for the systems eventually installed",
+        ],
+        serviceHighlights: [
+          "AC and heating repair for all major brands and system types",
+          "Pre-season tune-ups timed before summer and before the first winter cold front",
+          "Ductless mini-split installation for detached structures, additions, and sunrooms",
+          "Honest repair-vs-replace assessments — no pressure in either direction",
+        ],
+        whyChooseUs: [
+          "We schedule Boerne calls on a regular basis — it's not an occasional long drive for us",
+          "Familiar with the equipment common in both Hill Country historic homes and new builds",
+          "Written estimates before any work starts, itemized so you see exactly what you're paying for",
+          "Fully licensed, insured, and NATE-certified for all residential and light commercial work",
+        ],
+        nearbyAreas: ["Fair Oaks Ranch", "Leon Springs", "Helotes", "Comfort", "San Antonio"],
+        faqs: [
+          {
+            question: "Is Boerne a regular service area or more of a stretch for your team?",
+            answer:
+              "Regular. We have customers out there and schedule efficiently so Boerne calls get the same response times as closer-in San Antonio calls.",
+          },
+          {
+            question: "We have a detached guest house — can you service that structure too?",
+            answer:
+              "Yes. Ductless mini-splits are often the right fit for detached buildings where running new ductwork isn't practical. We can assess and install.",
+          },
+          {
+            question: "When's the best time to schedule maintenance in Boerne?",
+            answer:
+              "March or April for AC, and October for heating — before the system gets stressed. That timing lets us catch small problems before they become expensive ones.",
+          },
+        ],
+        ctaHeading: "Schedule HVAC Service in Boerne, TX",
+        ctaText: "We run regular routes out to Boerne — call or book online to get on the schedule.",
+        metaTitle: "HVAC Repair & Maintenance in Boerne, TX | RiverSide HVAC Solutions",
+        metaDescription:
+          "HVAC repair, installation, and seasonal maintenance in Boerne, TX. Serving Hill Country homes with honest service and reliable scheduling. RiverSide HVAC.",
+      },
+      "helotes": {
+        headline: "HVAC Service in Helotes, TX",
+        subheadline: "Ranch Homes, New Builds, and Everything In Between",
+        intro:
+          "Helotes has two distinct kinds of housing — established ranch-style homes that have been here for decades, and newer subdivisions that have gone up along 1604 and Braun Road in recent years. The HVAC needs are completely different between them, and we're comfortable with both. We don't make assumptions when we walk in the door.",
+        areaContext:
+          "The older homes in Helotes often have ductwork that was originally sized for smaller, less efficient systems. Over time, when a new air handler goes in, the duct mismatch creates airflow problems that show up as weak output in back bedrooms and uneven temperatures throughout the house. The newer builds tend to have more capable equipment but sometimes run into calibration issues — especially with smart thermostats and zoned setups that weren't commissioned properly.",
+        commonProblems: [
+          "Undersized or leaking original ductwork causing weak airflow in back bedrooms and far rooms",
+          "Systems short-cycling — running for two minutes, shutting off, repeating — instead of full cooling cycles",
+          "Cedar pollen season accelerating filter clogging from November through March",
+          "Heat pumps that aren't calibrated correctly for the temperature swings this area sees",
+        ],
+        serviceHighlights: [
+          "Ductwork inspection, sealing, and rebalancing to even out airflow across the home",
+          "AC and heating repair across all equipment types and brands",
+          "Smart thermostat installation and troubleshooting for zoned systems",
+          "Whole-home air filtration upgrades for homes dealing with pollen and dust",
+        ],
+        whyChooseUs: [
+          "We explain what we find before we recommend anything — no surprises on the quote",
+          "Evening and weekend availability for homeowners with tight weekday schedules",
+          "We leave the work area clean — no debris, no footprints",
+          "25 years in the San Antonio area means we've seen what goes wrong in homes like yours",
+        ],
+        nearbyAreas: ["Grey Forest", "Leon Valley", "San Antonio", "Boerne", "Leon Springs"],
+        faqs: [
+          {
+            question: "Our back bedrooms are always hotter than the rest of the house. What causes that?",
+            answer:
+              "Usually a ductwork or airflow issue. The most common culprits are undersized or leaking duct runs, a clogged filter reducing static pressure, or a blower that's not moving enough air. We can measure airflow at each vent and trace the problem.",
+          },
+          {
+            question: "How often should we change filters out here during cedar season?",
+            answer:
+              "Every 4–6 weeks for standard 1-inch filters during heavy cedar and oak pollen periods. A thicker media filter can go longer — we can tell you what fits your system.",
+          },
+          {
+            question: "Our system is only 8 years old but keeps having problems. Is that normal?",
+            answer:
+              "No. Frequent failures on a system that age usually point to an installation problem or a maintenance gap. We can do a full diagnostic and give you a straight read on what's going on.",
+          },
+        ],
+        ctaHeading: "HVAC Issues in Helotes? Let's Fix It.",
+        ctaText: "Call or book online — we'll diagnose the problem and give you straight answers.",
+        metaTitle: "HVAC Repair & Service in Helotes, TX | RiverSide HVAC Solutions",
+        metaDescription:
+          "Helotes HVAC repair and maintenance for ranch homes and new builds. Ductwork, AC, heating, and air quality services. RiverSide HVAC Solutions.",
+      },
+      "stone-oak": {
+        headline: "HVAC Service in Stone Oak, TX",
+        subheadline: "Larger Homes Need Equipment and Technicians That Keep Up",
+        intro:
+          "Stone Oak homes are newer, larger, and often more complex from an HVAC standpoint. Variable-speed equipment, multi-zone systems, and smart home integrations are common here. When something goes wrong it takes a tech who actually knows those systems — not someone who's going to spend half the visit figuring out what they're looking at.",
+        areaContext:
+          "Most of Stone Oak was built in the 2000s and 2010s during rapid growth along US-281. Homes here are typically larger and frequently have two-zone or three-zone HVAC setups to manage temperature differences between floors. That complexity makes standard repair calls less straightforward — a fault code on a variable-speed system means something different than it would on conventional equipment. We've logged enough hours on these systems to move efficiently.",
+        commonProblems: [
+          "Zoned systems where one zone isn't heating or cooling properly while others are fine",
+          "Variable-speed equipment throwing fault codes that require brand-specific diagnostic procedures",
+          "Upstairs zones overworking during summer because of inadequate return air or duct sizing",
+          "Systems in the 12–16 year range reaching the repair-vs-replace inflection point",
+        ],
+        serviceHighlights: [
+          "Multi-zone and variable-speed system diagnostics and repair",
+          "High-efficiency system replacement with proper load calculations for larger homes",
+          "Smart thermostat setup and integration with existing home automation",
+          "Seasonal maintenance to keep warranty-eligible equipment in spec",
+        ],
+        whyChooseUs: [
+          "Experienced with the equipment brands common in Stone Oak builds — no learning curve on your dime",
+          "We pull permits, size equipment correctly, and do the job right the first time",
+          "Punctual and professional — we respect your time and your home",
+          "Honest replacement guidance when repair costs no longer make financial sense",
+        ],
+        nearbyAreas: ["Shavano Park", "Hollywood Park", "Bulverde", "San Antonio", "Live Oak"],
+        faqs: [
+          {
+            question: "Our downstairs is cool but the upstairs is always warm in the afternoon. What's wrong?",
+            answer:
+              "Heat rises and upper floors absorb more radiant heat from the roof. If it's severe, the usual causes are undersized equipment for the upper zone, damper issues, or insufficient return air. We can measure and diagnose.",
+          },
+          {
+            question: "Our system throws an error code but then resets itself. Should we be worried?",
+            answer:
+              "Yes. Intermittent fault codes usually mean something is failing but hasn't fully failed yet. Catching it now is almost always cheaper than a full breakdown in July.",
+          },
+          {
+            question: "We want a smart thermostat — do you handle the full install?",
+            answer:
+              "Yes. We install, wire, and configure. We also check compatibility first, since multi-stage and zoned systems sometimes require a specific thermostat type.",
+          },
+        ],
+        ctaHeading: "Stone Oak HVAC — Done Right the First Time",
+        ctaText: "Book a diagnostic or system assessment — we'll give you the full picture.",
+        metaTitle: "HVAC Repair & Installation in Stone Oak, TX | RiverSide HVAC Solutions",
+        metaDescription:
+          "Stone Oak HVAC specialists for multi-zone, variable-speed, and smart home systems. Honest diagnostics, upfront pricing. RiverSide HVAC Solutions.",
+      },
+      "leon-springs": {
+        headline: "HVAC Service in Leon Springs, TX",
+        subheadline: "Where the Hill Country Starts — We're Already Out There",
+        intro:
+          "Leon Springs sits at the edge of the Hill Country, and the homes out here range from established neighborhoods along the I-10 corridor to rural properties on acreage. We cover both. Our technicians run this area regularly and know what to expect from the equipment and the housing stock.",
+        areaContext:
+          "The Leon Springs area has seen significant growth over the past decade, with newer subdivisions going up alongside homes that have been here for thirty or forty years. That mix means we encounter everything from aging systems with original ductwork to high-efficiency equipment installed just a few years ago. The terrain also plays a role — properties with larger footprints and detached structures have different HVAC demands than a typical neighborhood home.",
+        commonProblems: [
+          "Aging systems on older properties that have been repaired multiple times and are losing reliability",
+          "Detached garages and workshops with no HVAC coverage getting unbearably hot in summer",
+          "Refrigerant loss from fittings that have loosened over years of temperature cycling",
+          "Newer high-efficiency systems that weren't commissioned correctly and underperform",
+        ],
+        serviceHighlights: [
+          "AC and heating repair with same-day availability for most calls",
+          "Ductless mini-split installation for detached structures and additions",
+          "Refrigerant leak detection, repair, and proper recharge",
+          "Honest repair-vs-replace assessments for systems approaching end of life",
+        ],
+        whyChooseUs: [
+          "We run Leon Springs on a regular schedule — it's not a long haul for us",
+          "Comfortable with rural property setups including detached structures and larger homes",
+          "25 years of experience with the equipment and housing types common in this corridor",
+          "No pressure repair-vs-replace guidance — we give you the numbers and let you decide",
+        ],
+        nearbyAreas: ["Boerne", "Helotes", "Fair Oaks Ranch", "San Antonio", "Dominion area"],
+        faqs: [
+          {
+            question: "We have a shop building on our property — can you add AC to that?",
+            answer:
+              "Yes. Ductless mini-splits are the most common solution for detached structures. We can size and install a system that handles the heat load without requiring any new ductwork.",
+          },
+          {
+            question: "We're on a larger property — does that affect scheduling or pricing?",
+            answer:
+              "Not scheduling. Pricing depends on the work, not the property size. We'll give you an upfront quote based on what we find.",
+          },
+          {
+            question: "A different tech recharged our system last summer but it's low again this year. What's going on?",
+            answer:
+              "Refrigerant doesn't disappear on its own — if it needs recharging again, there's a leak. A recharge without finding the leak is a temporary fix. We'll locate the source and repair it.",
+          },
+        ],
+        ctaHeading: "Need HVAC Service in Leon Springs?",
+        ctaText: "We cover this area regularly — call or book online to get on our schedule.",
+        metaTitle: "HVAC Repair & Service in Leon Springs, TX | RiverSide HVAC Solutions",
+        metaDescription:
+          "HVAC repair and installation in Leon Springs, TX. Serving residential and rural properties along the I-10 corridor. RiverSide HVAC Solutions.",
+      },
+      "bulverde": {
+        headline: "HVAC Service in Bulverde, TX",
+        subheadline: "More Space, More Shade — and AC Systems That Still Work Hard",
+        intro:
+          "Bulverde has grown significantly over the past decade and now has a real mix of established rural properties and newer neighborhood builds. The Hill Country setting means cooler nights than San Antonio proper, but summers are still brutal. We service all of it — from older homes with systems that haven't been touched in years to new construction with the latest equipment.",
+        areaContext:
+          "Bulverde sits in Comal County, just north of Bexar County, and many homes here are on larger lots or acreage. That affects HVAC in a few ways: more square footage to condition, detached structures that need coverage, and sometimes older systems that were sized for a smaller original footprint before additions were made. We also see a lot of homes where the previous service history is thin or undocumented.",
+        commonProblems: [
+          "Systems that were sized for the original home but can't keep up after additions or sunroom expansions",
+          "Detached garages, barns, and casitas with no climate control becoming unusable in summer",
+          "Ductwork that has developed leaks over years of thermal expansion and contraction",
+          "Heat pumps that don't transition to auxiliary heat properly on cold nights",
+        ],
+        serviceHighlights: [
+          "Full system diagnostics and repair for all brands and system types",
+          "Ductless mini-split installation for detached structures and additions",
+          "Ductwork inspection, sealing, and rebalancing",
+          "Load calculations and system sizing for homes that have grown since original construction",
+        ],
+        whyChooseUs: [
+          "We cover Bulverde and Comal County on a regular basis",
+          "Experience with rural and acreage properties including multi-structure setups",
+          "Written quote before work starts — no verbal estimates that balloon later",
+          "NATE-certified technicians familiar with heat pump and variable-speed systems",
+        ],
+        nearbyAreas: ["Spring Branch", "Canyon Lake area", "Stone Oak", "Boerne", "San Antonio"],
+        faqs: [
+          {
+            question: "Our house has had two additions over the years. Could that be why the AC struggles?",
+            answer:
+              "Very likely. If the system was sized for the original footprint, added square footage will push it beyond its capacity. We can do a load calculation to see whether resizing makes sense.",
+          },
+          {
+            question: "We have a casita on our property with no AC — what are the options?",
+            answer:
+              "Ductless mini-splits are the standard solution. No ductwork needed, and we can install a unit that's properly sized for the space.",
+          },
+          {
+            question: "Is there a travel charge for Bulverde service calls?",
+            answer:
+              "No separate travel charge. Pricing is based on the work — we'll give you a flat diagnostic fee upfront and a full quote before starting any repair.",
+          },
+        ],
+        ctaHeading: "Schedule HVAC Service in Bulverde, TX",
+        ctaText: "Call or book online — we run regular routes through Bulverde and can get you on the schedule.",
+        metaTitle: "HVAC Repair & Service in Bulverde, TX | RiverSide HVAC Solutions",
+        metaDescription:
+          "HVAC repair, installation, and maintenance in Bulverde, TX. Serving homes and rural properties in Comal County. RiverSide HVAC Solutions.",
+      },
+      "live-oak": {
+        headline: "HVAC Service in Live Oak, TX",
+        subheadline: "Reliable Heating & Cooling Near Randolph and the Northeast Side",
+        intro:
+          "Live Oak sits northeast of San Antonio near Randolph AFB, and it's a community that runs on reliable schedules. People here don't have time for a HVAC company that gives a four-hour arrival window and shows up at the end of it. We give tight windows and we keep them.",
+        areaContext:
+          "Much of Live Oak's housing was built in the 1970s and 1980s, and those homes have seen multiple HVAC system changes over the years. Humidity is a consistent issue in this part of the metro — the area sits lower and traps moisture, which puts extra load on AC systems and contributes to air quality problems when equipment isn't maintained properly. We factor that in when we diagnose.",
+        commonProblems: [
+          "High indoor humidity even when the AC is running — often caused by an oversized system that short-cycles",
+          "Older homes where ductwork runs through unconditioned attic space and loses significant efficiency in summer",
+          "Systems that have been patched multiple times and are starting to lose reliability",
+          "Musty smells from vents tied to humidity buildup on evaporator coils or in ductwork",
+        ],
+        serviceHighlights: [
+          "AC repair and full system replacement with same-week availability",
+          "Humidity control including whole-home dehumidifiers and ventilation improvements",
+          "Ductwork evaluation for homes with attic-run duct systems",
+          "Air quality testing and filtration upgrades for homes with musty odor or allergy concerns",
+        ],
+        whyChooseUs: [
+          "We keep our arrival windows tight — you're not clearing your whole afternoon",
+          "We address root causes, not just symptoms — no repeat visits for the same problem",
+          "Straightforward communication from booking through invoice",
+          "25 years in the San Antonio area means we've worked through every version of this problem",
+        ],
+        nearbyAreas: ["Universal City", "Converse", "Selma", "Schertz", "San Antonio"],
+        faqs: [
+          {
+            question: "Our house feels clammy even when the temperature is right. What causes that?",
+            answer:
+              "Humidity. AC removes moisture as part of cooling, but an oversized system short-cycles and doesn't run long enough to dehumidify properly. A correctly sized system or a standalone whole-home dehumidifier can fix it.",
+          },
+          {
+            question: "We get a musty smell from the vents when the AC first turns on. Is that mold?",
+            answer:
+              "It could be mold or mildew on the evaporator coil or inside the air handler — both are common when humidity is high and filters are changed infrequently. We can inspect, clean, and advise on preventing recurrence.",
+          },
+          {
+            question: "We've had other companies out and nothing has fully fixed the problem. Can you help?",
+            answer:
+              "Usually that means the root cause hasn't been identified yet. We'll do a thorough diagnostic and give you a clear explanation — not just a quick patch.",
+          },
+        ],
+        ctaHeading: "Live Oak HVAC — We Show Up When We Say We Will",
+        ctaText: "Book your repair or tune-up online, or call us to talk through what you're experiencing.",
+        metaTitle: "HVAC Repair & Service in Live Oak, TX | RiverSide HVAC Solutions",
+        metaDescription:
+          "HVAC repair and maintenance in Live Oak, TX. Humidity control, air quality, and reliable same-day service. RiverSide HVAC Solutions.",
+      },
+      "leon-valley": {
+        headline: "HVAC Repair & Service in Leon Valley, TX",
+        subheadline: "Honest Work for a No-Nonsense Neighborhood",
+        intro:
+          "Leon Valley homeowners don't want a sales pitch — they want a technician who shows up, diagnoses correctly, and fixes it without padding the invoice. That's exactly how we work. We've been in plenty of homes out here and we know what to look for.",
+        areaContext:
+          "Leon Valley's housing stock is largely from the 1960s through the 1980s — well-built homes, but with HVAC systems that have been updated in pieces over the decades. It's common to find a newer air handler paired with a condenser that's ten years older, or a system that was replaced without addressing the ductwork underneath it. Those mismatches cause efficiency losses and comfort problems that are easy to overlook until something breaks.",
+        commonProblems: [
+          "Mismatched systems where the indoor and outdoor units weren't designed to work together",
+          "Ductwork that was never updated when the air handler was replaced",
+          "Refrigerant loss from fittings that have loosened over years of thermal cycling",
+          "Capacitors and contactors failing on condensers that are 10 or more years old",
+        ],
+        serviceHighlights: [
+          "AC and heating repair with same-day availability for most calls",
+          "Refrigerant leak detection, proper repair, and recharge",
+          "Ductwork evaluation and targeted repairs to fix airflow and efficiency issues",
+          "Honest replacement guidance when the repair math stops making sense",
+        ],
+        whyChooseUs: [
+          "We tell you what we find, not what produces the biggest invoice",
+          "Familiar with the older system configurations common in Leon Valley homes",
+          "We show up in the agreed window — no vague all-day waits",
+          "Financing available for replacements so a bad repair isn't your only option",
+        ],
+        nearbyAreas: ["Helotes", "Balcones Heights", "San Antonio", "Grey Forest", "Lackland area"],
+        faqs: [
+          {
+            question: "Another tech recharged our refrigerant last summer and now it's low again. Why?",
+            answer:
+              "Refrigerant doesn't disappear — if it needs recharging again, there's a leak. A recharge without finding the leak is a temporary fix at best. We'll locate the source and repair it properly.",
+          },
+          {
+            question: "Is it worth fixing a system that's 15 years old?",
+            answer:
+              "It depends on the repair. A capacitor or contactor replacement on a 15-year-old unit is often worth doing. A compressor replacement usually isn't. We'll give you the honest numbers.",
+          },
+          {
+            question: "Can you work on window units or just central HVAC?",
+            answer:
+              "Our focus is central HVAC — split systems and package units. For any whole-home system we're the right call.",
+          },
+        ],
+        ctaHeading: "Need Honest HVAC Help in Leon Valley?",
+        ctaText: "Call or book online — no pressure, no upsells, just straight answers and solid work.",
+        metaTitle: "HVAC Repair & Service in Leon Valley, TX | RiverSide HVAC Solutions",
+        metaDescription:
+          "Dependable HVAC repair in Leon Valley, TX. Experienced with older home systems, honest diagnostics, and upfront pricing. RiverSide HVAC Solutions.",
+      },
+    },
   },
 
   "cool-breeze": {

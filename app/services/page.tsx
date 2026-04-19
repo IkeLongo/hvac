@@ -52,7 +52,7 @@ export default async function ServicesPage() {
             by licensed, background-checked technicians with upfront pricing and no surprise fees.
           </p>
           <a
-            href="/booking"
+            href="/request-service"
             className="inline-block rounded px-8 py-4 font-bold text-lg shadow transition hover:opacity-90"
             style={{ backgroundColor: company.primaryColor, color: "white" }}
           >

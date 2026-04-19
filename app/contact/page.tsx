@@ -204,7 +204,7 @@ export default async function ContactPage() {
               Call {company.phone}
             </a>
             <a
-              href="/booking"
+              href="/request-service"
               className="rounded border-2 px-8 py-4 text-lg font-bold transition hover:bg-gray-100"
               style={{ borderColor: company.primaryColor, color: company.primaryColor }}
             >

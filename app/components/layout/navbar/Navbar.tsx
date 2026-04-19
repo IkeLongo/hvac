@@ -94,7 +94,7 @@ const DesktopNav = ({ company }: NavbarProps) => {
           {company.phone}
         </a>
         <Link
-          href="/booking"
+          href="/request-service"
           className="rounded px-5 py-2 text-sm font-bold transition hover:opacity-90"
           style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
         >
@@ -233,7 +233,7 @@ const MobileNav = ({ company }: NavbarProps) => {
                   {company.phone}
                 </a>
                 <Link
-                  href="/booking"
+                  href="/request-service"
                   onClick={() => setOpen(false)}
                   className="block text-center rounded px-5 py-3 text-sm font-bold transition hover:opacity-90"
                   style={{ backgroundColor: company.accentColor, color: company.primaryColor }}

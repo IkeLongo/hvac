@@ -119,7 +119,7 @@ export default async function ServiceDetailPage({
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row justify-center gap-3 mb-10">
             <a
-              href="/booking"
+              href="/request-service"
               className="rounded px-8 py-4 text-lg font-bold shadow-lg transition hover:opacity-90"
               style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
             >

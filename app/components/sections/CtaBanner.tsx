@@ -57,7 +57,7 @@ export function CtaBanner({
             Call {company.phone}
           </a>
           <a
-            href="#lead-form"
+            href="/request-service"
             className="rounded border-2 px-8 py-4 text-lg font-bold transition hover:bg-gray-100"
             style={{ borderColor: company.primaryColor, color: company.primaryColor }}
           >

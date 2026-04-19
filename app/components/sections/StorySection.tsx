@@ -46,7 +46,7 @@ export function StorySection({ company }: StorySectionProps) {
               </div>
             )}
             <a
-              href="/booking"
+              href="/request-service"
               className="flex items-center justify-center rounded px-7 py-3.5 font-bold border-2 border-white/40 text-white hover:bg-white/10 transition"
             >
               Schedule a Visit
