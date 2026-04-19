@@ -12,6 +12,8 @@ export type ServiceAreaDetail = {
   ctaText: string;
   metaTitle?: string;
   metaDescription?: string;
+  /** Hero image displayed near the top of the editorial layout. Use a real path once photos exist. */
+  heroImage?: { src: string; alt: string };
 };
 export type CompanyAddress = {
   street: string;
@@ -4254,6 +4256,7 @@ export const companies: Record<string, Company> = {
             slug: "ac-installation",
             description: "Proper sizing, equipment selection, and installation for new or replacement central AC systems.",
             isFeatured: true,
+            imageSrc: "/ac-installation.webp",
             signsYouNeed: [
               "Current system is 12 or more years old",
               "Repair costs are approaching the system's replacement value",
@@ -4281,6 +4284,7 @@ export const companies: Record<string, Company> = {
             name: "AC Maintenance & Tune-Up",
             slug: "ac-maintenance",
             description: "Pre-season inspection and tune-up to maximize efficiency and catch issues before summer.",
+            imageSrc: "/ac-maintenance.webp",
             signsYouNeed: [
               "System hasn't been serviced in over a year",
               "Airflow from vents feels weaker than before",
@@ -4307,6 +4311,7 @@ export const companies: Record<string, Company> = {
             name: "Ductless Mini-Split Service",
             slug: "mini-split-service",
             description: "Installation, repair, and maintenance for ductless mini-split systems in additions, sunrooms, and detached structures.",
+            imageSrc: "/ductless-mini-split.webp",
             signsYouNeed: [
               "Room or addition has no existing ductwork",
               "One room consistently runs hot or cold",
@@ -4679,6 +4684,10 @@ export const companies: Record<string, Company> = {
         metaTitle: "HVAC Repair & Installation in San Antonio, TX | Conquer All Mechanical",
         metaDescription:
           "Same-day HVAC repair in San Antonio, TX. Honest diagnostics, upfront pricing, and local technicians who know the city. Call Conquer All Mechanical.",
+        heroImage: {
+          src: "/city/san-antonio-iconic.jpg",
+          alt: "Iconic view of San Antonio, Texas",
+        },
       },
       "boerne": {
         headline: "HVAC Repair & Maintenance in Boerne, TX",
@@ -4728,6 +4737,11 @@ export const companies: Record<string, Company> = {
         metaTitle: "HVAC Repair & Maintenance in Boerne, TX | Conquer All Mechanical",
         metaDescription:
           "HVAC repair, installation, and seasonal maintenance in Boerne, TX. Serving Hill Country homes with honest service and reliable scheduling.",
+      
+        heroImage: {
+          src: "/city/boerne-iconic.jpeg",
+          alt: "Watertower in Boerne, Texas",
+        },
       },
       "helotes": {
         headline: "HVAC Service in Helotes, TX",
@@ -4777,7 +4791,11 @@ export const companies: Record<string, Company> = {
         metaTitle: "HVAC Repair & Service in Helotes, TX | Conquer All Mechanical",
         metaDescription:
           "Helotes HVAC repair and maintenance for ranch homes and new builds. Ductwork, AC, heating, and air quality services. Call Conquer All Mechanical.",
-      },
+        heroImage: {
+          src: "/city/helotes-iconic.webp",
+          alt: "Iconic welcome sign to Old Town Helotes, Texas",
+        },
+       },
       "stone-oak": {
         headline: "HVAC Service in Stone Oak, TX",
         subheadline: "Modern Homes Need Equipment That Keeps Up",
@@ -4826,14 +4844,18 @@ export const companies: Record<string, Company> = {
         metaTitle: "HVAC Repair & Installation in Stone Oak, TX | Conquer All Mechanical",
         metaDescription:
           "Stone Oak HVAC specialists for multi-zone, high-efficiency, and smart home systems. Honest diagnostics and upfront pricing. Call Conquer All Mechanical.",
-      },
-      "leon-valley": {
-        headline: "HVAC Repair & Service in Leon Valley, TX",
+        heroImage: {
+          src: "/city/stone-oak-iconic.jpeg",
+          alt: "Iconic view of Stone Oak, Texas",
+        },
+       },
+      "spring-branch": {
+        headline: "HVAC Repair & Service in Spring Branch, TX",
         subheadline: "Straightforward Service for a No-Nonsense Neighborhood",
         intro:
-          "Leon Valley homeowners don't need a sales pitch — they need a tech who shows up, figures out what's wrong, and fixes it without running up the bill. That's exactly how we work. We've been in plenty of the homes out here and we know what to look for.",
+          "Spring Branch homeowners don't need a sales pitch — they need a tech who shows up, figures out what's wrong, and fixes it without running up the bill. That's exactly how we work. We've been in plenty of the homes out here and we know what to look for.",
         areaContext:
-          "Leon Valley's housing stock is largely from the 1960s through the 1980s — solid homes, but with HVAC systems that have been updated piecemeal over the decades. It's common to find a newer air handler paired with an older condenser, or a system that was replaced without addressing the ductwork. Those mismatches cause efficiency losses and comfort problems that are easy to overlook until something breaks.",
+          "Spring Branch's housing stock is largely from the 1960s through the 1980s — solid homes, but with HVAC systems that have been updated piecemeal over the decades. It's common to find a newer air handler paired with an older condenser, or a system that was replaced without addressing the ductwork. Those mismatches cause efficiency losses and comfort problems that are easy to overlook until something breaks.",
         commonProblems: [
           "Mismatched systems where the indoor and outdoor units aren't sized for each other",
           "Ductwork that was never updated when the system was replaced",
@@ -4848,7 +4870,7 @@ export const companies: Record<string, Company> = {
         ],
         whyChooseUs: [
           "We tell you what we find, not what generates the biggest invoice",
-          "Familiar with the older system configurations common in Leon Valley homes",
+          "Familiar with the older system configurations common in Spring Branch homes",
           "We show up in the agreed window — we don't leave you guessing all afternoon",
           "Financing available for replacements so you're not forced into a bad repair",
         ],
@@ -4870,12 +4892,16 @@ export const companies: Record<string, Company> = {
               "Our focus is central HVAC — split systems and package units. For window units we'd point you elsewhere, but for any whole-home system we're the right call.",
           },
         ],
-        ctaHeading: "Need Honest HVAC Help in Leon Valley?",
+        ctaHeading: "Need Honest HVAC Help in Spring Branch?",
         ctaText: "Call or book online — no pressure, no upsells, just straight answers and good work.",
-        metaTitle: "HVAC Repair & Service in Leon Valley, TX | Conquer All Mechanical",
+        metaTitle: "HVAC Repair & Service in Spring Branch, TX | Conquer All Mechanical",
         metaDescription:
-          "Dependable HVAC repair in Leon Valley, TX. Experienced with older home systems, honest diagnostics, and upfront pricing. Call Conquer All Mechanical.",
-      },
+          "Dependable HVAC repair in Spring Branch, TX. Experienced with older home systems, honest diagnostics, and upfront pricing. Call Conquer All Mechanical.",
+        heroImage: {
+          src: "/city/spring-branch-iconic.webp",
+          alt: "Iconic view of Spring Branch, Texas",
+        },
+       },
       "live-oak": {
         headline: "HVAC Service in Live Oak, TX",
         subheadline: "Reliable Heating & Cooling Near Randolph and Beyond",
@@ -4924,6 +4950,10 @@ export const companies: Record<string, Company> = {
         metaTitle: "HVAC Repair & Service in Live Oak, TX | Conquer All Mechanical",
         metaDescription:
           "HVAC repair and maintenance in Live Oak, TX. Humidity control, air quality, and reliable same-day service. Call Conquer All Mechanical.",
+        heroImage: {
+          src: "/city/live-oak-iconic.jpeg",
+          alt: "Iconic view of Live Oak, Texas",
+        },
       },
     },
   },
