@@ -59,8 +59,10 @@ export default async function ServiceAreaPage({
 
   if (!area || !detail) notFound();
 
+  // Build sidebar list: all other service areas for this company
   const otherAreas = company.serviceAreas.filter((a) => a.slug !== slug);
 
+  // Build a lookup so nearby area pills can be linked when the area exists
   const areaSlugByName = new Map(
     company.serviceAreas.map((a) => [a.name.toLowerCase(), a.slug])
   );
@@ -131,7 +133,7 @@ export default async function ServiceAreaPage({
                 <p className="text-gray-500 leading-relaxed">{detail.areaContext}</p>
               </div>
 
-              {/* Common problems + service highlights */}
+              {/* Common problems + service highlights — two-col on md+ */}
               <div className="grid md:grid-cols-2 gap-8 mb-10">
                 <div>
                   <h2 className="text-xl font-black mb-4">
@@ -192,7 +194,7 @@ export default async function ServiceAreaPage({
                 </ul>
               </div>
 
-              {/* Nearby areas */}
+              {/* Nearby areas — linked when a matching slug exists */}
               {detail.nearbyAreas.length > 0 && (
                 <div className="mb-10">
                   <h2 className="text-xl font-black mb-4">Nearby Areas We Also Serve</h2>
@@ -224,7 +226,7 @@ export default async function ServiceAreaPage({
                 </div>
               )}
 
-              {/* FAQs */}
+              {/* FAQs — native details/summary */}
               <section>
                 <h2 className="text-xl font-black mb-5">
                   HVAC FAQs for {area.name} Homeowners

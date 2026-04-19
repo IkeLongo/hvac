@@ -119,12 +119,9 @@ export function determineRouting(payload: ServiceRequestPayload): RoutingOutput 
   // route it to the right calendar without human triage. "other" issue type
   // means we don't have enough detail yet.
   const isKnownIssue = !!issueType && issueType !== "other";
-  const isBookingEligible =
-    propertyType === "residential" &&
-    urgency !== "urgent" &&
-    urgency !== "quote" &&
-    serviceCategory !== "new-system" &&
-    isKnownIssue;
+  // Note: urgency === "urgent", urgency === "quote", and serviceCategory === "new-system"
+  // are all already eliminated by the early returns above (branches C and D).
+  const isBookingEligible = propertyType === "residential" && isKnownIssue;
 
   if (isBookingEligible) {
     return {
