@@ -33,7 +33,7 @@ export function CtaBanner({
         <p className="text-gray-500 mb-8">{subtext}</p>
 
         {features.length > 0 && (
-          <ul className="inline-flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10">
+          <ul className="inline-grid grid-cols-2 gap-x-8 gap-y-3 mb-10 text-left">
             {features.map((f) => (
               <li key={f} className="flex items-center gap-2 text-sm font-semibold text-gray-700">
                 <span

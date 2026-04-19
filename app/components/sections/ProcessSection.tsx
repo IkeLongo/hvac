@@ -6,7 +6,7 @@ interface ProcessSectionProps {
 
 export function ProcessSection({ company }: ProcessSectionProps) {
   return (
-    <section className="bg-gray-50 py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gray-100 py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p

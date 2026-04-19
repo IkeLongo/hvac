@@ -62,7 +62,7 @@ export default async function AboutPage() {
       <TeamSectionWithLightBackground company={company} />
 
       {/* 4. Stats — trust metrics */}
-      <StatsBar company={company} />
+      {/* <StatsBar company={company} /> */}
 
       {/* 3. Story — who we are, body copy, years badge */}
       <StorySection company={company} />
@@ -137,7 +137,7 @@ export default async function AboutPage() {
       </section>
 
       {/* 6. Why Choose Us */}
-      <WhyChooseUs company={company} />
+      {/* <WhyChooseUs company={company} /> */}
 
       {/* 7. Process */}
       <ProcessSection company={company} />

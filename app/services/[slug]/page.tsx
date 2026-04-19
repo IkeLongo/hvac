@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
+import Link from "next/link";
+import Image from "next/image";
 import { companies } from "@/data/companies";
 import { PageHeader } from "@/app/components/layout/PageHeader";
-import { WhyChooseUs } from "@/app/components/sections/WhyChooseUs";
 import { FaqSection } from "@/app/components/sections/FaqSection";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
 import type { Service } from "@/lib/types/service";
 import servicesData from "@/lib/chat/data/services.json";
+import servicePages from "@/lib/data/service-pages";
 
 const services = servicesData as Service[];
+
+const FALLBACK_IMAGES = {
+  primary: "/overhead-of-utility-workers-maintaining-outside-ai.jpg",
+  secondary: "/hvac-service-repairman.png",
+};
 
 const FALLBACK_SLUG = "alamo-air";
 
@@ -31,8 +38,11 @@ export async function generateStaticParams() {
       ) ?? []
   );
 
+  // Include slugs that only exist in the editorial content data
+  const contentSlugs = Object.keys(servicePages).map((slug) => ({ slug }));
+
   const seen = new Set<string>();
-  return [...jsonSlugs, ...categorySlugs].filter(({ slug }) => {
+  return [...jsonSlugs, ...categorySlugs, ...contentSlugs].filter(({ slug }) => {
     if (seen.has(slug)) return false;
     seen.add(slug);
     return true;
@@ -46,13 +56,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const company = await getCompany();
+  const pageContent = servicePages[slug];
   const serviceItem = company.serviceCategories
     ?.flatMap((cat) => cat.services)
     .find((s) => s.slug === slug);
   const jsonService = services.find((s) => s.slug === slug && s.is_active);
-  if (!serviceItem && !jsonService) return {};
-  const name = serviceItem?.name ?? jsonService!.name;
-  const description = serviceItem?.description ?? jsonService!.short_description;
+  if (!pageContent && !serviceItem && !jsonService) return {};
+  const name =
+    pageContent?.pageTitle ?? serviceItem?.name ?? jsonService!.name;
+  const description =
+    pageContent?.pageIntro ??
+    serviceItem?.description ??
+    jsonService?.short_description ??
+    "";
   return {
     title: `${name} in ${company.city}, TX`,
     description: `${description} Licensed & insured technicians. Upfront pricing. Serving ${company.city}, TX. Call ${company.phone}.`,
@@ -67,23 +83,66 @@ export default async function ServiceDetailPage({
   const { slug } = await params;
   const company = await getCompany();
 
-  // Resolve from serviceCategories first, fall back to JSON
+  const pageContent = servicePages[slug];
   const serviceItem = company.serviceCategories
     ?.flatMap((cat) => cat.services)
     .find((s) => s.slug === slug);
   const jsonService = services.find((s) => s.slug === slug && s.is_active);
 
-  if (!serviceItem && !jsonService) notFound();
+  if (!pageContent && !serviceItem && !jsonService) notFound();
 
-  // Merged data — serviceItem takes priority, JSON fills gaps
-  const name = serviceItem?.name ?? jsonService!.name;
-  const shortDescription = serviceItem?.description ?? jsonService!.short_description;
-  const longDescription = jsonService?.long_description ?? shortDescription;
-  const benefits = serviceItem?.benefits ?? jsonService?.benefits ?? [];
-  const process = serviceItem?.process ?? [];
-  const signsYouNeed = serviceItem?.signsYouNeed ?? [];
-  const pricingNote = serviceItem?.pricingNote ?? jsonService?.pricing_notes;
-  const idealFor = jsonService?.ideal_for;
+  // ── Resolve display values: content data wins, JSON/company fills gaps ──
+  const name =
+    pageContent?.pageTitle ?? serviceItem?.name ?? jsonService!.name;
+
+  const pageEyebrow = pageContent?.pageEyebrow;
+  const pageIntro =
+    pageContent?.pageIntro ??
+    serviceItem?.description ??
+    jsonService?.short_description;
+
+  const introParagraphs = pageContent?.introParagraphs ?? [];
+  const sectionOneTitle = pageContent?.sectionOneTitle;
+  const sectionOneBody = pageContent?.sectionOneBody;
+
+  // Inline images: prefer content data, fall back to generic images
+  const img0 = pageContent?.inlineImages?.[0] ?? {
+    src: FALLBACK_IMAGES.primary,
+    alt: `${name} service`,
+  };
+  const img1 = pageContent?.inlineImages?.[1] ?? {
+    src: FALLBACK_IMAGES.secondary,
+    alt: `${name} technician`,
+  };
+
+  const sectionTwoBody = pageContent?.sectionTwoBody;
+  const bulletListTitle = pageContent?.bulletListTitle;
+  const bulletItems = pageContent?.bulletItems ?? [];
+  const sectionThreeTitle = pageContent?.sectionThreeTitle;
+  const sectionThreeBody = pageContent?.sectionThreeBody;
+  const faqItems = pageContent?.faqItems ?? [];
+  const hasServiceFaqs = faqItems.length > 0;
+
+  // Build sidebar list: all services for this company except the current one
+  const sidebarServices: { slug: string; name: string }[] = [];
+  const seen = new Set<string>([slug]);
+  if (company.serviceCategories && company.serviceCategories.length > 0) {
+    for (const cat of company.serviceCategories) {
+      for (const s of cat.services) {
+        if (!seen.has(s.slug)) {
+          sidebarServices.push({ slug: s.slug, name: s.name });
+          seen.add(s.slug);
+        }
+      }
+    }
+  } else {
+    for (const s of services.filter((s) => s.is_active)) {
+      if (!seen.has(s.slug)) {
+        sidebarServices.push({ slug: s.slug, name: s.name });
+        seen.add(s.slug);
+      }
+    }
+  }
 
   return (
     <main className="font-sans text-gray-900">
@@ -97,217 +156,231 @@ export default async function ServiceDetailPage({
         company={company}
       />
 
-      {/* Service Hero */}
-      <section
-        className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
-        style={{ backgroundColor: company.primaryColor }}
-      >
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <p
-            className="text-xs font-bold uppercase tracking-widest mb-3"
-            style={{ color: company.accentColor }}
-          >
-            {company.city}, TX — Licensed &amp; Insured
-          </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-5">
-            {name} in {company.city}
-          </h1>
-          <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto leading-relaxed">
-            {shortDescription}
-          </p>
+      {/* ── Two-column editorial layout ── */}
+      <div className="bg-white py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-[1fr_272px] gap-12 lg:gap-16 items-start">
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row justify-center gap-3 mb-10">
-            <a
-              href="/request-service"
-              className="rounded px-8 py-4 text-lg font-bold shadow-lg transition hover:opacity-90"
-              style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
-            >
-              Schedule Service
-            </a>
-            <a
-              href={`tel:${company.phone}`}
-              className="rounded border-2 border-white/50 px-8 py-4 text-lg font-bold hover:bg-white/10 transition"
-            >
-              Call {company.phone}
-            </a>
-          </div>
+            {/* ── Main content article ── */}
+            <article className="min-w-0">
 
-          {/* Trust badges */}
-          <div className="inline-flex flex-wrap justify-center gap-x-6 gap-y-3">
-            {[
-              "Same-day appointments available",
-              "Upfront pricing before work begins",
-              "90-day labor warranty",
-            ].map((badge) => (
-              <div key={badge} className="flex items-center gap-2 text-sm text-white/70">
-                <span
-                  className="w-4 h-4 rounded-full flex items-center justify-center text-xs font-black shrink-0"
-                  style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
+              {/* 1 ── Eyebrow + H1 + Intro ── */}
+              {pageEyebrow && (
+                <p
+                  className="text-xs font-bold uppercase tracking-widest mb-2"
+                  style={{ color: company.primaryColor }}
                 >
-                  ✓
-                </span>
-                {badge}
+                  {pageEyebrow}
+                </p>
+              )}
+
+              <h1 className="text-3xl md:text-4xl font-black leading-tight mb-4">
+                {name}
+              </h1>
+
+              {/* 2 ── Page intro (lead sentence) ── */}
+              {pageIntro && (
+                <p className="text-lg text-gray-600 leading-relaxed mb-6 max-w-2xl">
+                  {pageIntro}
+                </p>
+              )}
+
+              {/* 3 ── Intro paragraphs ── */}
+              {introParagraphs.length > 0 && (
+                <div className="flex flex-col gap-4 mb-10 text-gray-500 leading-relaxed">
+                  {introParagraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              )}
+
+              {/* 4 ── Section one: title + body ── */}
+              {(sectionOneTitle || sectionOneBody) && (
+                <div className="mb-8">
+                  {sectionOneTitle && (
+                    <h2 className="text-xl font-black mb-3">{sectionOneTitle}</h2>
+                  )}
+                  {sectionOneBody && (
+                    <p className="text-gray-500 leading-relaxed">{sectionOneBody}</p>
+                  )}
+                </div>
+              )}
+
+              {/* 5 ── Two inline images ── */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                <div className="relative aspect-[4/3] rounded overflow-hidden bg-gray-100">
+                  <Image
+                    src={img0.src}
+                    alt={img0.alt}
+                    fill
+                    sizes="(min-width: 1024px) 28vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div className="relative aspect-[4/3] rounded overflow-hidden bg-gray-100">
+                  <Image
+                    src={img1.src}
+                    alt={img1.alt}
+                    fill
+                    sizes="(min-width: 1024px) 28vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Service Overview */}
-      <section className="bg-white py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <p
-            className="text-xs font-bold uppercase tracking-widest mb-3"
-            style={{ color: company.primaryColor }}
-          >
-            What We Do
-          </p>
-          <h2 className="text-2xl md:text-3xl font-black mb-5 leading-snug">
-            About Our {name} Service
-          </h2>
-          <p className="text-gray-500 leading-relaxed text-base">
-            {longDescription}
-          </p>
-          {pricingNote && (
-            <div className="mt-6 border border-gray-200 rounded p-5 bg-gray-50 text-sm text-gray-600 leading-relaxed">
-              <span className="font-bold text-gray-800">Pricing: </span>
-              {pricingNote}
-            </div>
-          )}
-        </div>
-      </section>
+              {/* 6 ── Section two body ── */}
+              {sectionTwoBody && (
+                <p className="text-gray-500 leading-relaxed mb-10">{sectionTwoBody}</p>
+              )}
 
-      {/* Our Process */}
-      {process.length > 0 && (
-        <section className="bg-gray-50 py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <p
-              className="text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: company.primaryColor }}
-            >
-              How It Works
-            </p>
-            <h2 className="text-2xl md:text-3xl font-black mb-8 leading-snug">
-              Our {name} Process
-            </h2>
-            <ol className="flex flex-col gap-4">
-              {process.map((item, i) => (
-                <li key={item.step} className="flex items-start gap-4">
-                  <span
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black shrink-0 mt-0.5"
-                    style={{ backgroundColor: company.primaryColor, color: "white" }}
-                  >
-                    {i + 1}
-                  </span>
-                  <div>
-                    <span className="font-bold text-gray-900">{item.step}: </span>
-                    <span className="text-gray-500 text-sm leading-relaxed">{item.detail}</span>
+              {/* 7 ── Bullet list ── */}
+              {bulletItems.length > 0 && (
+                <div className="mb-10">
+                  {bulletListTitle && (
+                    <h2 className="text-xl font-black mb-4">{bulletListTitle}</h2>
+                  )}
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {bulletItems.map((item) => (
+                      <li key={item} className="flex items-center gap-3">
+                        <span
+                          className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-black shrink-0"
+                          style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
+                        >
+                          ✓
+                        </span>
+                        <span className="text-gray-700 text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* 8 ── Section three: title + body ── */}
+              {(sectionThreeTitle || sectionThreeBody) && (
+                <div className="mb-10">
+                  {sectionThreeTitle && (
+                    <h2 className="text-xl font-black mb-3">{sectionThreeTitle}</h2>
+                  )}
+                  {sectionThreeBody && (
+                    <p className="text-gray-500 leading-relaxed">{sectionThreeBody}</p>
+                  )}
+                </div>
+              )}
+
+              {/* 9 ── Inline FAQs (service-specific) ── */}
+              {hasServiceFaqs && (
+                <section className="mt-2">
+                  <h2 className="text-xl font-black mb-5">Frequently Asked Questions</h2>
+                  <div className="flex flex-col divide-y divide-gray-200 border border-gray-200 rounded overflow-hidden">
+                    {faqItems.map((faq) => (
+                      <details key={faq.question} className="group">
+                        <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none select-none hover:bg-gray-50 transition">
+                          <span className="font-semibold text-sm text-gray-900">
+                            {faq.question}
+                          </span>
+                          <span
+                            className="text-lg font-black shrink-0 transition-transform group-open:rotate-45"
+                            style={{ color: company.primaryColor }}
+                            aria-hidden="true"
+                          >
+                            +
+                          </span>
+                        </summary>
+                        <div className="px-5 pb-5 pt-2">
+                          <p className="text-sm text-gray-500 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      </details>
+                    ))}
                   </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-      )}
+                </section>
+              )}
 
-      {/* Signs You Need This Service */}
-      {signsYouNeed.length > 0 && (
-        <section className={`${process.length > 0 ? "bg-white" : "bg-gray-50"} py-16 md:py-20 px-4 sm:px-6 lg:px-8`}>
-          <div className="max-w-3xl mx-auto">
-            <p
-              className="text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: company.primaryColor }}
-            >
-              Watch for These
-            </p>
-            <h2 className="text-2xl md:text-3xl font-black mb-8 leading-snug">
-              Signs You Need {name}
-            </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {signsYouNeed.map((sign) => (
-                <li
-                  key={sign}
-                  className="flex items-start gap-3 bg-white border border-gray-200 rounded p-4 shadow-sm"
+            </article>
+
+            {/* ── Sidebar ── */}
+            <aside className="lg:sticky lg:top-8 flex flex-col gap-6">
+
+              {/* Quick CTA */}
+              <div
+                className="rounded border-2 p-6"
+                style={{ borderColor: company.primaryColor }}
+              >
+                <p className="font-black text-base mb-1">
+                  {pageContent?.sidebarTitle ?? "Ready to Book?"}
+                </p>
+                <p className="text-sm text-gray-500 mb-4">
+                  {pageContent?.sidebarDescription ??
+                    "Call now or schedule online \u2014 we\u2019ll take it from here."}
+                </p>
+                <a
+                  href={`tel:${company.phone}`}
+                  className="flex items-center justify-center w-full rounded px-4 py-3 text-sm font-bold text-white mb-2 transition hover:opacity-90"
+                  style={{ backgroundColor: company.primaryColor }}
                 >
-                  <span
-                    className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black shrink-0"
-                    style={{ backgroundColor: company.primaryColor, color: company.accentColor }}
+                  Call {company.phone}
+                </a>
+                <a
+                  href={pageContent?.ctaHref ?? "/request-service"}
+                  className="flex items-center justify-center w-full rounded border px-4 py-3 text-sm font-bold transition hover:bg-gray-50"
+                  style={{ borderColor: company.primaryColor, color: company.primaryColor }}
+                >
+                  {pageContent?.ctaButtonLabel ?? "Schedule Online"}
+                </a>
+              </div>
+
+              {/* Other services */}
+              {sidebarServices.length > 0 && (
+                <div>
+                  <p
+                    className="text-xs font-bold uppercase tracking-widest mb-3"
+                    style={{ color: company.primaryColor }}
                   >
-                    !
-                  </span>
-                  <span className="text-sm text-gray-700 leading-relaxed">{sign}</span>
-                </li>
-              ))}
-            </ul>
+                    Other Services
+                  </p>
+                  <ul className="flex flex-col">
+                    {sidebarServices.map((s) => (
+                      <li key={s.slug}>
+                        <Link
+                          href={`/services/${s.slug}`}
+                          className="flex items-center gap-2.5 py-2.5 px-3 rounded text-sm font-semibold text-gray-700 hover:bg-gray-50 transition"
+                        >
+                          <span
+                            className="w-1.5 h-1.5 rounded-full shrink-0"
+                            style={{ backgroundColor: company.primaryColor }}
+                          />
+                          {s.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </aside>
           </div>
-        </section>
-      )}
+        </div>
+      </div>
 
-      {/* What's Included */}
-      {benefits.length > 0 && (
-        <section className="bg-white py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <p
-              className="text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: company.primaryColor }}
-            >
-              What You Get
-            </p>
-            <h2 className="text-2xl md:text-3xl font-black mb-8 leading-snug">
-              What&apos;s Included
-            </h2>
-            <ul className="flex flex-col gap-3">
-              {benefits.map((benefit) => (
-                <li key={benefit} className="flex items-center gap-3">
-                  <span
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0"
-                    style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
-                  >
-                    ✓
-                  </span>
-                  <span className="text-gray-700 font-medium">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
-      <WhyChooseUs company={company} />
-
-      {/* Ideal For */}
-      {idealFor && (
-        <section className="bg-gray-50 py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <p
-              className="text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: company.primaryColor }}
-            >
-              Is This Right for You?
-            </p>
-            <h2 className="text-2xl md:text-3xl font-black mb-5 leading-snug">
-              Ideal For
-            </h2>
-            <p className="text-gray-500 leading-relaxed text-base bg-white border border-gray-200 rounded p-6 shadow-sm">
-              {idealFor}
-            </p>
-          </div>
-        </section>
-      )}
-
-      <FaqSection company={company} />
+      {/* Global FAQ section — only shown when no service-specific FAQs exist */}
+      {!hasServiceFaqs && <FaqSection company={company} />}
 
       <CtaBanner
         company={company}
-        headline={`Need ${name}?`}
-        subtext="Book your service today in under 60 seconds — or give us a call right now."
-        features={[
-          "Same-day appointments available",
-          "Licensed & insured technicians",
-          "Upfront pricing, no surprises",
-          "24/7 emergency service",
-        ]}
+        headline={pageContent?.ctaTitle ?? `Need ${name}?`}
+        subtext={
+          pageContent?.ctaBody ??
+          "Book your service today in under 60 seconds \u2014 or give us a call right now."
+        }
+        features={
+          bulletItems.length >= 4
+            ? bulletItems.slice(0, 4)
+            : [
+                "Same-day appointments available",
+                "Licensed & insured technicians",
+                "Upfront pricing, no surprises",
+                "24/7 emergency service",
+              ]
+        }
       />
 
     </main>

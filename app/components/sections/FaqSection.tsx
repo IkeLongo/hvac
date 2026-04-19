@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { Company } from "@/data/companies";
+import { getRandomItems } from "@/lib/utils";
 import faqsData from "@/lib/chat/data/faqs.json";
 
 interface Faq {
@@ -20,6 +21,9 @@ interface FaqSectionProps {
 export function FaqSection({ company }: FaqSectionProps) {
   const [openId, setOpenId] = useState<number | null>(null);
 
+  // Select 6 FAQs once per component mount; stable across re-renders.
+  const displayedFaqs = useMemo(() => getRandomItems(faqs, 6), []);
+
   return (
     <section className="bg-white py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
@@ -34,7 +38,7 @@ export function FaqSection({ company }: FaqSectionProps) {
         </div>
 
         <div className="flex flex-col gap-3">
-          {faqs.map((faq) => {
+          {displayedFaqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div
