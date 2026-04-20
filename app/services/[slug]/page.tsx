@@ -7,7 +7,7 @@ import { companies } from "@/data/companies";
 import { SERVICE_CATEGORIES } from "@/public/services/services";
 import { PageHeader } from "@/app/components/layout/PageHeader";
 import { FaqSection } from "@/app/components/sections/FaqSection";
-import { CtaBanner } from "@/app/components/sections/CtaBanner";
+import { CtaSection } from "@/app/components/sections/CtaSection";
 import type { Service } from "@/lib/types/service";
 import servicesData from "@/lib/chat/data/services.json";
 import servicePages from "@/lib/data/service-pages";
@@ -365,24 +365,7 @@ export default async function ServiceDetailPage({
       {/* Global FAQ section — only shown when no service-specific FAQs exist */}
       {!hasServiceFaqs && <FaqSection company={company} />}
 
-      <CtaBanner
-        company={company}
-        headline={pageContent?.ctaTitle ?? `Need ${name}?`}
-        subtext={
-          pageContent?.ctaBody ??
-          "Book your service today in under 60 seconds \u2014 or give us a call right now."
-        }
-        features={
-          bulletItems.length >= 4
-            ? bulletItems.slice(0, 4)
-            : [
-                "Same-day appointments available",
-                "Licensed & insured technicians",
-                "Upfront pricing, no surprises",
-                "24/7 emergency service",
-              ]
-        }
-      />
+      <CtaSection company={company} />
 
     </main>
   );

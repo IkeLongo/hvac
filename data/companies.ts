@@ -54,6 +54,20 @@ export type CompanyTeamMember = {
   alt?: string;
 };
 
+export type CompanyCtaTestimonial = {
+  name: string;
+  designation: string;
+  imageSrc: string;
+  alt?: string;
+};
+
+export type CompanyCtaSection = {
+  title: string;
+  description: string;
+  testimonialDescription?: string;
+  testimonials?: CompanyCtaTestimonial[];
+};
+
 export type Company = {
   // Core (used by existing chatbot, metadata, booking)
   name: string;
@@ -113,6 +127,9 @@ export type Company = {
 
   // Optional team members for the About page
   teamMembers?: CompanyTeamMember[];
+
+  // Optional CTA section content and testimonials
+  ctaSection?: CompanyCtaSection;
 };
 
 export const companies: Record<string, Company> = {
@@ -1000,6 +1017,26 @@ export const companies: Record<string, Company> = {
         alt: "Antonio Garcia, Operations Manager at Tough AC & Heating",
       },
     ],
+    ctaSection: {
+      title: "San Antonio Trusts Tough AC & Heating",
+      description:
+        "Join hundreds of homeowners who rely on us for fast, honest HVAC service. Same-day response, upfront pricing, and a team that treats your home like their own.",
+      testimonialDescription: "Trusted by 500+ San Antonio homeowners",
+      testimonials: [
+        {
+          name: "Fernando Garcia",
+          designation: "Owner & Lead Technician",
+          imageSrc: "/team/tough-ac/Fernando-Garcia.avif",
+          alt: "Fernando Garcia, Owner of Tough AC & Heating",
+        },
+        {
+          name: "Antonio Garcia",
+          designation: "Operations Manager",
+          imageSrc: "/team/tough-ac/Antonio-Garcia.avif",
+          alt: "Antonio Garcia, Operations Manager at Tough AC & Heating",
+        },
+      ],
+    },
   },
 
   "jbaire": {

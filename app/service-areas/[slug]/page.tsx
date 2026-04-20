@@ -6,7 +6,7 @@ import Image from "next/image";
 import { companies } from "@/data/companies";
 import { SERVICE_AREAS } from "@/data/serviceAreas";
 import { PageHeader } from "@/app/components/layout/PageHeader";
-import { CtaBanner } from "@/app/components/sections/CtaBanner";
+import { CtaSection } from "@/app/components/sections/CtaSection";
 
 const FALLBACK_SLUG = "riverside";
 
@@ -331,17 +331,7 @@ export default async function ServiceAreaPage({
         </div>
       </div>
 
-      <CtaBanner
-        company={company}
-        headline={areaContent.ctaHeading}
-        subtext={areaContent.ctaText}
-        features={[
-          "Fast response times",
-          "Licensed & insured technicians",
-          "Upfront pricing, no surprises",
-          "Same-day appointments available",
-        ]}
-      />
+      <CtaSection company={company} />
 
     </main>
   );

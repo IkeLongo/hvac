@@ -4,7 +4,7 @@ import { companies } from "@/data/companies";
 import { PageHeader } from "@/app/components/layout/PageHeader";
 import { ServicesGrid } from "@/app/components/sections/ServicesGrid";
 import { StatsBar } from "@/app/components/sections/StatsBar";
-import { CtaBanner } from "@/app/components/sections/CtaBanner";
+import { CtaSection } from "@/app/components/sections/CtaSection";
 
 const FALLBACK_SLUG = "riverside";
 
@@ -65,17 +65,7 @@ export default async function ServicesPage() {
 
       <StatsBar company={company} />
 
-      <CtaBanner
-        company={company}
-        headline="Need Help With Your HVAC System?"
-        subtext="Schedule your service today in under 60 seconds — or give us a call."
-        features={[
-          "Same-day appointments available",
-          "Licensed & insured technicians",
-          "Upfront pricing, no surprises",
-          "24/7 emergency service",
-        ]}
-      />
+      <CtaSection company={company} />
 
     </main>
   );

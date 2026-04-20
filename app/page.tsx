@@ -11,6 +11,7 @@ import { ProcessSection } from "@/app/components/sections/ProcessSection";
 import { TestimonialsSection } from "@/app/components/sections/TestimonialsSection";
 import { FaqSection } from "@/app/components/sections/FaqSection";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
+import { CtaSection } from "@/app/components/sections/CtaSection";
 
 const FALLBACK_SLUG = "riverside";
 
@@ -68,6 +69,7 @@ export default async function Home() {
       <FaqSection company={company} />
 
       <CtaBanner company={company} />
+      <CtaSection company={company} />
 
     </main>
   );

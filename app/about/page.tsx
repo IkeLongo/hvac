@@ -8,7 +8,7 @@ import { WhyChooseUs } from "@/app/components/sections/WhyChooseUs";
 import { ProcessSection } from "@/app/components/sections/ProcessSection";
 import { TestimonialsSection } from "@/app/components/sections/TestimonialsSection";
 import { FaqSection } from "@/app/components/sections/FaqSection";
-import { CtaBanner } from "@/app/components/sections/CtaBanner";
+import { CtaSection } from "@/app/components/sections/CtaSection";
 import { TeamSectionWithLightBackground } from "../components/sections/TeamSection";
 
 const FALLBACK_SLUG = "riverside";
@@ -175,17 +175,7 @@ export default async function AboutPage() {
       <FaqSection company={company} />
 
       {/* 11. Closing CTA */}
-      <CtaBanner
-        company={company}
-        headline="Ready to Work With a Team You Can Trust?"
-        subtext={`${company.name} has been keeping ${company.city} homes comfortable for ${company.about.yearsExperience}+ years. Schedule your service today.`}
-        features={[
-          "Licensed & insured technicians",
-          "Same-day availability",
-          "Written quote before any work",
-          "Satisfaction guaranteed",
-        ]}
-      />
+      <CtaSection company={company} />
 
     </main>
   );
