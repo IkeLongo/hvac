@@ -12,68 +12,68 @@ export function TeamSectionWithLightBackground({ company }: TeamSectionProps) {
   const { teamMembers } = company;
   const defaultTeam = [
     {
-      title: "Manu Arora",
-      designation: "Founder & CEO",
+      title: "Carlos Ramirez",
+      designation: "Owner & Lead Technician",
       src: "https://assets.aceternity.com/avatars/manu.webp",
-      alt: "Manu Arora, Founder & CEO",
+      alt: "Carlos Ramirez, Owner & Lead Technician",
       excerpt:
-        "Builder of digital products and founder at Aceternity, Manu focuses on product innovation and cross-disciplinary leadership.",
+        "With over 15 years of experience, Carlos leads every project with a focus on honest work, reliable service, and long-term customer relationships.",
     },
     {
-      title: "John Doe",
-      designation: "Co-Founder & CTO",
+      title: "Michael Thompson",
+      designation: "Operations Manager",
       src: "https://assets.aceternity.com/avatars/1.webp",
-      alt: "John Doe, Co-Founder & CTO",
+      alt: "Michael Thompson, Operations Manager",
       excerpt:
-        "Architects scalable infrastructures and leads our technology vision, with a passion for mentoring the engineering team.",
+        "Michael ensures every job runs smoothly—from scheduling to completion—so customers get fast, organized, and stress-free service.",
     },
     {
-      title: "Glennfiddich Doe",
-      designation: "Software Engineer",
+      title: "Daniela Perez",
+      designation: "HVAC Service Technician",
       src: "https://assets.aceternity.com/avatars/2.webp",
-      alt: "Glennfiddich Doe, Software Engineer",
+      alt: "Daniel Perez, HVAC Service Technician",
       excerpt:
-        "Specializes in frontend frameworks and UI systems—Glennfiddich crafts seamless and accessible user interfaces.",
+        "Daniel specializes in diagnosing and repairing HVAC systems quickly and efficiently, helping homeowners stay comfortable year-round.",
     },
     {
-      title: "Jameson Beam",
-      designation: "Designer",
+      title: "James Carter",
+      designation: "Installation Specialist",
       src: "https://assets.aceternity.com/avatars/3.webp",
-      alt: "Jameson Beam, Designer",
+      alt: "James Carter, Installation Specialist",
       excerpt:
-        "Designs clear, elegant digital experiences, blending visual storytelling with empathetic user research.",
+        "James handles full system installs and replacements, ensuring every unit is set up for long-term performance and energy efficiency.",
     },
     {
-      title: "Johnny Walker",
-      designation: "Marketing Manager",
+      title: "Anthony Walker",
+      designation: "Customer Experience Manager",
       src: "https://assets.aceternity.com/avatars/4.webp",
-      alt: "Johnny Walker, Marketing Manager",
+      alt: "Anthony Walker, Customer Experience Manager",
       excerpt:
-        "Drives brand growth through creative campaigns and analytics, always seeking meaningful community engagement.",
+        "Anthony works directly with customers to ensure clear communication, timely updates, and a smooth service experience from start to finish.",
     },
     {
-      title: "Jack Daniels",
-      designation: "HR & Management",
+      title: "Robert Davis",
+      designation: "Field Supervisor",
       src: "https://assets.aceternity.com/avatars/5.webp",
-      alt: "Jack Daniels, HR & Management",
+      alt: "Robert Davis, Field Supervisor",
       excerpt:
-        "Fosters company culture and supports team wellbeing, ensuring seamless operations and professional development.",
+        "Robert oversees on-site operations, ensuring every technician delivers high-quality work that meets company standards and customer expectations.",
     },
     {
       title: "Samantha Rives",
-      designation: "Product Manager",
+      designation: "Service Coordinator",
       src: "https://assets.aceternity.com/avatars/6.webp",
-      alt: "Samantha Rives, Product Manager",
+      alt: "Samantha Rives, Service Coordinator",
       excerpt:
-        "Bridges vision and execution, keeping projects on track and fostering collaboration across all disciplines.",
+        "Samantha keeps everything on track behind the scenes, coordinating appointments and making sure every customer is taken care of promptly.",
     },
     {
       title: "Evelyn Martinez",
-      designation: "QA Lead",
+      designation: "Quality Assurance Specialist",
       src: "https://assets.aceternity.com/avatars/7.webp",
-      alt: "Evelyn Martinez, QA Lead",
+      alt: "Evelyn Martinez, Quality Assurance Specialist",
       excerpt:
-        "Ensures every release meets rigorous quality standards, blending keen attention to detail with a love for process improvement.",
+        "Evelyn ensures every job meets strict quality standards, following up on service work to guarantee customer satisfaction and long-term reliability.",
     },
   ];
 
