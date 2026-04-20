@@ -7,7 +7,7 @@ import { SERVICE_AREAS } from "@/data/serviceAreas";
 import { PageHeader } from "@/app/components/layout/PageHeader";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

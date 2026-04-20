@@ -7,7 +7,7 @@ import { getBookingOptionById, getStaticBookingOptions } from "@/lib/ghl/calenda
 import { companies } from "@/data/companies";
 import { FaChevronLeft } from "react-icons/fa";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

@@ -4,8 +4,8 @@ import { companies } from "./data/companies";
 export function proxy(req: NextRequest) {
   const host = req.headers.get("host") ?? "";
 
-  // Extract subdomain: e.g. "alamo-air" from "alamo-air.mydomain.com"
-  // Works locally too: "alamo-air.localhost:3000"
+  // Extract subdomain: e.g. "riverside" from "riverside.mydomain.com"
+  // Works locally too: "riverside.localhost:3000"
   const subdomain = host.split(".")[0];
 
   // Skip if it's the root domain (www, naked domain, or localhost)

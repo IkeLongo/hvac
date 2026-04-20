@@ -12,7 +12,7 @@ import servicesData from "@/lib/chat/data/services.json";
 
 const activeServices = (servicesData as Service[]).filter((s) => s.is_active);
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

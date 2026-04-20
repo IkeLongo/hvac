@@ -115,7 +115,7 @@ export type Company = {
 };
 
 export const companies: Record<string, Company> = {
-  "alamo-air": {
+  "riverside": {
     name: "RiverSide HVAC Solutions",
     phone: "(210) 730-6232",
     city: "San Antonio",

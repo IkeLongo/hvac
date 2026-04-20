@@ -27,6 +27,7 @@ export type CompanyAbout = {
   headline: string;
   body: string;
   yearsExperience: number;
+  img?: { src: string; alt: string };
 };
 
 export type CompanyProcessStep = {
@@ -115,7 +116,7 @@ export type Company = {
 };
 
 export const companies: Record<string, Company> = {
-  "alamo-air": {
+  "riverside": {
     name: "RiverSide HVAC Solutions",
     phone: "(210) 730-6232",
     city: "San Antonio",
@@ -880,7 +881,7 @@ export const companies: Record<string, Company> = {
     serviceCategories: ["cooling", "heating", "air-quality", "commercial"],
   },
 
-  "tough-ac": {
+  "toughac": {
     name: "Tough AC & Heating",
     phone: "830-212-2892",
     city: "San Antonio",
@@ -914,6 +915,10 @@ export const companies: Record<string, Company> = {
       headline: "Focused on Service & Reliability",
       body: "At Tough AC, our mission is to deliver reliable, high-quality air conditioning solutions with integrity, expertise, and a personal touch. We are committed to keeping our customers comfortable year-round by providing top-tier service, energy-efficient systems, and building lasting relationships based on trust and transparency.",
       yearsExperience: 10,
+      img: { 
+        src: "/team/tough-ac/repair-brothers.avif", 
+        alt: "Tough AC & Heating team at work"
+      },
     },
 
     process: [

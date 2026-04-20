@@ -12,11 +12,11 @@ export function StorySection({ company }: StorySectionProps) {
         {/* Image */}
         <div className="relative h-72 md:h-96 rounded overflow-hidden shadow-lg">
           <Image
-            src="/overhead-of-utility-workers-maintaining-outside-ai.jpg"
-            alt="Our team serving the area"
+            src={company.about.img?.src ?? "/overhead-of-utility-workers-maintaining-outside-ai.jpg"}
+            alt={company.about.img?.alt ?? "Our team serving the area"}
             fill
             sizes="(min-width: 1024px) 800px, 100vw"
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
         </div>

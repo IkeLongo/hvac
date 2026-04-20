@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import { getGhlCalendars } from "@/lib/ghl/calendars";
 import { companies } from "@/data/companies";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

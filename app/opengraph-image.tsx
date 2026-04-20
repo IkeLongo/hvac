@@ -7,7 +7,7 @@ export const alt = "HVAC Company";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 export default async function Image() {
   const headersList = await headers();

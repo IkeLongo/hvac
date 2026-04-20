@@ -11,7 +11,7 @@ import { FaqSection } from "@/app/components/sections/FaqSection";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
 import { TeamSectionWithLightBackground } from "../components/sections/TeamSection";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

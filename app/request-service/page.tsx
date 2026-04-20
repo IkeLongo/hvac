@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { companies } from "@/data/companies";
 import { ServiceRequestForm } from "@/app/components/service-request/ServiceRequestForm";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

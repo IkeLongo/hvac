@@ -19,7 +19,7 @@ const FALLBACK_IMAGES = {
   secondary: "/hvac-service-repairman.png",
 };
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

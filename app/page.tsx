@@ -12,7 +12,7 @@ import { TestimonialsSection } from "@/app/components/sections/TestimonialsSecti
 import { FaqSection } from "@/app/components/sections/FaqSection";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

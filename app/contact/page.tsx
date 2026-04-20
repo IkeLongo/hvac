@@ -6,7 +6,7 @@ import { PageHeader } from "@/app/components/layout/PageHeader";
 import { ContactSectionWithShader } from "@/app/components/sections/ContactSection";
 import hoursData from "@/lib/chat/data/hours.json";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();

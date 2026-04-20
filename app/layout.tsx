@@ -8,7 +8,7 @@ import { Footer } from "./components/layout/Footer";
 import { companies } from "@/data/companies";
 import CookieBanner from "./components/cookies/components/CookieBanner";
 
-const FALLBACK_SLUG = "alamo-air";
+const FALLBACK_SLUG = "riverside";
 
 async function getCompany() {
   const headersList = await headers();
