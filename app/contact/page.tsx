@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { companies } from "@/data/companies";
+import { SERVICE_AREAS } from "@/data/serviceAreas";
 import { PageHeader } from "@/app/components/layout/PageHeader";
 import { ContactSectionWithShader } from "@/app/components/sections/ContactSection";
 import hoursData from "@/lib/chat/data/hours.json";
@@ -137,13 +138,13 @@ export default async function ContactPage() {
             <div className="border-t border-gray-100 pt-5">
               <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Service Areas</p>
               <div className="flex flex-wrap gap-2">
-                {company.serviceAreas.map((area) => (
+                {company.serviceAreas.map((slug) => (
                   <span
-                    key={area.slug}
+                    key={slug}
                     className="text-xs font-semibold px-3 py-1 rounded-full border"
                     style={{ borderColor: company.primaryColor, color: company.primaryColor }}
                   >
-                    {area.name}
+                    {SERVICE_AREAS[slug]?.name ?? slug}
                   </span>
                 ))}
               </div>
