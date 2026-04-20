@@ -81,7 +81,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ctaHeading: "AC or Heating Issue in San Antonio?",
     ctaText: "Call now for same-day availability or book online and we'll confirm your slot within the hour.",
     heroImage: {
-      src: "/city/san-antonio-iconic.jpg",
+      src: "/city/san-antonio-iconic.jpeg",
       alt: "Iconic view of San Antonio, Texas",
     },
   },

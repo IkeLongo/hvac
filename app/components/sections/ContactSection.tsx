@@ -16,7 +16,7 @@ export function ContactSectionWithShader({ company }: ContactSectionProps) {
     company.accentColor,    // first accent highlight
     company.accentColor2,   // second accent / depth layer
     company.neutral1,       // light neutral wash
-    company.neutral2,       // mid neutral vignette base
+    //company.neutral2,       // mid neutral vignette base
   ];
 
   return (
@@ -50,21 +50,21 @@ const hvacTestimonials = [
   {
     quote:
       "They came out the same day my AC broke down in July. Fixed it in under two hours and the price was exactly what they quoted. Absolutely incredible service.",
-    name: "Maria T.",
+    name: "Mike T.",
     designation: "Homeowner, San Antonio, TX",
     image: "https://assets.aceternity.com/avatars/1.webp",
   },
   {
     quote:
       "I've used three different HVAC companies over the years. These guys are the only ones who explain what they're doing and don't try to upsell you on things you don't need.",
-    name: "James R.",
+    name: "Jasmine R.",
     designation: "Homeowner, Stone Oak, TX",
     image: "https://assets.aceternity.com/avatars/2.webp",
   },
   {
     quote:
       "Called at 9 PM on a Friday night. Technician was here by 10:30. My family didn't have to sleep in the heat. That kind of service is hard to find.",
-    name: "Linda M.",
+    name: "Jeremy M.",
     designation: "Homeowner, Helotes, TX",
     image: "https://assets.aceternity.com/avatars/3.webp",
   },
