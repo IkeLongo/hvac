@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import Image from "next/image";
 import { companies } from "@/data/companies";
+import { SERVICE_AREAS } from "@/data/serviceAreas";
 import { PageHeader } from "@/app/components/layout/PageHeader";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
 
@@ -19,10 +20,10 @@ export async function generateStaticParams() {
   const seen = new Set<string>();
   const params: { slug: string }[] = [];
   for (const company of Object.values(companies)) {
-    for (const area of company.serviceAreas) {
-      if (!seen.has(area.slug)) {
-        seen.add(area.slug);
-        params.push({ slug: area.slug });
+    for (const slug of company.serviceAreas) {
+      if (!seen.has(slug)) {
+        seen.add(slug);
+        params.push({ slug });
       }
     }
   }
@@ -36,13 +37,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const company = await getCompany();
-  const detail = company.serviceAreaDetails?.[slug];
-  if (!detail) return {};
+  const areaContent = SERVICE_AREAS[slug];
+  if (!areaContent) return {};
   return {
-    title: detail.metaTitle ?? `HVAC Service in ${slug} | ${company.name}`,
+    title: areaContent.metaTitle ?? `HVAC Service in ${areaContent.name} | ${company.name}`,
     description:
-      detail.metaDescription ??
-      `${company.name} provides HVAC repair and installation in ${slug}. Call today.`,
+      areaContent.metaDescription ??
+      `${company.name} provides HVAC repair and installation in ${areaContent.name}. Call today.`,
   };
 }
 
@@ -54,27 +55,26 @@ export default async function ServiceAreaPage({
   const { slug } = await params;
   const company = await getCompany();
 
-  const area = company.serviceAreas.find((a) => a.slug === slug);
-  const detail = company.serviceAreaDetails?.[slug];
+  const areaContent = SERVICE_AREAS[slug];
 
-  if (!area || !detail) notFound();
+  if (!areaContent || !company.serviceAreas.includes(slug)) notFound();
 
   // Build sidebar list: all other service areas for this company
-  const otherAreas = company.serviceAreas.filter((a) => a.slug !== slug);
+  const otherAreas = company.serviceAreas.filter((s) => s !== slug);
 
-  // Build a lookup so nearby area pills can be linked when the area exists
+  // Build a lookup so nearby area pills can be linked when the area exists in this company
   const areaSlugByName = new Map(
-    company.serviceAreas.map((a) => [a.name.toLowerCase(), a.slug])
+    company.serviceAreas.map((s) => [SERVICE_AREAS[s]?.name.toLowerCase() ?? s, s])
   );
 
   return (
     <main className="font-sans text-gray-900">
 
       <PageHeader
-        title={detail.headline}
+        title={areaContent.headline}
         breadcrumbs={[
           { label: "Service Areas", href: "/service-areas" },
-          { label: area.name },
+          { label: areaContent.name },
         ]}
         company={company}
       />
@@ -92,23 +92,23 @@ export default async function ServiceAreaPage({
                 className="text-xs font-bold uppercase tracking-widest mb-2"
                 style={{ color: company.primaryColor }}
               >
-                {area.name}, TX
+                {areaContent.name}, TX
               </p>
               <h1 className="text-3xl md:text-4xl font-black leading-tight mb-4">
-                {detail.headline}
+                {areaContent.headline}
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl">
-                {detail.intro}
+                {areaContent.intro}
               </p>
 
               {/* Hero image */}
-              {detail.heroImage?.src ? (
+              {areaContent.heroImage?.src ? (
                 <div className="relative w-full aspect-[16/9] rounded overflow-hidden bg-gray-100 mb-10">
                   <Image
-                    src={detail.heroImage.src}
-                    alt={detail.heroImage.alt}
+                    src={areaContent.heroImage.src}
+                    alt={areaContent.heroImage.alt}
                     fill
-                    sizes="(min-width: 1024px) 60vw, 100vw"
+                    sizes="(min-width: 1280px) 1000px, (min-width: 768px) 100vw, 100vw"
                     className="object-cover"
                     priority
                   />
@@ -122,25 +122,25 @@ export default async function ServiceAreaPage({
                     className="text-sm font-semibold"
                     style={{ color: company.primaryColor, opacity: 0.4 }}
                   >
-                    {area.name} — photo coming soon
+                    {areaContent.name} — photo coming soon
                   </span>
                 </div>
               )}
 
               {/* Area context */}
               <div className="mb-10">
-                <h2 className="text-xl font-black mb-3">About {area.name}</h2>
-                <p className="text-gray-500 leading-relaxed">{detail.areaContext}</p>
+                <h2 className="text-xl font-black mb-3">About {areaContent.name}</h2>
+                <p className="text-gray-500 leading-relaxed">{areaContent.areaContext}</p>
               </div>
 
               {/* Common problems + service highlights — two-col on md+ */}
               <div className="grid md:grid-cols-2 gap-8 mb-10">
                 <div>
                   <h2 className="text-xl font-black mb-4">
-                    Common HVAC Issues in {area.name}
+                    Common HVAC Issues in {areaContent.name}
                   </h2>
                   <ul className="flex flex-col gap-3">
-                    {detail.commonProblems.map((problem, i) => (
+                    {areaContent.commonProblems.map((problem, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <span
                           className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black"
@@ -156,10 +156,10 @@ export default async function ServiceAreaPage({
 
                 <div>
                   <h2 className="text-xl font-black mb-4">
-                    Services Available in {area.name}
+                    Services Available in {areaContent.name}
                   </h2>
                   <ul className="flex flex-col gap-3">
-                    {detail.serviceHighlights.map((highlight, i) => (
+                    {areaContent.serviceHighlights.map((highlight, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <span
                           className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black"
@@ -177,10 +177,10 @@ export default async function ServiceAreaPage({
               {/* Why choose us */}
               <div className="mb-10">
                 <h2 className="text-xl font-black mb-4">
-                  Why {area.name} Homeowners Choose {company.name}
+                  Why {areaContent.name} Homeowners Choose {company.name}
                 </h2>
                 <ul className="grid sm:grid-cols-2 gap-3">
-                  {detail.whyChooseUs.map((reason, i) => (
+                  {areaContent.whyChooseUs.map((reason, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span
                         className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black"
@@ -195,11 +195,11 @@ export default async function ServiceAreaPage({
               </div>
 
               {/* Nearby areas — linked when a matching slug exists */}
-              {detail.nearbyAreas.length > 0 && (
+              {areaContent.nearbyAreas.length > 0 && (
                 <div className="mb-10">
                   <h2 className="text-xl font-black mb-4">Nearby Areas We Also Serve</h2>
                   <ul className="flex flex-wrap gap-2">
-                    {detail.nearbyAreas.map((nearby) => {
+                    {areaContent.nearbyAreas.map((nearby) => {
                       const nearbySlug = areaSlugByName.get(nearby.toLowerCase());
                       return nearbySlug ? (
                         <li key={nearby}>
@@ -229,10 +229,10 @@ export default async function ServiceAreaPage({
               {/* FAQs — native details/summary */}
               <section>
                 <h2 className="text-xl font-black mb-5">
-                  HVAC FAQs for {area.name} Homeowners
+                  HVAC FAQs for {areaContent.name} Homeowners
                 </h2>
                 <div className="flex flex-col divide-y divide-gray-200 border border-gray-200 rounded overflow-hidden">
-                  {detail.faqs.map((faq, i) => (
+                  {areaContent.faqs.map((faq, i) => (
                     <details key={i} className="group">
                       <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none select-none hover:bg-gray-50 transition">
                         <span className="font-semibold text-sm text-gray-900">{faq.question}</span>
@@ -262,8 +262,8 @@ export default async function ServiceAreaPage({
                 className="rounded border-2 p-6"
                 style={{ borderColor: company.primaryColor }}
               >
-                <p className="font-black text-base mb-1">{detail.ctaHeading}</p>
-                <p className="text-sm text-gray-500 mb-4">{detail.ctaText}</p>
+                <p className="font-black text-base mb-1">{areaContent.ctaHeading}</p>
+                <p className="text-sm text-gray-500 mb-4">{areaContent.ctaText}</p>
                 <a
                   href={`tel:${company.phone}`}
                   className="flex items-center justify-center w-full rounded px-4 py-3 text-sm font-bold text-white mb-2 transition hover:opacity-90"
@@ -290,20 +290,23 @@ export default async function ServiceAreaPage({
                     Other Service Areas
                   </p>
                   <ul className="flex flex-col">
-                    {otherAreas.map((a) => (
-                      <li key={a.slug}>
-                        <Link
-                          href={`/service-areas/${a.slug}`}
-                          className="flex items-center gap-2.5 py-2.5 px-3 rounded text-sm font-semibold text-gray-700 hover:bg-gray-50 transition"
-                        >
-                          <span
-                            className="w-1.5 h-1.5 rounded-full shrink-0"
-                            style={{ backgroundColor: company.primaryColor }}
-                          />
-                          {a.name}
-                        </Link>
-                      </li>
-                    ))}
+                    {otherAreas.map((s) => {
+                      const a = SERVICE_AREAS[s];
+                      return (
+                        <li key={s}>
+                          <Link
+                            href={`/service-areas/${s}`}
+                            className="flex items-center gap-2.5 py-2.5 px-3 rounded text-sm font-semibold text-gray-700 hover:bg-gray-50 transition"
+                          >
+                            <span
+                              className="w-1.5 h-1.5 rounded-full shrink-0"
+                              style={{ backgroundColor: company.primaryColor }}
+                            />
+                            {a?.name ?? s}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}
@@ -330,8 +333,8 @@ export default async function ServiceAreaPage({
 
       <CtaBanner
         company={company}
-        headline={detail.ctaHeading}
-        subtext={detail.ctaText}
+        headline={areaContent.ctaHeading}
+        subtext={areaContent.ctaText}
         features={[
           "Fast response times",
           "Licensed & insured technicians",

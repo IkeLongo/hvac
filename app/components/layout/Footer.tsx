@@ -4,6 +4,7 @@ import { FaYelp } from "react-icons/fa";
 import type { Company } from "@/data/companies";
 import type { Service } from "@/lib/types/service";
 import servicesData from "@/lib/chat/data/services.json";
+import { SERVICE_AREAS } from "@/data/serviceAreas";
 
 interface FooterProps {
   company: Company;
@@ -99,13 +100,13 @@ export function Footer({ company }: FooterProps) {
         <div className="flex flex-col gap-4">
           <h3 className="text-white text-sm font-bold uppercase tracking-widest">Service Areas</h3>
           <ul className="flex flex-col gap-2.5">
-            {company.serviceAreas.map((area) => (
-              <li key={area.slug}>
+            {company.serviceAreas.map((slug) => (
+              <li key={slug}>
                 <Link
-                  href={`/service-areas/${area.slug}`}
+                  href={`/service-areas/${slug}`}
                   className="text-white/55 text-sm hover:text-white transition"
                 >
-                  {area.name}
+                  {SERVICE_AREAS[slug]?.name ?? slug}
                 </Link>
               </li>
             ))}

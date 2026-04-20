@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { type JSX } from "react";
 import { cn } from "@/lib/utils";
-import type { Company, ServiceItem } from "@/data/companies";
+import type { Company } from "@/data/companies";
+import type { ServiceItem } from "@/data/services";
+import { SERVICE_CATEGORIES } from "@/data/services";
 import type { Service } from "@/lib/types/service";
 import servicesData from "@/lib/chat/data/services.json";
 
@@ -163,7 +165,10 @@ export function ServicesGrid({ company }: ServicesGridProps) {
 
         {hasCategories ? (
           <div className="flex flex-col gap-14">
-            {company.serviceCategories!.map((category) => (
+            {company.serviceCategories!.map((catSlug) => {
+              const category = SERVICE_CATEGORIES[catSlug];
+              if (!category) return null;
+              return (
               <div key={category.slug}>
                 <div className="flex items-center gap-3 mb-6">
                   <div
@@ -189,7 +194,8 @@ export function ServicesGrid({ company }: ServicesGridProps) {
                   ))}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

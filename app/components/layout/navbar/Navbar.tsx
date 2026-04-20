@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import type { Company } from "@/data/companies";
 import type { Service } from "@/lib/types/service";
 import servicesData from "@/lib/chat/data/services.json";
+import { SERVICE_AREAS } from "@/data/serviceAreas";
 
 interface NavbarProps {
   company: Company;
@@ -69,9 +70,9 @@ const DesktopNav = ({ company }: NavbarProps) => {
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Service Areas">
           <div className="flex flex-col space-y-3 min-w-[220px] py-1">
-            {company.serviceAreas.map((a) => (
-              <HoveredLink key={a.slug} href={`/service-areas/${a.slug}`}>
-                {a.name}
+            {company.serviceAreas.map((slug) => (
+              <HoveredLink key={slug} href={`/service-areas/${slug}`}>
+                {SERVICE_AREAS[slug]?.name ?? slug}
               </HoveredLink>
             ))}
             <div className="border-t border-gray-100 pt-2 mt-1">
@@ -201,11 +202,11 @@ const MobileNav = ({ company }: NavbarProps) => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden pl-3 border-l border-white/20"
                     >
-                      {company.serviceAreas.map((a) => (
+                      {company.serviceAreas.map((slug) => (
                         <MobileNavLink
-                          key={a.slug}
-                          href={`/service-areas/${a.slug}`}
-                          label={a.name}
+                          key={slug}
+                          href={`/service-areas/${slug}`}
+                          label={SERVICE_AREAS[slug]?.name ?? slug}
                           onClick={() => setOpen(false)}
                           muted
                         />

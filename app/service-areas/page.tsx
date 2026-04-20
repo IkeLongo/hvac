@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { companies } from "@/data/companies";
+import { SERVICE_AREAS } from "@/data/serviceAreas";
 import { PageHeader } from "@/app/components/layout/PageHeader";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
 
@@ -57,10 +58,13 @@ export default async function ServiceAreasPage() {
       <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {company.serviceAreas.map((area) => (
-              <li key={area.slug}>
+            {company.serviceAreas.map((slug) => {
+              const area = SERVICE_AREAS[slug];
+              if (!area) return null;
+              return (
+              <li key={slug}>
                 <Link
-                  href={`/service-areas/${area.slug}`}
+                  href={`/service-areas/${slug}`}
                   className="group flex items-center justify-between gap-3 rounded-lg border border-gray-200 bg-white px-5 py-4 shadow-sm transition hover:shadow-md hover:border-transparent"
                   style={{ ["--hover-border" as string]: company.accentColor }}
                 >
@@ -75,7 +79,8 @@ export default async function ServiceAreasPage() {
                   </span>
                 </Link>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import Image from "next/image";
 import { companies } from "@/data/companies";
+import { SERVICE_CATEGORIES } from "@/data/services";
 import { PageHeader } from "@/app/components/layout/PageHeader";
 import { FaqSection } from "@/app/components/sections/FaqSection";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";
@@ -33,8 +34,8 @@ export async function generateStaticParams() {
 
   const categorySlugs = Object.values(companies).flatMap(
     (company) =>
-      company.serviceCategories?.flatMap((cat) =>
-        cat.services.map((s) => ({ slug: s.slug }))
+      company.serviceCategories?.flatMap((catSlug) =>
+        SERVICE_CATEGORIES[catSlug]?.services.map((s) => ({ slug: s.slug })) ?? []
       ) ?? []
   );
 
@@ -58,7 +59,7 @@ export async function generateMetadata({
   const company = await getCompany();
   const pageContent = servicePages[slug];
   const serviceItem = company.serviceCategories
-    ?.flatMap((cat) => cat.services)
+    ?.flatMap((catSlug) => SERVICE_CATEGORIES[catSlug]?.services ?? [])
     .find((s) => s.slug === slug);
   const jsonService = services.find((s) => s.slug === slug && s.is_active);
   if (!pageContent && !serviceItem && !jsonService) return {};
@@ -85,7 +86,7 @@ export default async function ServiceDetailPage({
 
   const pageContent = servicePages[slug];
   const serviceItem = company.serviceCategories
-    ?.flatMap((cat) => cat.services)
+    ?.flatMap((catSlug) => SERVICE_CATEGORIES[catSlug]?.services ?? [])
     .find((s) => s.slug === slug);
   const jsonService = services.find((s) => s.slug === slug && s.is_active);
 
@@ -127,8 +128,8 @@ export default async function ServiceDetailPage({
   const sidebarServices: { slug: string; name: string }[] = [];
   const seen = new Set<string>([slug]);
   if (company.serviceCategories && company.serviceCategories.length > 0) {
-    for (const cat of company.serviceCategories) {
-      for (const s of cat.services) {
+    for (const catSlug of company.serviceCategories) {
+      for (const s of SERVICE_CATEGORIES[catSlug]?.services ?? []) {
         if (!seen.has(s.slug)) {
           sidebarServices.push({ slug: s.slug, name: s.name });
           seen.add(s.slug);
