@@ -996,4 +996,121 @@ export const companies: Record<string, Company> = {
       },
     ],
   },
+
+  "jbaire": {
+    name: "JB Aire Heating & Air Conditioning",
+    phone: "830-885-6640",
+    city: "San Antonio",
+    services: ["AC Maintenance", "AC Services", "Heating & Furnace"],
+    primaryColor: "#140a0a",
+    accentColor: "#dd2a2a",
+    accentColor2: "#4a4e5e",
+    neutral1: "#f8f9fa",
+    neutral2: "#dee2e6",
+    logo: "/logos/jbaire/jbaire.png",
+    logoHorizontal: "/logos/jbaire/jbaire.png",
+    googlePlaceId: "ChIJufHTGSlDnmsRcqQ_XkIWetI",
+
+    tagline: "Fast, Honest HVAC Service You Can Count On",
+    email: "office@jbaire.com",
+    address: {
+      street: "",
+      city: "Spring Branch",
+      state: "TX",
+      zip: "",
+    },
+    social: {},
+
+    hero: {
+      headline: "San Antonio HVAC Service Done Right",
+      subheadline:
+        "JB Aire Heating & Air Conditioning delivers fast response times, honest pricing, and reliable HVAC solutions for homes across San Antonio.",
+    },
+
+    about: {
+      headline: "Focused on Service & Reliability",
+      body: "At JB Aire Heating & Air Conditioning, our mission is to deliver reliable, high-quality air conditioning solutions with integrity, expertise, and a personal touch. We are committed to keeping our customers comfortable year-round by providing top-tier service, energy-efficient systems, and building lasting relationships based on trust and transparency.",
+      yearsExperience: 10,
+    },
+
+    process: [
+      {
+        step: 1,
+        title: "Call or Book Online",
+        description: "Reach us by phone or schedule online for fast, responsive service.",
+      },
+      {
+        step: 2,
+        title: "Fast Diagnosis",
+        description:
+          "A technician arrives ready to diagnose your system and explain what's wrong in plain terms.",
+      },
+      {
+        step: 3,
+        title: "Clear Quote",
+        description: "We provide written pricing before starting — honest and upfront with no hidden charges.",
+      },
+      {
+        step: 4,
+        title: "Repair & Verify",
+        description: "We complete the repair and confirm your system is running correctly before we leave.",
+      },
+    ],
+
+    whyChooseUs: [
+      {
+        title: "Fast Response Times",
+        description: "We prioritize quick scheduling so you're not left waiting in discomfort.",
+      },
+      {
+        title: "Honest Pricing",
+        description: "Fair, upfront quotes — the price you're given is the price you pay.",
+      },
+      {
+        title: "Reliable Repairs",
+        description: "We fix it right the first time and stand behind our work on every job.",
+      },
+      {
+        title: "Clear Communication",
+        description: "We keep you informed from the first call through the final invoice — no surprises.",
+      },
+    ],
+
+    statsBar: [
+      { value: "10+", label: "Years in Business" },
+      { value: "Fast", label: "Response Times" },
+      { value: "100%", label: "Satisfaction Guarantee" },
+      { value: "All", label: "Major Brands Serviced" },
+    ],
+
+    serviceAreas: ["san-antonio", "boerne", "helotes", "stone-oak", "spring-branch", "live-oak"],
+
+    certifications: [
+      "Licensed HVAC Technicians",
+      "EPA Certified",
+      "Fully Insured",
+      "Residential & Commercial Service",
+    ],
+
+    serviceCategories: ["cooling", "heating", "air-quality", "commercial"],
+
+    teamMembers: [
+      {
+        name: "Fernando Garcia",
+        title: "Operations Manager",
+        description:
+          "With 12+ years of HVAC experience, Fernando started JB Aire Heating & Air Conditioning to provide honest, reliable service. He's a hands-on leader who loves meeting customers. Outside of work, he enjoys fishing and family time.",
+        imageSrc: "/team/jbaire/Fernando-Garcia.avif",
+        alt: "Fernando Garcia, Operations Manager at JB Aire Heating & Air Conditioning",
+      },
+      {
+        name: "Antonio Garcia",
+        title: "Operations Manager",
+        description:
+          "Antonio has oversees daily operations, ensuring efficiency and excellent service. With a decade in the HVAC field, he's passionate about customer satisfaction. In his free time, he loves fishing.",
+        imageSrc: "/team/jbaire/Antonio-Garcia.avif",
+        alt: "Antonio Garcia, Operations Manager at JB Aire Heating & Air Conditioning",
+      },
+    ],
+  },
 };
