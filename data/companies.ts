@@ -1018,26 +1018,6 @@ export const companies: Record<string, Company> = {
         alt: "Antonio Garcia, Operations Manager at Tough AC & Heating",
       },
     ],
-    ctaSection: {
-      title: "San Antonio Trusts Tough AC & Heating",
-      description:
-        "Join hundreds of homeowners who rely on us for fast, honest HVAC service. Same-day response, upfront pricing, and a team that treats your home like their own.",
-      testimonialDescription: "Trusted by 500+ San Antonio homeowners",
-      testimonials: [
-        {
-          name: "Fernando Garcia",
-          designation: "Owner & Lead Technician",
-          imageSrc: "/team/tough-ac/Fernando-Garcia.avif",
-          alt: "Fernando Garcia, Owner of Tough AC & Heating",
-        },
-        {
-          name: "Antonio Garcia",
-          designation: "Operations Manager",
-          imageSrc: "/team/tough-ac/Antonio-Garcia.avif",
-          alt: "Antonio Garcia, Operations Manager at Tough AC & Heating",
-        },
-      ],
-    },
   },
 
   "jbaire": {

@@ -89,12 +89,12 @@ const servicePages: Record<string, ServicePageContent> = {
       "Heating systems fail in predictable ways. We start with the igniter and flame sensor on gas systems, the capacitor and reversing valve on heat pumps, and the heating element and sequencer on electric furnaces. Our technicians carry the most common failure parts on their trucks.",
     inlineImages: [
       {
-        src: "/heating-repair.webp",
-        alt: "Technician repairing a residential furnace",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/young-hvac-technician-millennial-has-modern-equipment.jpg",
-        alt: "HVAC technician using diagnostic equipment on a heating system",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -156,12 +156,12 @@ const servicePages: Record<string, ServicePageContent> = {
       "Our technicians follow a comprehensive checklist: filter replacement, evaporator and condenser coil cleaning, refrigerant level verification, electrical connection tightening, blower motor inspection, thermostat calibration, and a full system performance test. Nothing is skipped.",
     inlineImages: [
       {
-        src: "/heating-maintenance.webp",
-        alt: "Technician performing seasonal HVAC maintenance",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/young-hvac-technician-millennial-has-modern-equipment.jpg",
-        alt: "HVAC professional running a system tune-up",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -229,12 +229,12 @@ const servicePages: Record<string, ServicePageContent> = {
       "Before recommending a system, we calculate your home's heating and cooling load based on square footage, insulation, window placement, and local climate data. This takes the guesswork out of sizing and ensures you're not paying for capacity you don't need.",
     inlineImages: [
       {
-        src: "/full-heating-system-install.webp",
-        alt: "New HVAC system being installed in a residential home",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/overhead-of-utility-workers-maintaining-outside-ai.jpg",
-        alt: "Technicians installing outdoor HVAC equipment",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -303,12 +303,12 @@ const servicePages: Record<string, ServicePageContent> = {
       "Duct cleaning is most beneficial after a renovation, following a pest infestation, if you've noticed visible mold near your vents, or if allergy symptoms in your home have gotten noticeably worse. We'll do an honest assessment before recommending a full cleaning.",
     inlineImages: [
       {
-        src: "/duct-cleaning-and-sealing.webp",
-        alt: "Technician cleaning residential ductwork",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/indorr-air-quality.webp",
-        alt: "Indoor air quality equipment installed in a home",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -377,12 +377,12 @@ const servicePages: Record<string, ServicePageContent> = {
       "Restricted return air is the most overlooked cause of comfort problems. If your system can't draw enough air back through the returns, it starves the blower and reduces airflow to every room. We check return sizing, filter restriction, and duct leakage as the first step in any airflow diagnosis.",
     inlineImages: [
       {
-        src: "/hvac-service-repairman.png",
-        alt: "Technician diagnosing thermostat and airflow issues",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/young-hvac-technician-millennial-has-modern-equipment.jpg",
-        alt: "HVAC professional checking airflow and system performance",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -446,12 +446,12 @@ const servicePages: Record<string, ServicePageContent> = {
       "We check whole-home humidity levels, inspect the air handler and coil for mold or debris, review ductwork for contamination indicators, assess filtration effectiveness relative to your system's airflow, and evaluate ventilation adequacy. You get written findings and specific recommendations — not a list of products.",
     inlineImages: [
       {
-        src: "/indorr-air-quality.webp",
-        alt: "Indoor air quality testing equipment in use",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/filtration-and-air-purification.webp",
-        alt: "Technician evaluating an air filtration system",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -526,12 +526,12 @@ const commercialPages: Record<string, ServicePageContent> = {
       "A full commercial maintenance visit covers filter replacement, coil cleaning, refrigerant level verification, belt and bearing inspection, economizer function check, thermostat and controls calibration, electrical connection tightening, and a documented system performance report for each unit.",
     inlineImages: [
       {
-        src: "/commercial-hvac-rooftop.jpg",
-        alt: "Rooftop commercial HVAC units being serviced",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/young-hvac-technician-millennial-has-modern-equipment.jpg",
-        alt: "Technician servicing a commercial HVAC unit",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -600,12 +600,12 @@ const commercialPages: Record<string, ServicePageContent> = {
       "After the load calculation we present equipment options with efficiency ratings, expected operating costs, and manufacturer warranty terms. We coordinate with your general contractor or building management team and build a project schedule that minimizes disruption to building operations throughout the installation.",
     inlineImages: [
       {
-        src: "/commercial-hvac-rooftop.jpg",
-        alt: "Commercial rooftop HVAC units being installed",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/overhead-of-utility-workers-maintaining-outside-ai.jpg",
-        alt: "Commercial HVAC installation crew at work",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -674,12 +674,12 @@ const commercialPages: Record<string, ServicePageContent> = {
       "We repair rooftop units, commercial split systems, packaged HVAC equipment, air handlers, and commercial heat pumps. We work on all major commercial brands and can source parts for older equipment that other contractors won't take on.",
     inlineImages: [
       {
-        src: "/commercial-hvac-rooftop.jpg",
-        alt: "Technician repairing a commercial rooftop HVAC unit",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/young-hvac-technician-millennial-has-modern-equipment.jpg",
-        alt: "Technician diagnosing a commercial HVAC system",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -754,12 +754,12 @@ const iaqPages: Record<string, ServicePageContent> = {
       "We start with a duct system inspection to assess contamination levels and identify obvious leaks or damaged sections. Cleaning uses commercial-grade negative-pressure vacuum equipment to pull debris out rather than push it through. Sealing is done with mastic or professional-grade foil tape at connection points and is verified with a pressure test.",
     inlineImages: [
       {
-        src: "/duct-cleaning-and-sealing.webp",
-        alt: "Technician performing professional duct cleaning",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/indorr-air-quality.webp",
-        alt: "Duct inspection and sealing process",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -828,12 +828,12 @@ const iaqPages: Record<string, ServicePageContent> = {
       "Short-cycling caused by an oversized system is the most overlooked source of high indoor humidity. When the AC satisfies the thermostat before it can run a full dehumidification cycle, moisture stays in the air. A dedicated whole-home dehumidifier solves this regardless of how the AC is sized.",
     inlineImages: [
       {
-        src: "/whole-home-dehumidifier.jpg",
-        alt: "Whole-home dehumidifier installed in a utility room",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/young-hvac-technician-millennial-has-modern-equipment.jpg",
-        alt: "Technician installing a whole-home humidity control system",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -902,12 +902,12 @@ const iaqPages: Record<string, ServicePageContent> = {
       "High-MERV media filters capture fine particles — pollen, pet dander, and fine dust — without the pressure restrictions of thinner pleated filters. UV air purifiers neutralize biological contaminants using ultraviolet light inside the air handler. Electronic air cleaners use an electric charge to attract and trap particles. Most homes benefit most from a media filter paired with UV purification.",
     inlineImages: [
       {
-        src: "/filtration-and-air-purification.webp",
-        alt: "Whole-home air filtration and purification system",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/indorr-air-quality.webp",
-        alt: "UV air purifier installed inside an air handler",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -982,12 +982,12 @@ const heatingPages: Record<string, ServicePageContent> = {
       "Our heating maintenance checklist covers burner cleaning, heat exchanger inspection, igniter and flame sensor testing, gas valve and pressure verification, blower motor and belt inspection, thermostat calibration, and a full system performance measurement against manufacturer specs. Every visit ends with a written report.",
     inlineImages: [
       {
-        src: "/heating-maintenance.webp",
-        alt: "Technician performing annual heating system maintenance",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/young-hvac-technician-millennial-has-modern-equipment.jpg",
-        alt: "HVAC professional inspecting a furnace during a tune-up",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -1056,12 +1056,12 @@ const heatingPages: Record<string, ServicePageContent> = {
       "We install gas furnaces, electric furnaces, heat pumps, dual-fuel systems, and ductless mini-splits. The best choice depends on your existing infrastructure, local utility costs, and your home's heating load. We'll lay out the trade-offs honestly so you can make a decision you'll be satisfied with for the next two decades.",
     inlineImages: [
       {
-        src: "/full-heating-system-install.webp",
-        alt: "New heating system installation in a residential home",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/overhead-of-utility-workers-maintaining-outside-ai.jpg",
-        alt: "HVAC installation crew completing a heating system replacement",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -1130,12 +1130,12 @@ const heatingPages: Record<string, ServicePageContent> = {
       "Gas furnace failures most often trace to the igniter, flame sensor, gas valve, or inducer motor. Heat pump failures typically involve the capacitor, contactor, reversing valve, or defrost controls. Electric furnace issues usually point to a heating element or sequencer. We follow a logical diagnostic sequence to isolate the component quickly.",
     inlineImages: [
       {
-        src: "/heating-repair.webp",
-        alt: "Technician repairing a residential gas furnace",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/young-hvac-technician-millennial-has-modern-equipment.jpg",
-        alt: "HVAC technician diagnosing a heating system fault",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -1211,11 +1211,11 @@ const coolingPages: Record<string, ServicePageContent> = {
     inlineImages: [
       {
         src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
-        alt: "Technician performing an AC tune-up on an outdoor condenser unit",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
         src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
-        alt: "HVAC professional checking AC system components",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -1285,11 +1285,11 @@ const coolingPages: Record<string, ServicePageContent> = {
     inlineImages: [
       {
         src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
-        alt: "New AC outdoor unit being installed",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
         src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
-        alt: "Technician completing an air conditioning system installation",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
@@ -1364,12 +1364,12 @@ const specialtyPages: Record<string, ServicePageContent> = {
       "Mini-splits are the best available solution for any space that can't or shouldn't have ductwork: garage conversions, home offices, sunrooms, bonus rooms, and detached structures. For whole-home applications, multi-zone mini-split systems eliminate duct losses entirely and deliver precise room-by-room control that a central system can't match.",
     inlineImages: [
       {
-        src: "/mini-split-installation.jpg",
-        alt: "Ductless mini-split indoor air handler being installed",
+        src: "/repairman-in-uniform-installing-the-outside-unit.jpg",
+        alt: "Technician inspecting an outdoor AC condenser unit",
       },
       {
-        src: "/overhead-of-utility-workers-maintaining-outside-ai.jpg",
-        alt: "Mini-split outdoor unit installation",
+        src: "/indian-male-worker-inspecting-the-air-conditioner.jpg",
+        alt: "HVAC technician checking air conditioner components",
       },
     ],
     sectionTwoBody:
