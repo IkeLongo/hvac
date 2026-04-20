@@ -323,10 +323,10 @@ export const companies: Record<string, Company> = {
     ],
 
     statsBar: [
-      { value: "15+", label: "Years in Business" },
-      { value: "4,500+", label: "Repairs Completed" },
-      { value: "< 2hr", label: "Avg Emergency Response" },
-      { value: "4.9★", label: "Average Review Rating" },
+      { value: "10+", label: "Years in Business" },
+      { value: "500+", label: "Jobs Completed" },
+      { value: "100%", label: "Satisfaction Guarantee" },
+      { value: "24/7", label: "Emergency Service" },
     ],
 
     serviceAreas: [
@@ -439,10 +439,10 @@ export const companies: Record<string, Company> = {
     ],
 
     statsBar: [
-      { value: "18+", label: "Years in Business" },
-      { value: "6,200+", label: "Jobs Completed" },
-      { value: "All", label: "Major Brands Serviced" },
-      { value: "4.8★", label: "Average Review Rating" },
+      { value: "10+", label: "Years in Business" },
+      { value: "500+", label: "Jobs Completed" },
+      { value: "100%", label: "Satisfaction Guarantee" },
+      { value: "24/7", label: "Emergency Service" },
     ],
 
     serviceAreas: [
@@ -560,10 +560,10 @@ export const companies: Record<string, Company> = {
     ],
 
     statsBar: [
-      { value: "10+", label: "Years Experience" },
-      { value: "1,000+", label: "Projects Completed" },
-      { value: "24/7", label: "Availability" },
-      { value: "100%", label: "Customer Focused" },
+      { value: "10+", label: "Years in Business" },
+      { value: "500+", label: "Jobs Completed" },
+      { value: "100%", label: "Satisfaction Guarantee" },
+      { value: "24/7", label: "Emergency Service" },
     ],
 
     serviceAreas: ["san-antonio", "boerne", "helotes", "stone-oak", "leon-valley", "live-oak"],
@@ -660,10 +660,10 @@ export const companies: Record<string, Company> = {
     ],
 
     statsBar: [
-      { value: "15+", label: "Years in Business" },
+      { value: "10+", label: "Years in Business" },
+      { value: "500+", label: "Jobs Completed" },
+      { value: "100%", label: "Satisfaction Guarantee" },
       { value: "24/7", label: "Emergency Service" },
-      { value: "100%", label: "Satisfaction Focus" },
-      { value: "All", label: "Major Brands Serviced" },
     ],
 
     serviceAreas: ["san-antonio", "boerne", "helotes", "stone-oak", "leon-valley", "live-oak"],
@@ -759,10 +759,10 @@ export const companies: Record<string, Company> = {
     ],
 
     statsBar: [
-      { value: "12+", label: "Years in Business" },
-      { value: "100%", label: "Licensed & Insured" },
-      { value: "All", label: "Major Brands Serviced" },
-      { value: "24/7", label: "Emergency Availability" },
+      { value: "10+", label: "Years in Business" },
+      { value: "500+", label: "Jobs Completed" },
+      { value: "100%", label: "Satisfaction Guarantee" },
+      { value: "24/7", label: "Emergency Service" },
     ],
 
     serviceAreas: ["san-antonio", "boerne", "helotes", "stone-oak", "leon-valley", "live-oak"],
@@ -863,9 +863,9 @@ export const companies: Record<string, Company> = {
 
     statsBar: [
       { value: "10+", label: "Years in Business" },
-      { value: "Fast", label: "Response Times" },
+      { value: "500+", label: "Jobs Completed" },
       { value: "100%", label: "Satisfaction Guarantee" },
-      { value: "All", label: "Major Brands Serviced" },
+      { value: "24/7", label: "Emergency Service" },
     ],
 
     serviceAreas: ["san-antonio", "boerne", "helotes", "stone-oak", "leon-valley", "live-oak"],
@@ -961,9 +961,9 @@ export const companies: Record<string, Company> = {
 
     statsBar: [
       { value: "10+", label: "Years in Business" },
-      { value: "Fast", label: "Response Times" },
+      { value: "500+", label: "Jobs Completed" },
       { value: "100%", label: "Satisfaction Guarantee" },
-      { value: "All", label: "Major Brands Serviced" },
+      { value: "24/7", label: "Emergency Service" },
     ],
 
     serviceAreas: ["san-antonio", "boerne", "helotes", "stone-oak", "spring-branch", "live-oak"],
