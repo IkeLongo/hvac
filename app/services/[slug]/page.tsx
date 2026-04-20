@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import Image from "next/image";
 import { companies } from "@/data/companies";
-import { SERVICE_CATEGORIES } from "@/data/services";
+import { SERVICE_CATEGORIES } from "@/public/services/services";
 import { PageHeader } from "@/app/components/layout/PageHeader";
 import { FaqSection } from "@/app/components/sections/FaqSection";
 import { CtaBanner } from "@/app/components/sections/CtaBanner";

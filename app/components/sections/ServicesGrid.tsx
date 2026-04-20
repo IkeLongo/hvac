@@ -3,8 +3,8 @@ import Image from "next/image";
 import { type JSX } from "react";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/data/companies";
-import type { ServiceItem } from "@/data/services";
-import { SERVICE_CATEGORIES } from "@/data/services";
+import type { ServiceItem } from "@/public/services/services";
+import { SERVICE_CATEGORIES } from "@/public/services/services";
 import type { Service } from "@/lib/types/service";
 import servicesData from "@/lib/chat/data/services.json";
 

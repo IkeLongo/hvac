@@ -37,6 +37,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
       {
         name: "AC Repair",
         slug: "ac-repair",
+        imageSrc: "/services/ac-repair.avif",
         description:
           "Fast diagnosis and repair for all central AC and heat pump systems. Most repairs completed same-day.",
         isFeatured: true,
@@ -71,7 +72,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         description:
           "Proper sizing, equipment selection, and installation for new or replacement central AC systems.",
         isFeatured: true,
-        imageSrc: "/ac-installation.webp",
+        imageSrc: "/services/ac-installation.webp",
         signsYouNeed: [
           "Current system is 12 or more years old",
           "Repair costs are approaching the system's replacement value",
@@ -100,7 +101,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "ac-maintenance",
         description:
           "Pre-season inspection and tune-up to maximize efficiency and catch issues before summer.",
-        imageSrc: "/ac-maintenance.webp",
+        imageSrc: "/services/ac-maintenance.webp",
         signsYouNeed: [
           "System hasn't been serviced in over a year",
           "Airflow from vents feels weaker than before",
@@ -131,7 +132,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "mini-split-service",
         description:
           "Installation, repair, and maintenance for ductless mini-split systems in additions, sunrooms, and detached structures.",
-        imageSrc: "/ductless-mini-split.webp",
+        imageSrc: "/services/ductless-mini-split.webp",
         signsYouNeed: [
           "Room or addition has no existing ductwork",
           "One room consistently runs hot or cold",
@@ -167,7 +168,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         description:
           "Diagnosis and repair for furnaces, heat pumps, and all residential heating systems.",
         isFeatured: true,
-        imageSrc: "/heating-repair.webp",
+        imageSrc: "/services/heating-repair.webp",
         signsYouNeed: [
           "Heater turns on but produces little or no heat",
           "Pilot light is out or won't stay lit",
@@ -197,7 +198,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "heating-installation",
         description:
           "Full heating system installation and replacement with proper load calculations and equipment sizing.",
-        imageSrc: "/full-heating-system-install.webp",
+        imageSrc: "/services/full-heating-system-install.webp",
         signsYouNeed: [
           "Furnace or heat pump is 15 or more years old",
           "Repair estimates are approaching the cost of a new system",
@@ -226,7 +227,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "heating-maintenance",
         description:
           "Fall heating check to ensure your system is ready before the first cold front of the season.",
-        imageSrc: "/heating-maintenance.webp",
+        imageSrc: "/services/heating-maintenance.webp",
         signsYouNeed: [
           "Heating system hasn't been serviced in over a year",
           "System has had intermittent starting issues",
@@ -262,7 +263,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         description:
           "Evaluation of filtration, ventilation, and humidity levels to improve air quality in your home.",
         isFeatured: true,
-        imageSrc: "/indoor-air-quality.webp",
+        imageSrc: "/services/indoor-air-quality.webp",
         signsYouNeed: [
           "Family members experience allergy or asthma symptoms at home",
           "Dust builds up quickly on surfaces after cleaning",
@@ -296,7 +297,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "air-filtration",
         description:
           "Upgrade to high-efficiency filters or whole-home air purifiers for cleaner indoor air.",
-        imageSrc: "/filtration-and-air-purification.webp",
+        imageSrc: "/services/filtration-and-air-purification.webp",
         signsYouNeed: [
           "More dust or pet dander than usual throughout the home",
           "Family members with allergies or respiratory sensitivities",
@@ -324,7 +325,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "humidity-control",
         description:
           "Whole-home dehumidifier installation and service to address humidity issues common in the San Antonio area.",
-        imageSrc: "/humidity-control.webp",
+        imageSrc: "/services/humidity-control.webp",
         signsYouNeed: [
           "Interior humidity regularly above 55%",
           "Condensation on windows or interior walls",
@@ -352,7 +353,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "duct-cleaning",
         description:
           "Professional ductwork inspection, cleaning, and sealing to improve airflow and reduce energy loss.",
-        imageSrc: "/duct-cleaning-and-sealing.webp",
+        imageSrc: "/services/duct-cleaning-and-sealing.webp",
         signsYouNeed: [
           "Ductwork hasn't been inspected in more than 5 years",
           "Visible dust or debris at vent openings",
@@ -392,7 +393,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         description:
           "Repair and maintenance for light commercial HVAC systems in offices, retail spaces, and small facilities.",
         isFeatured: true,
-        imageSrc: "/commercial-hvac-repair.webp",
+        imageSrc: "/services/commercial-hvac-repair.webp",
         signsYouNeed: [
           "Commercial system is not cooling or heating properly",
           "Unusual noises from the rooftop unit or air handler",
@@ -424,7 +425,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "commercial-hvac-installation",
         description:
           "New system installation and replacement for commercial properties with proper load and zoning requirements.",
-        imageSrc: "/commercial-hvac-installation.webp",
+        imageSrc: "/services/commercial-hvac-installation.webp",
         imageAlt: "Commercial HVAC Installation",
         signsYouNeed: [
           "Existing commercial HVAC is aging and repairs are no longer cost-effective",
@@ -466,7 +467,7 @@ export const SERVICE_CATEGORIES: Record<string, ServiceCategory> = {
         slug: "commercial-maintenance",
         description:
           "Scheduled maintenance plans for commercial properties to minimize downtime and extend equipment life.",
-        imageSrc: "/commercial-preventative-maintenance.webp",
+        imageSrc: "/services/commercial-preventative-maintenance.webp",
         imageAlt: "Commercial Preventative Maintenance",
         signsYouNeed: [
           "No current preventative maintenance plan in place",

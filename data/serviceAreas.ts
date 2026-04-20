@@ -30,6 +30,8 @@ export type ServiceArea = {
   metaDescription?: string;
   /** Hero image displayed near the top of the editorial layout. */
   heroImage?: { src: string; alt: string };
+  /** One-sentence blurb displayed on the hub card. */
+  blurb?: string;
 };
 
 export const SERVICE_AREAS: Record<string, ServiceArea> = {
@@ -80,6 +82,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "AC or Heating Issue in San Antonio?",
     ctaText: "Call now for same-day availability or book online and we'll confirm your slot within the hour.",
+    blurb: "Same-day HVAC service across the Alamo City, rain or shine.",
     heroImage: {
       src: "/city/san-antonio-iconic.jpeg",
       alt: "Iconic view of San Antonio, Texas",
@@ -133,6 +136,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "Schedule HVAC Service in Boerne",
     ctaText: "We run regular routes out to Boerne — call or book online and we'll get you on the schedule.",
+    blurb: "Trusted Hill Country heating and cooling for homes and ranches.",
     heroImage: {
       src: "/city/boerne-iconic.jpeg",
       alt: "Water tower in Boerne, Texas",
@@ -186,6 +190,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "HVAC Issues in Helotes? Let's Fix It.",
     ctaText: "Call or book online — we'll diagnose the problem and give you straight answers.",
+    blurb: "Fast AC and heating repair on San Antonio's west side.",
     heroImage: {
       src: "/city/helotes-iconic.webp",
       alt: "Iconic welcome sign to Old Town Helotes, Texas",
@@ -239,6 +244,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "Stone Oak HVAC — Done Right the First Time",
     ctaText: "Book a diagnostic or schedule a system assessment — we'll give you the full picture.",
+    blurb: "Modern multi-zone systems and premium HVAC service in north SA.",
     heroImage: {
       src: "/city/stone-oak-iconic.jpeg",
       alt: "Iconic view of Stone Oak, Texas",
@@ -292,6 +298,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "Need HVAC Service in Leon Springs?",
     ctaText: "We cover this area regularly — call or book online to get on our schedule.",
+    blurb: "Reliable HVAC for homes along the I-10 Hill Country corridor.",
   },
 
   "leon-valley": {
@@ -341,6 +348,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "Need Honest HVAC Help in Leon Valley?",
     ctaText: "Call or book online — no pressure, no upsells, just straight answers and good work.",
+    blurb: "Straight-shooting HVAC repair for a no-nonsense neighborhood.",
     heroImage: {
       src: "/city/leon-valley-iconic.webp",
       alt: "Iconic view of Leon Valley, Texas",
@@ -394,6 +402,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "Live Oak HVAC — We'll Be There When We Say We Will",
     ctaText: "Book your repair or tune-up online, or give us a call to talk through what you're experiencing.",
+    blurb: "Dependable heating and cooling near Randolph and northeast SA.",
     heroImage: {
       src: "/city/live-oak-iconic.jpeg",
       alt: "Iconic view of Live Oak, Texas",
@@ -447,6 +456,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "Schedule HVAC Service in Bulverde, TX",
     ctaText: "Call or book online — we run regular routes through Bulverde and can get you on the schedule.",
+    blurb: "Rural and residential HVAC service deep in the Hill Country.",
   },
 
   "spring-branch": {
@@ -491,8 +501,9 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "Schedule HVAC Service in Spring Branch",
     ctaText: "Call or book online — we're out in this area regularly and can get you on the schedule.",
+    blurb: "Hill Country comfort for custom homes and rural properties.",
     heroImage: {
-      src: "/city/spring-branch-iconic.webp",
+      src: "/city/spring-branch-iconic.avif",
       alt: "Iconic view of Spring Branch, Texas",
     },
   },
@@ -539,6 +550,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "HVAC Service in Shavano Park",
     ctaText: "Call or book online for prompt, professional service.",
+    blurb: "Precision HVAC service for premium homes in Shavano Park.",
   },
 
   "hollywood-park": {
@@ -583,6 +595,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "HVAC Service in Hollywood Park",
     ctaText: "Call or book online — we serve this area regularly.",
+    blurb: "Reliable HVAC for an established north San Antonio community.",
   },
 
   "universal-city": {
@@ -627,6 +640,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "HVAC Service in Universal City",
     ctaText: "Call or book online — we serve the Randolph corridor regularly.",
+    blurb: "Tight arrival windows and same-day repairs near Randolph AFB.",
   },
 
   converse: {
@@ -671,6 +685,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "HVAC Service in Converse",
     ctaText: "Call or book online — straight answers and fair prices.",
+    blurb: "Honest pricing and fast turnaround for Converse homeowners.",
   },
 
   schertz: {
@@ -715,6 +730,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "HVAC Service in Schertz",
     ctaText: "Call or book online — serving Schertz and the Guadalupe corridor.",
+    blurb: "Full HVAC coverage across one of San Antonio's fastest-growing cities.",
   },
 
   "new-braunfels": {
@@ -759,6 +775,7 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "HVAC Service in New Braunfels",
     ctaText: "Call or book online — serving New Braunfels and the Comal corridor.",
+    blurb: "Expert heating and cooling from the Comal River to I-35.",
   },
 
   seguin: {
@@ -803,5 +820,6 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
     ],
     ctaHeading: "HVAC Service in Seguin",
     ctaText: "Call or book online — serving Seguin and Guadalupe County.",
+    blurb: "Dependable HVAC service for Seguin and Guadalupe County.",
   },
 };
