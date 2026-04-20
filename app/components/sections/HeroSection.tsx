@@ -12,7 +12,7 @@ export function HeroSection({ company }: HeroSectionProps) {
       style={{ backgroundColor: company.primaryColor }}
     >
       <Image
-        src="/san-antonio-city-drawing.png"
+        src="/hvac-tech-working-in-san-antonio-hero-3.png"
         alt="San Antonio skyline"
         fill
         className="object-cover"
@@ -21,7 +21,7 @@ export function HeroSection({ company }: HeroSectionProps) {
       />
       <div className="absolute inset-0" style={{ backgroundColor: company.primaryColor, opacity: 0.83 }} />
 
-      <div className="mb-5 h-32 w-48 relative z-10">
+      <div className="mb-5 h-48 w-64 relative z-10">
         <Image src={company.logo} alt={`${company.name} logo`} fill className="object-contain" />
       </div>
 

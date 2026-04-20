@@ -68,7 +68,6 @@ export default async function Home() {
 
       <FaqSection company={company} />
 
-      <CtaBanner company={company} />
       <CtaSection company={company} />
 
     </main>
