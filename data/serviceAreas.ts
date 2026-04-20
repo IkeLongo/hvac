@@ -17,8 +17,8 @@ export type ServiceArea = {
   subheadline: string;
   intro: string;
   areaContext: string;
-  commonProblems: string[];
-  serviceHighlights: string[];
+  commonProblems: string;
+  serviceHighlights: string;
   whyChooseUs: string[];
   nearbyAreas: string[];
   faqs: ServiceAreaFaq[];
@@ -44,18 +44,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "When temperatures push past 100°F, a broken AC isn't an inconvenience — it's a health concern. We're based here in San Antonio and we keep our schedule open for same-day calls because we know how fast things can go sideways in a Texas summer.",
     areaContext:
       "San Antonio is a big city with a huge range of housing stock — 1950s bungalows on the South Side, 1980s brick homes in the northwest, new construction off 1604. We've worked in all of them. That variety means we don't assume anything when we show up. We diagnose what's actually wrong and explain it before we touch a thing.",
-    commonProblems: [
-      "Systems that ran fine in spring but can't keep up once July hits",
-      "Two-story homes where the upstairs is always 5–8 degrees warmer",
-      "AC running constantly but never reaching the set temperature",
-      "Older R-22 systems that are expensive to recharge and hard to source parts for",
-    ],
-    serviceHighlights: [
-      "Same-day AC repair for most San Antonio calls",
-      "Full system replacements with same-week installation",
-      "Preventative maintenance that actually extends equipment life",
-      "Indoor air quality assessments for homes with allergy or asthma concerns",
-    ],
+    commonProblems:
+      "San Antonio summers push systems hard — and the ones that handled spring fine are often the same ones that quit in July once temperatures crest 100°F. Two-story homes are a recurring challenge; the upstairs can run 5–8 degrees warmer than the thermostat setting even when the system is working as designed. We also frequently see units that run constantly without ever reaching the set temperature, which almost always points to a refrigerant or airflow issue rather than a thermostat problem. Older R-22 systems are becoming increasingly difficult and expensive to service as the refrigerant grows harder to source — for those, we have honest conversations about whether continued repair still makes financial sense.",
+    serviceHighlights:
+      "For most repair calls across San Antonio, we have same-day availability — we deliberately keep open slots for urgent service rather than booking the schedule solid. Full system replacements typically move same-week from signed quote to completed installation. Our maintenance visits are built to actually extend equipment life: inspecting refrigerant levels, electrical connections, and coil condition rather than just swapping a filter and leaving. For homes where allergies or asthma are a concern, we also offer indoor air quality assessments and can recommend filtration upgrades that make a measurable difference.",
     whyChooseUs: [
       "We give you the diagnosis in plain language, not industry jargon",
       "Upfront written estimate before any work starts — no verbal surprises",
@@ -98,18 +90,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Boerne gets hot, but it also gets genuinely cold in winter — something newer residents sometimes underestimate. We service both sides of the equation: AC tune-ups before the heat arrives and heating checks before the first cold front rolls through in November.",
     areaContext:
       "Boerne's housing stock is diverse. There are limestone homes built in the 1970s along the older streets near Main Plaza, newer subdivisions off Herff Road and IH-10, and large properties on acreage outside of town. Each comes with different HVAC challenges — older homes with original ductwork, new builds with variable-speed equipment, and rural properties where the nearest tech might be 45 minutes away otherwise.",
-    commonProblems: [
-      "AC units that sit idle all winter and then struggle when first turned on in spring",
-      "Heating systems that work fine but cycle too frequently on cold nights",
-      "Cedar and oak pollen clogging filters and reducing airflow faster than expected",
-      "Older homes where ductwork was never properly sized for the system installed",
-    ],
-    serviceHighlights: [
-      "AC and heating repair for all major brands",
-      "Pre-season tune-ups before summer and winter",
-      "Ductless mini-split installation for additions, sunrooms, and detached structures",
-      "Honest repair-vs-replace assessments with no pressure either way",
-    ],
+    commonProblems:
+      "One of the most consistent patterns we see in Boerne: systems that sat idle all winter and then struggled when first turned on in spring — usually because minor issues went unaddressed during the off season. Heating systems here also tend to short-cycle on cold nights, turning on and off every few minutes instead of running full cycles, which typically points to a calibration or airflow problem. Cedar and oak pollen season is harder on HVAC systems in this area than most homeowners realize; filters that last a month in summer can clog in two weeks during heavy pollen. And in many older Boerne homes, ductwork was sized for a smaller or different system and was never updated when the equipment was replaced, leading to pressure imbalances and uneven temperatures throughout the house.",
+    serviceHighlights:
+      "We service all major HVAC brands for both cooling and heating repairs in Boerne, with same-day or scheduled availability depending on urgency. Pre-season tune-ups are something we emphasize strongly here — getting the AC checked in late March and the heating system checked in October is consistently less expensive than emergency service after the season has already arrived. For additions, sunrooms, and detached structures, ductless mini-splits are typically the right fit, and we install and service them regularly throughout the Hill Country. When a system is approaching the end of its service life, we give you honest repair-versus-replace guidance with real numbers — no default toward either option.",
     whyChooseUs: [
       "We schedule Boerne calls in advance so you're not waiting on a vague arrival window",
       "Familiar with the specific systems common in Hill Country new builds",
@@ -152,18 +136,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Helotes has a split personality when it comes to housing — there are established ranch-style homes that have been here for decades and newer subdivisions that have gone up in the last several years. The HVAC needs are completely different between them, and we're comfortable with both.",
     areaContext:
       "The older homes in Helotes often have ductwork that was sized for smaller systems, and over the decades that mismatch causes airflow problems and uneven cooling. The newer homes tend to have more efficient equipment but can run into setup and calibration issues, especially with smart thermostats and zoned systems. We diagnose before we recommend — we don't assume.",
-    commonProblems: [
-      "Original ductwork that's restrictive or leaking, causing weak airflow in back bedrooms",
-      "Systems short-cycling — turning on and off every few minutes instead of running full cycles",
-      "Heavy cedar pollen season accelerating filter clogging and reducing system efficiency",
-      "Heat pump systems that aren't properly calibrated for the area's temperature swings",
-    ],
-    serviceHighlights: [
-      "Ductwork inspection, sealing, and rebalancing",
-      "AC and heating repair for all equipment types",
-      "Smart thermostat installation and troubleshooting",
-      "Whole-home air quality improvements including filtration upgrades",
-    ],
+    commonProblems:
+      "Helotes homes present two distinct categories of HVAC problems that reflect the divide in its housing stock. In older homes, the most common issue is restrictive or leaking ductwork — ducts sized for an older era of equipment — causing weak airflow in back bedrooms and rooms at the far end of the duct run. Short-cycling is the other recurring complaint: systems turning on and off every few minutes instead of running full cycles, which usually indicates a refrigerant, airflow, or oversizing issue. Cedar pollen season amplifies filter clogging faster than most homeowners anticipate, compounding problems in systems that are already strained. In newer construction, heat pump systems sometimes aren't properly calibrated for the area's temperature range, which shows up as underperformance on the coldest or hottest days.",
+    serviceHighlights:
+      "Ductwork inspection, sealing, and rebalancing is among our most common services in Helotes — fixing airflow at the duct level often resolves comfort complaints that initially appear to be equipment problems. We handle AC and heating repair for all equipment types, from older single-stage units to newer variable-speed systems and heat pumps. Smart thermostat installation and troubleshooting is something we do regularly, particularly for homeowners integrating HVAC into broader smart home setups. For homes where air quality is a concern — allergens, dust, or stale air — we can assess the full system and recommend filtration upgrades that address the source.",
     whyChooseUs: [
       "We explain what we find before we recommend anything",
       "Evening and weekend availability for homeowners with tight weekday schedules",
@@ -206,18 +182,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Stone Oak homes are newer, nicer, and often more complex from an HVAC standpoint. Variable-speed equipment, multi-zone systems, and smart home integrations are common here — and when something goes wrong, it takes a tech who actually knows those systems, not someone who's going to guess.",
     areaContext:
       "Most Stone Oak homes were built in the 2000s and 2010s during rapid growth along US-281. They're larger, often two stories, and frequently have zoned HVAC setups to manage the temperature difference between floors. That complexity means standard repairs aren't always straightforward. We've worked on these systems enough to diagnose them efficiently — including the quirks that come with two-stage and variable-speed equipment.",
-    commonProblems: [
-      "Zoned systems where one zone isn't heating or cooling properly",
-      "Variable-speed equipment throwing fault codes that require manufacturer-specific diagnostics",
-      "Two-story homes where the upstairs zone is overworking in summer",
-      "Systems approaching 12–15 years old that are reaching the point of replacement vs. repair decisions",
-    ],
-    serviceHighlights: [
-      "Multi-zone and variable-speed system diagnostics and repair",
-      "High-efficiency system replacement with proper sizing for larger homes",
-      "Smart thermostat setup and app integration",
-      "Seasonal tune-ups to keep warranty-eligible equipment in spec",
-    ],
+    commonProblems:
+      "Stone Oak homes tend to have more complex HVAC setups than average, and the problems they present reflect that complexity. Zoned systems are common here, and when one zone fails while others continue working, the issue usually traces back to a damper, zone controller, or zone board failure rather than the main equipment. Variable-speed systems throw fault codes that require manufacturer-specific diagnostic tools — a tech who isn't familiar with the platform will spend your time and money guessing. Two-story homes frequently develop an overworked upper zone in summer, often because the system was sized to average the load across both floors without accounting for the additional heat at the upper level. And with much of Stone Oak's housing stock approaching the 12–15 year mark, repair-versus-replace decisions are becoming an increasingly common part of the conversation.",
+    serviceHighlights:
+      "We diagnose and repair multi-zone and variable-speed systems regularly, including the fault codes and calibration issues specific to each manufacturer's platform. For full system replacements, we start with a proper load calculation to size equipment correctly for the actual square footage and layout — not just whatever's cheapest or fastest to install. Smart thermostat and app integration is part of our standard installation process, not an afterthought. For equipment still under manufacturer warranty, our seasonal tune-ups keep systems in specification so the coverage stays valid through the full warranty period.",
     whyChooseUs: [
       "Experienced with the equipment brands common in Stone Oak builds — no learning curve on your dime",
       "We pull permits and size equipment correctly — not just whatever's cheapest to install",
@@ -260,18 +228,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Leon Springs sits at the edge of the Hill Country, and the homes out here range from established neighborhoods along the I-10 corridor to rural properties on acreage. We cover both. Our technicians run this area regularly and know what to expect from the equipment and the housing stock.",
     areaContext:
       "The Leon Springs area has seen significant growth over the past decade, with newer subdivisions going up alongside homes that have been here for thirty or forty years. That mix means we encounter everything from aging systems with original ductwork to high-efficiency equipment installed just a few years ago. The terrain also plays a role — properties with larger footprints and detached structures have different HVAC demands than a typical neighborhood home.",
-    commonProblems: [
-      "Aging systems on older properties that have been repaired multiple times and are losing reliability",
-      "Detached garages and workshops with no HVAC coverage getting unbearably hot in summer",
-      "Refrigerant loss from fittings that have loosened over years of temperature cycling",
-      "Newer high-efficiency systems that weren't commissioned correctly and underperform",
-    ],
-    serviceHighlights: [
-      "AC and heating repair with same-day availability for most calls",
-      "Ductless mini-split installation for detached structures and additions",
-      "Refrigerant leak detection, repair, and proper recharge",
-      "Honest repair-vs-replace assessments for systems approaching end of life",
-    ],
+    commonProblems:
+      "Older properties along the Leon Springs corridor often have systems that have been through multiple repairs over many years — and at some point, the reliability issue outweighs any individual failing component. Detached garages, workshops, and outbuildings are common on larger properties out here, and most have no climate control at all, becoming effectively unusable from June through September. Refrigerant loss from fittings that have loosened over years of temperature cycling is a recurring finding, particularly on systems installed before tighter connection standards became standard practice. Newer high-efficiency systems installed by builders who prioritized upfront cost over proper commissioning occasionally underperform from the start — the equipment is fine, but the setup never matched what the system needed.",
+    serviceHighlights:
+      "For most repair calls in the Leon Springs corridor, we have same-day availability — we run this area regularly and don't treat it as an outlying route. Ductless mini-split installation for detached structures is something we do frequently out here; it's the cleanest solution for garages and outbuildings where new ductwork isn't practical. Refrigerant leak detection and proper repair means locating and fixing the source rather than just recharging — a consistent part of our work on this side of the city. For systems approaching end of life, we give you straight repair-versus-replace guidance with clear cost numbers so the decision is yours to make with full information.",
     whyChooseUs: [
       "We run Leon Springs on a regular schedule — it's not a long haul for us",
       "Comfortable with rural property setups including detached structures and larger homes",
@@ -310,18 +270,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Leon Valley homeowners don't need a sales pitch — they need a tech who shows up, figures out what's wrong, and fixes it without running up the bill. That's exactly how we work. We've been in plenty of the homes out here and we know what to look for.",
     areaContext:
       "Leon Valley's housing stock is largely from the 1960s through the 1980s — solid homes, but with HVAC systems that have been updated piecemeal over the decades. It's common to find a newer air handler paired with an older condenser, or a system that was replaced without addressing the ductwork. Those mismatches cause efficiency losses and comfort problems that are easy to overlook until something breaks.",
-    commonProblems: [
-      "Mismatched systems where the indoor and outdoor units aren't sized for each other",
-      "Ductwork that was never updated when the system was replaced",
-      "Refrigerant loss from fittings that have loosened over years of thermal cycling",
-      "Capacitors and contactors failing on condensers that are 10+ years old",
-    ],
-    serviceHighlights: [
-      "AC and heating repair with same-day availability for most calls",
-      "Refrigerant leak detection and recharge",
-      "Ductwork evaluation and targeted repairs",
-      "Honest system assessments when it's time to decide between repair and replacement",
-    ],
+    commonProblems:
+      "Leon Valley homes frequently have HVAC systems that were updated piecemeal over the decades — a newer air handler paired with an older condenser, or a replacement system installed without touching the ductwork. Those mismatches drive efficiency losses and comfort issues that are easy to overlook until something fails. Refrigerant loss from fittings that have loosened through years of thermal cycling is common in this era of housing stock, as are capacitor and contactor failures on condensers that have been running for 10–15 years — inexpensive repairs when caught early, costly failures when they happen on a hot July afternoon. Ductwork that was never properly sized or sealed after a system replacement is a consistent underlying issue, contributing to uneven temperatures and utility bills that don't match what the equipment should be producing.",
+    serviceHighlights:
+      "AC and heating repair with same-day availability covers most calls in Leon Valley — we know the housing stock and keep parts for the equipment we see most regularly. Refrigerant leak detection and proper repair means we find the source and fix it, not just recharge and return in twelve months. Ductwork evaluation and targeted repairs address the efficiency losses that frequently go unnoticed in homes where the system was swapped but the ducts were left unchanged. And when a system has reached the point where another repair doesn't make financial sense, we give you honest replacement guidance with financing options available.",
     whyChooseUs: [
       "We tell you what we find, not what generates the biggest invoice",
       "Familiar with the older system configurations common in Leon Valley homes",
@@ -364,18 +316,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Live Oak sits just northeast of San Antonio with a mix of long-established neighborhoods and areas that have grown up around Randolph AFB. It's a community that values reliability — people here have schedules to keep and don't have time for a HVAC company that doesn't show up when they say they will. We do.",
     areaContext:
       "A significant portion of Live Oak's housing was built in the 1970s and 1980s, and those homes have seen multiple HVAC system changes over the years. Humidity is a consistent issue in this part of the metro — the area sits lower and tends to trap moisture, which puts extra load on AC systems and contributes to air quality problems if equipment isn't maintained. We factor that in when we diagnose.",
-    commonProblems: [
-      "High indoor humidity even when the AC is running, pointing to an oversized or poorly maintained system",
-      "Older homes where the ductwork runs through unconditioned attic space, losing efficiency in summer",
-      "Systems that have been repaired multiple times and are losing reliability",
-      "Air quality issues — musty smells, visible mold at vents — tied to humidity and poor filtration",
-    ],
-    serviceHighlights: [
-      "AC repair and full system replacement",
-      "Humidity control solutions including dehumidifiers and ventilation improvements",
-      "Ductwork evaluation for homes with attic-run duct systems",
-      "Air quality testing and filtration upgrades",
-    ],
+    commonProblems:
+      "High indoor humidity is the defining HVAC challenge in Live Oak — the area sits lower in the metro and consistently traps more moisture than higher-elevation neighborhoods. AC systems that are even slightly oversized will short-cycle and never run long enough to dehumidify properly, leaving the house feeling clammy even when the thermostat reads correctly. Older homes here also frequently have ductwork routed through unconditioned attic space, which dramatically reduces system efficiency in summer when attic temperatures can exceed 150 degrees. Air quality issues — musty odors from vents, visible mold near registers — are closely connected to chronic humidity and tend to develop in systems that have gone without maintenance or have filtration gaps.",
+    serviceHighlights:
+      "AC repair and full system replacement is the core of our work in Live Oak, but humidity control is a consistent part of the conversation here. We install and service standalone dehumidifiers as well as ventilation improvements that address the root cause of moisture buildup rather than just managing the symptoms. For homes with ductwork running through attic space, we evaluate insulation and sealing to reduce the efficiency losses that compound in summer. Air quality testing and filtration upgrades are available for homeowners dealing with musty odors, allergens, or air quality concerns connected to their HVAC system.",
     whyChooseUs: [
       "We keep our arrival windows tight — you're not clearing your whole afternoon for us",
       "We address the root cause, not just the symptom",
@@ -418,18 +362,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Bulverde has grown significantly over the past decade and now has a real mix of established rural properties and newer neighborhood builds. The Hill Country setting means cooler nights than San Antonio proper, but summers are still brutal. We service all of it — from older homes with systems that haven't been touched in years to new construction with the latest equipment.",
     areaContext:
       "Bulverde sits in Comal County, just north of Bexar County, and many homes here are on larger lots or acreage. That affects HVAC in a few ways: more square footage to condition, detached structures that need coverage, and sometimes older systems that were sized for a smaller original footprint before additions were made. We also see a lot of homes where the previous service history is thin or undocumented.",
-    commonProblems: [
-      "Systems that were sized for the original home but can't keep up after additions or sunroom expansions",
-      "Detached garages, barns, and casitas with no climate control becoming unusable in summer",
-      "Ductwork that has developed leaks over years of thermal expansion and contraction",
-      "Heat pumps that don't transition to auxiliary heat properly on cold nights",
-    ],
-    serviceHighlights: [
-      "Full system diagnostics and repair for all brands and system types",
-      "Ductless mini-split installation for detached structures and additions",
-      "Ductwork inspection, sealing, and rebalancing",
-      "Load calculations and system sizing for homes that have grown since original construction",
-    ],
+    commonProblems:
+      "Bulverde properties often have systems sized for the original footprint that are now being asked to condition space added over the years — sunrooms, garage apartments, finished bonus rooms. That undersizing causes the system to run hard without ever catching up, shortening equipment life and producing inconsistent comfort. Detached structures are common on larger lots here, and most have no climate control despite being in regular use through the summer. Ductwork in homes that have seen multiple renovations frequently develops leaks through years of thermal expansion and contraction, quietly reducing efficiency and creating uneven temperatures across the house. Heat pumps — increasingly common in newer Bulverde builds — sometimes don't transition properly to auxiliary heat when temperatures drop significantly, leaving parts of the home undertreated.",
+    serviceHighlights:
+      "Full system diagnostics and repair covers all brands and system types we encounter in Bulverde — from older single-stage units to newer variable-speed equipment and heat pumps. Ductless mini-split installation for detached structures and additions is one of our most frequent projects in this area; no new ductwork is required, and we size each unit for the specific space it needs to condition. Ductwork inspection, sealing, and rebalancing addresses the efficiency losses that accumulate in homes that have grown beyond their original layout. For properties where the system was sized for a smaller footprint, we provide load calculations and written proposals for right-sized replacements.",
     whyChooseUs: [
       "We cover Bulverde and Comal County on a regular basis",
       "Experience with rural and acreage properties including multi-structure setups",
@@ -468,18 +404,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Spring Branch sits between Boerne and Canyon Lake, drawing homeowners who want acreage, privacy, and the Hill Country lifestyle. That often means older homes, custom builds, or rural properties with unique HVAC setups. We know this area and we service it regularly.",
     areaContext:
       "Homes in the Spring Branch area vary widely — from modest older houses to larger custom builds on significant acreage. Many properties have detached structures, well water, or other rural characteristics that affect how HVAC equipment is installed and maintained. We're experienced with all of it.",
-    commonProblems: [
-      "Aging systems that have gone years without professional maintenance",
-      "Detached structures with no climate control in the Texas summer heat",
-      "Systems undersized for properties that have expanded over time",
-      "Heat pump systems not calibrated for the area's temperature extremes",
-    ],
-    serviceHighlights: [
-      "Residential and rural property HVAC repair and installation",
-      "Ductless mini-split solutions for detached buildings",
-      "Preventative maintenance to catch issues before they become emergencies",
-      "Honest repair-vs-replace guidance for aging systems",
-    ],
+    commonProblems:
+      "Many homes in the Spring Branch area have had years — sometimes decades — without professional HVAC maintenance, and deferred service tends to compound: the small issue that would have been a minor repair becomes an emergency breakdown when the system gets stressed in summer. Detached structures are common on rural properties here, and most have no climate control despite being used as workshops, guest quarters, or storage that needs to stay conditioned. Systems sized for the original home often struggle with additions or renovations that increased the footprint without a corresponding HVAC upgrade. Heat pump systems, common in the region's newer construction, occasionally aren't calibrated for the temperature extremes this part of the Hill Country can see in January.",
+    serviceHighlights:
+      "Residential and rural HVAC repair and installation covers the full range of what we encounter in Spring Branch — from aging systems in long-established homes to newer equipment in custom builds on acreage. Ductless mini-split solutions for detached buildings are something we install regularly out here; they're the right answer for structures where running new ductwork doesn't make sense. Preventative maintenance is especially valuable given the service history gaps that are common in this area — a thorough tune-up often surfaces issues that would otherwise become emergency calls. For aging systems, we give you honest repair-versus-replace guidance based on actual cost numbers, not a default toward either option.",
     whyChooseUs: [
       "Regular service routes in the Spring Branch corridor",
       "Experienced with rural and multi-structure property setups",
@@ -517,18 +445,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Shavano Park homes are large, well-built, and demand HVAC systems that perform reliably year-round. We service this area with the same precision and professionalism that homeowners here expect.",
     areaContext:
       "Shavano Park is a small municipality adjacent to San Antonio with predominantly larger homes on generous lots. The homes here are typically well-maintained and equipped with higher-end HVAC systems, including multi-zone setups and smart thermostats. When something goes wrong, the stakes are higher and the repair requires a tech who knows what they're doing.",
-    commonProblems: [
-      "Multi-zone systems where one zone fails while others remain operational",
-      "Premium equipment with fault codes that require brand-specific diagnostic tools",
-      "Systems approaching the 12–15 year mark requiring replacement evaluation",
-      "Smart home integration issues causing thermostat or zoning malfunctions",
-    ],
-    serviceHighlights: [
-      "Multi-zone and high-efficiency system repair",
-      "Premium equipment replacement with full load calculations",
-      "Smart thermostat and home automation integration",
-      "Scheduled maintenance for warranty compliance",
-    ],
+    commonProblems:
+      "Multi-zone HVAC systems are common in Shavano Park, and when one zone fails while others continue to function normally, the issue usually traces back to a zone board, damper motor, or controller component rather than the primary equipment. Premium systems with advanced control boards throw fault codes that require brand-specific diagnostic tools; a tech without that familiarity will spend time and money guessing. Systems in this area are increasingly approaching the 12–15 year mark from when many homes were last fully updated, and replacement decisions here carry more at stake than a typical repair call. Smart home integration issues — thermostats communicating incorrectly with zoning hardware, or app connections that intermittently drop — are a surprisingly common reason for service calls on newer installs.",
+    serviceHighlights:
+      "Multi-zone and high-efficiency system repair is a consistent strength we bring to Shavano Park — we're familiar with the equipment brands common in this area and carry the tools to diagnose them accurately. For full system replacements, we do proper load calculations, handle permits and inspections, and present equipment options across the efficiency and feature range rather than defaulting to whatever is cheapest or fastest to install. Smart thermostat and home automation integration is part of our installation process, and we troubleshoot existing integrations when they stop working correctly. For equipment still under manufacturer warranty, our scheduled maintenance keeps systems in specification so coverage stays valid.",
     whyChooseUs: [
       "Experienced with premium HVAC brands and configurations",
       "Punctual and professional — we respect your time and your property",
@@ -562,18 +482,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Hollywood Park is a small residential community north of San Antonio with a quiet, established feel. Homes here range from mid-century builds to more recent construction, and we're familiar with the full range of HVAC equipment you'll find across those eras.",
     areaContext:
       "The community is surrounded by San Antonio and shares many of its HVAC challenges — summer heat, occasional cold snaps, and the humidity that comes with the region. Homes built in different decades have very different ductwork and equipment characteristics, and we adapt our approach accordingly.",
-    commonProblems: [
-      "Aging ductwork in older homes causing efficiency and comfort issues",
-      "Refrigerant leaks in systems that have seen significant seasonal temperature cycling",
-      "Older equipment reaching end of serviceable life",
-      "Inconsistent cooling due to undersized or mismatched system components",
-    ],
-    serviceHighlights: [
-      "AC and heating repair for all equipment types and brands",
-      "Ductwork evaluation and targeted repairs",
-      "System replacement with proper sizing and permits",
-      "Preventative maintenance to extend equipment life",
-    ],
+    commonProblems:
+      "Hollywood Park's housing spans several decades, and older homes in the community frequently have aging ductwork that was never updated when the equipment was replaced — contributing to efficiency losses and uneven cooling that residents often accept as normal. Refrigerant leaks from systems that have been through years of seasonal temperature cycling are common in this era of housing, as are component failures — capacitors, contactors, blower motors — that are inexpensive to catch early but cause complete system failures when ignored through peak season. Older equipment reaching the end of its serviceable life also accounts for a regular share of calls here, particularly for systems that have accumulated multiple repairs over the past few years.",
+    serviceHighlights:
+      "AC and heating repair for all equipment types and brands is the core of what we offer in Hollywood Park, with same-day availability for most calls. Ductwork evaluation and targeted repairs address the efficiency issues that are common in homes where the ducts weren't updated when the system was replaced. For systems that have reached the point where replacement is the right call, we handle the full scope — load calculations, equipment selection, permitting, and installation. Preventative maintenance visits are structured to actually surface developing issues rather than simply document the current condition.",
     whyChooseUs: [
       "Familiar with the equipment common in this area's housing stock",
       "Upfront written quotes before work begins",
@@ -607,18 +519,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Universal City sits in the heart of the northeast San Antonio metro near Randolph AFB. It's a community that keeps busy, and homeowners here don't have patience for a HVAC company with a four-hour arrival window. We give tight windows and keep them.",
     areaContext:
       "Much of Universal City's housing was built in the 1970s through 1990s. These homes have seen multiple system replacements and are subject to the same humidity challenges that affect the broader northeast San Antonio area. We diagnose humidity and air quality issues as part of every service call.",
-    commonProblems: [
-      "High indoor humidity causing comfort issues even with the AC running",
-      "Older homes with ductwork in unconditioned attic space losing efficiency in summer",
-      "Capacitors, contactors, and blower motors failing on aging equipment",
-      "Air quality issues tied to humidity, dust, and poor filtration",
-    ],
-    serviceHighlights: [
-      "AC and heating repair with same-day availability",
-      "Humidity control and dehumidifier installation",
-      "Ductwork evaluation for attic-run systems",
-      "Air quality assessments and filtration upgrades",
-    ],
+    commonProblems:
+      "High indoor humidity is a consistent issue in Universal City — the northeast metro tends to trap moisture, and AC systems that are even slightly oversized short-cycle and don't run long enough to dehumidify the air properly. The result is a house that feels damp or clammy despite reaching the set temperature. Older homes here frequently have ductwork routed through unconditioned attic space, creating significant efficiency losses in summer when attic temperatures are extreme. Capacitors, contactors, and blower motors are the most commonly failing components on aging equipment in this area — inexpensive repairs when caught during a maintenance visit, but capable of causing a full system shutdown when they fail in August. Air quality complaints — dust accumulation, musty odors — are closely tied to the humidity and filter maintenance patterns here.",
+    serviceHighlights:
+      "AC and heating repair with same-day availability covers most calls in Universal City — we know the area, keep common parts stocked, and give tight arrival windows rather than a four-hour range. Humidity control is a meaningful part of our work here: we install standalone dehumidifiers and implement ventilation improvements that address the root cause of excess indoor moisture rather than just masking it. Ductwork evaluation for attic-run systems is something we include in any efficiency complaint diagnosis, since the losses from poorly insulated attic ductwork are often dramatic and fixable. Air quality assessments and filtration upgrades are available for homeowners dealing with persistent dust, allergens, or musty odors from their HVAC system.",
     whyChooseUs: [
       "Tight arrival windows — we don't ask you to clear your whole day",
       "We address root causes, not just symptoms",
@@ -652,18 +556,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Converse homeowners want straightforward answers and fair prices — not upsells or scare tactics. That's exactly how we operate. We've worked in plenty of homes out here and we give it to you straight every time.",
     areaContext:
       "Converse is predominantly residential with a mix of older and newer construction. Homes in the area typically have central split systems, and the most common issues involve aging capacitors, refrigerant leaks, and ductwork that was never properly sized or sealed.",
-    commonProblems: [
-      "Capacitors and contactors failing on condensers in the 10–15 year age range",
-      "Refrigerant leaks from fittings and connections that have loosened over time",
-      "Ductwork leaks reducing efficiency and causing uneven temperatures",
-      "Systems that have been patched too many times and are nearing end of life",
-    ],
-    serviceHighlights: [
-      "AC and heating repair with same-day availability for most calls",
-      "Refrigerant leak detection and proper repair",
-      "Ductwork evaluation and sealing",
-      "Honest repair-vs-replace guidance with clear pricing",
-    ],
+    commonProblems:
+      "Converse homes are predominantly residential with central split systems, and the most common issues center on components that are wearing out — capacitors and contactors on condensers in the 10–15 year range, refrigerant leaks from fittings that have loosened after years of thermal cycling, and ductwork that was never properly sized or sealed. These aren't dramatic sudden failures; they're the kind of gradual degradation that chips away at performance until one hot afternoon the system simply stops. Systems that have been patched multiple times over the years eventually reach a point where another repair doesn't make economic sense, and we give you a direct answer when that line has been crossed rather than recommending yet another fix.",
+    serviceHighlights:
+      "AC and heating repair with same-day availability covers most calls in Converse — we know the housing stock and keep parts for the equipment we encounter most frequently. Refrigerant leak detection and proper repair means we locate and fix the source, not just recharge and come back next summer. Ductwork evaluation and sealing targets the efficiency losses that develop in homes where the ducts were never properly installed or have degraded over time. For systems at the end of their service life, we give honest repair-versus-replace guidance with clear cost comparisons and financing available for replacements.",
     whyChooseUs: [
       "We tell you what we find, not what generates the biggest invoice",
       "Upfront pricing before work begins — the price you approve is what you pay",
@@ -697,18 +593,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Schertz has grown rapidly over the past decade, and with that growth has come a wide range of HVAC equipment — from brand-new high-efficiency systems in new construction to aging units in older established neighborhoods. We service all of it.",
     areaContext:
       "Schertz straddles Guadalupe and Comal Counties and is part of the broader northeast San Antonio metro. New construction dominates much of the city, but older neighborhoods along the I-35 corridor have equipment that's seen multiple seasons and multiple repairs. We're familiar with both ends of the spectrum.",
-    commonProblems: [
-      "New construction equipment not commissioned correctly and underperforming",
-      "Older systems in established neighborhoods approaching end of life",
-      "Multi-story homes with zoning challenges and uneven temperatures",
-      "Demand for same-day service from a rapidly growing population",
-    ],
-    serviceHighlights: [
-      "AC and heating repair for all system types and ages",
-      "New construction warranty service and commissioning checks",
-      "Multi-zone system diagnostics and repair",
-      "Preventative maintenance plans for long-term equipment health",
-    ],
+    commonProblems:
+      "Schertz's rapid growth has produced a genuinely unusual HVAC landscape. New construction equipment is sometimes not commissioned correctly from the start — refrigerant charge, airflow settings, or thermostat calibration that was never set up properly and has underperformed since installation. On the other end, established neighborhoods along the I-35 corridor have systems that have been through multiple repairs and are approaching the end of reliable service life. Multi-story homes in both new and established construction present zoning and temperature balance challenges, with upper floors consistently warmer in summer and requiring more from the system. The rapid population growth has also created demand for same-day service that stretches local providers during peak season.",
+    serviceHighlights:
+      "AC and heating repair for all system types and ages covers the full range of what we encounter in Schertz, from legacy equipment in older neighborhoods to high-efficiency systems in new construction. Commissioning checks for new construction give homeowners a way to verify their system was set up correctly — refrigerant charge, airflow, and thermostat calibration included. Multi-zone system diagnostics and repair addresses the temperature balance issues common in two-story construction throughout the area. Preventative maintenance plans give homeowners a proactive structure for extending equipment life and avoiding the reactive, emergency-driven repairs that tend to happen at the worst possible times.",
     whyChooseUs: [
       "Familiar with both new construction and legacy systems in this corridor",
       "Upfront written quotes before work begins",
@@ -742,18 +630,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "New Braunfels is one of the fastest-growing cities in Texas, and its HVAC needs reflect that diversity — from historic homes near Gruene to massive new subdivisions along I-35. We cover the full range.",
     areaContext:
       "New Braunfels has a unique mix of older homes near the Comal and Guadalupe rivers, established mid-century neighborhoods, and sprawling new construction corridors. The Hill Country climate means warm summers and genuinely cold winter nights, requiring systems that handle both extremes well.",
-    commonProblems: [
-      "Older homes near the river with aging ductwork and equipment",
-      "New construction with high equipment density and early-stage performance issues",
-      "Heat pumps not properly calibrated for winter cold snaps",
-      "High demand during summer peak season creating long wait times with other providers",
-    ],
-    serviceHighlights: [
-      "AC and heating repair for residential and light commercial",
-      "Heat pump service and calibration",
-      "New construction commissioning and warranty work",
-      "Preventative maintenance before summer and winter seasons",
-    ],
+    commonProblems:
+      "New Braunfels has a genuine diversity of HVAC challenges driven by its housing stock. Older homes near the Comal and Guadalupe rivers often have aging ductwork and equipment that has accumulated multiple repairs and is approaching end of serviceable life. Newer construction along the I-35 growth corridor presents the opposite challenge: high-efficiency equipment that sometimes wasn't commissioned correctly and has underperformed since the day it was installed. Heat pumps, which are common throughout the region, occasionally aren't properly calibrated for the cold snaps Central Texas sees in January, leaving homes undertreated when it matters most. And during peak summer, demand for same-day service routinely exceeds what providers in the area can absorb — making an established relationship with a reliable team worth having before you need it urgently.",
+    serviceHighlights:
+      "AC and heating repair for residential and light commercial properties covers the core of what we do in New Braunfels. Heat pump service and calibration is a specific area of focus given how common heat pump installations have become in newer construction throughout the region. New construction commissioning checks give homeowners a way to verify that their system was set up correctly after installation — refrigerant charge, airflow, and thermostat calibration included. Pre-season preventative maintenance before summer and winter keeps equipment performing at its designed capacity during the periods when the demands on it are highest.",
     whyChooseUs: [
       "Experience across both historic homes and new construction in the area",
       "Upfront pricing — the price you're given is the price you pay",
@@ -787,18 +667,10 @@ export const SERVICE_AREAS: Record<string, ServiceArea> = {
       "Seguin is a growing community in Guadalupe County, and homeowners here expect dependable service at fair prices. We service this area regularly and know what to expect from the housing stock and equipment you'll find here.",
     areaContext:
       "Seguin has a mix of older established homes and newer growth corridors. The climate mirrors the rest of Central Texas — hot summers, unpredictable winters, and the seasonal pollen that affects filters and air quality throughout the year.",
-    commonProblems: [
-      "Older homes with aging equipment and ductwork from multiple prior repairs",
-      "Refrigerant issues from systems that have seen years of thermal cycling",
-      "Filter clogging during heavy cedar and oak pollen seasons",
-      "Systems undersized for the Texas summer heat load",
-    ],
-    serviceHighlights: [
-      "AC and heating repair with same-day availability for most calls",
-      "Refrigerant leak detection and proper repair",
-      "Preventative maintenance before peak seasons",
-      "Honest repair-vs-replace guidance",
-    ],
+    commonProblems:
+      "Seguin's HVAC challenges reflect the familiar Central Texas pattern: equipment aging in established neighborhoods after years of hard seasonal use, compounded by maintenance that was deferred longer than it should have been. Refrigerant issues are common in systems that have gone through many seasonal cycles without a professional service visit — slow leaks that weren't caught early become more significant problems over time. Cedar and oak pollen season accelerates filter clogging throughout the region, and in Seguin that means systems already working hard in late spring can be choked by airflow restriction before summer even fully arrives. Systems undersized for the Texas heat load are a consistent finding on older properties, where equipment was specified conservatively and the demands of the climate have only increased over time.",
+    serviceHighlights:
+      "AC and heating repair with same-day availability covers most calls in Seguin — we run regular routes in this area and don't treat it as an outlying stop on a long day. Refrigerant leak detection and proper repair is a consistent part of our work here: we find the source and fix it rather than recharging and waiting for the problem to return. Preventative maintenance before peak seasons is especially valuable for homeowners in Seguin who want to avoid the pattern of deferred service leading to emergency breakdowns in the hottest part of summer. For systems that have reached the decision point, we give straight repair-versus-replace guidance backed by clear cost comparisons.",
     whyChooseUs: [
       "Regular service routes in Seguin and Guadalupe County",
       "Upfront written pricing before work begins",

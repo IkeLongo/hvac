@@ -130,47 +130,27 @@ export default async function ServiceAreaPage({
               {/* Area context */}
               <div className="mb-10">
                 <h2 className="text-xl font-black mb-3">About {areaContent.name}</h2>
-                <p className="text-gray-500 leading-relaxed">{areaContent.areaContext}</p>
+                <p className="text-gray-600 leading-relaxed">{areaContent.areaContext}</p>
               </div>
 
-              {/* Common problems + service highlights — two-col on md+ */}
-              <div className="grid md:grid-cols-2 gap-8 mb-10">
+              {/* Common problems + service highlights — single-column editorial */}
+              <div className="flex flex-col gap-8 mb-10">
                 <div>
-                  <h2 className="text-xl font-black mb-4">
+                  <h2 className="text-xl font-black mb-3">
                     Common HVAC Issues in {areaContent.name}
                   </h2>
-                  <ul className="flex flex-col gap-3">
-                    {areaContent.commonProblems.map((problem, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span
-                          className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black"
-                          style={{ backgroundColor: company.neutral2, color: company.primaryColor }}
-                        >
-                          !
-                        </span>
-                        <span className="text-sm text-gray-700 leading-relaxed">{problem}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-gray-600 leading-relaxed">
+                    {areaContent.commonProblems}
+                  </p>
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-black mb-4">
+                  <h2 className="text-xl font-black mb-3">
                     Services Available in {areaContent.name}
                   </h2>
-                  <ul className="flex flex-col gap-3">
-                    {areaContent.serviceHighlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span
-                          className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-black"
-                          style={{ backgroundColor: company.accentColor, color: company.primaryColor }}
-                        >
-                          ✓
-                        </span>
-                        <span className="text-sm text-gray-700 leading-relaxed">{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-gray-600 leading-relaxed">
+                    {areaContent.serviceHighlights}
+                  </p>
                 </div>
               </div>
 
@@ -188,7 +168,7 @@ export default async function ServiceAreaPage({
                       >
                         ✓
                       </span>
-                      <span className="text-sm text-gray-700 leading-relaxed">{reason}</span>
+                      <span className="text-gray-700 leading-relaxed">{reason}</span>
                     </li>
                   ))}
                 </ul>

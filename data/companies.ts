@@ -34,6 +34,7 @@ export type CompanyProcessStep = {
   step: number;
   title: string;
   description: string;
+  img?: { src: string; alt: string };
 };
 
 export type CompanyWhyChooseUs = {

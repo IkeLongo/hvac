@@ -257,6 +257,7 @@ export function FeaturedAvatars({
                     onMouseMove={handleMouseMove}
                     height={56}
                     width={56}
+                    sizes="56px"
                     src={t.imageSrc}
                     alt={t.alt ?? t.name}
                     className="h-14 w-14 object-cover object-top"
