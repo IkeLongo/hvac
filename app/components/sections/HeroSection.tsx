@@ -15,8 +15,7 @@ export function HeroSection({ company }: HeroSectionProps) {
         src="/hvac-tech-working-in-san-antonio-hero-3.png"
         alt="San Antonio skyline"
         fill
-        className="object-cover"
-        style={{ objectPosition: "center 20%" }}
+        className="object-cover object-[left_20%] sm:object-[center_20%]"
         priority
       />
       <div className="absolute inset-0" style={{ backgroundColor: company.primaryColor, opacity: 0.83 }} />
