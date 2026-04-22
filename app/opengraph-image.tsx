@@ -97,7 +97,7 @@ export default async function Image() {
         />
 
         {/* Layer 4: centered logo */}
-        <div
+        {/* <div
           style={{
             position: "absolute",
             top: 0,
@@ -132,7 +132,7 @@ export default async function Image() {
               {company.name}
             </span>
           )}
-        </div>
+        </div> */}
 
         {/* ── DEBUG BANNER ── remove before going to production ── */}
         {/* <div
