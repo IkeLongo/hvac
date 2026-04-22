@@ -8,85 +8,113 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const FALLBACK_SLUG = "riverside";
+const BG_IMAGE = "/hvac-tech-working-in-san-antonio-hero-3.png";
+const FALLBACK_PRIMARY_COLOR = "#1a1a2e";
 
 export default async function Image() {
   const headersList = await headers();
   const slug = headersList.get("x-company-slug") ?? FALLBACK_SLUG;
   const company = companies[slug] ?? companies[FALLBACK_SLUG];
 
-  // Build an absolute URL for the logo so ImageResponse can fetch it
+  // Build absolute URLs — ImageResponse cannot resolve relative paths
   const host = headersList.get("host") ?? "localhost:3000";
   const protocol = host.startsWith("localhost") ? "http" : "https";
-  const logoUrl = `${protocol}://${host}${company.logo}`;
+  const baseUrl = `${protocol}://${host}`;
+
+  const bgUrl = `${baseUrl}${BG_IMAGE}`;
+  const logoUrl = company.logo ? `${baseUrl}${company.logo}` : null;
+  const primaryColor = company.primaryColor ?? FALLBACK_PRIMARY_COLOR;
 
   return new ImageResponse(
     (
+      // Root layer — establishes the canvas
       <div
         style={{
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          backgroundColor: company.primaryColor,
-          padding: "60px 80px",
+          position: "relative",
+          backgroundColor: primaryColor,
         }}
       >
-        {/* Logo + name row */}
-        <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={logoUrl}
-            alt={company.name}
-            width={160}
-            height={160}
-            style={{ objectFit: "contain" }}
-          />
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        {/* Layer 1: background photo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={bgUrl}
+          alt=""
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+
+        {/* Layer 2: subtle darkening pass so the photo doesn't compete with the logo */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0,0,0,0.35)",
+            display: "flex",
+          }}
+        />
+
+        {/* Layer 3: primary-color brand overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: primaryColor,
+            opacity: 0.58,
+            display: "flex",
+          }}
+        />
+
+        {/* Layer 4: centered logo */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {logoUrl ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={logoUrl}
+              alt={company.name}
+              style={{
+                maxWidth: 420,
+                maxHeight: 280,
+                objectFit: "contain",
+              }}
+            />
+          ) : (
             <span
               style={{
-                fontSize: 56,
+                fontSize: 72,
                 fontWeight: 800,
                 color: "#ffffff",
-                lineHeight: 1.1,
+                letterSpacing: "-2px",
               }}
             >
               {company.name}
             </span>
-            <span
-              style={{
-                fontSize: 28,
-                color: company.accentColor,
-                fontWeight: 600,
-              }}
-            >
-              {company.city}, TX &bull; {company.phone}
-            </span>
-          </div>
-        </div>
-
-        {/* Services + tagline row */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            {company.services.map((service) => (
-              <span
-                key={service}
-                style={{
-                  backgroundColor: company.accentColor,
-                  color: company.primaryColor,
-                  borderRadius: "6px",
-                  padding: "6px 18px",
-                  fontSize: "22px",
-                  fontWeight: 700,
-                }}
-              >
-                {service}
-              </span>
-            ))}
-          </div>
-          <span style={{ fontSize: 22, color: "rgba(255,255,255,0.55)" }}>
-            Licensed &amp; Insured &bull; 24/7 Emergency Service
-          </span>
+          )}
         </div>
       </div>
     ),
