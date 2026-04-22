@@ -1136,4 +1136,102 @@ export const companies: Record<string, Company> = {
       },
     ],
   },
+
+  "amigosac": {
+    name: "Amigos AC & Heating",
+    phone: "210-393-7422",
+    city: "San Antonio",
+    services: ["AC Maintenance", "AC Services", "Heating & Furnace"],
+    primaryColor: "#0d1541",
+    accentColor: "#45b5ff",
+    accentColor2: "#aed5ee",
+    neutral1: "#f8f9fa",
+    neutral2: "#dee2e6",
+    logo: "/logos/amigos-ac/amigos-ac-logo.webp",
+    logoHorizontal: "/logos/amigos-ac/amigos-ac-logo.webp",
+    googlePlaceId: "ChIJN4jdodhnXIYRWj9RmwFCxxg",
+
+    tagline: "Fast, Honest HVAC Service You Can Count On",
+    email: "amigosac@att.net",
+    address: {
+      street: "",
+      city: "San Antonio",
+      state: "TX",
+      zip: "",
+    },
+    social: {},
+
+    hero: {
+      headline: "San Antonio HVAC Service Done Right",
+      subheadline:
+        "Amigos AC & Heating delivers fast response times, honest pricing, and reliable HVAC solutions for homes across San Antonio.",
+    },
+
+    about: {
+      headline: "Focused on Service & Reliability",
+      body: "At Amigos AC & Heating, our mission is to deliver reliable, high-quality air conditioning solutions with integrity, expertise, and a personal touch. We are committed to keeping our customers comfortable year-round by providing top-tier service, energy-efficient systems, and building lasting relationships based on trust and transparency.",
+      yearsExperience: 10,
+    },
+
+    process: [
+      {
+        step: 1,
+        title: "Call or Book Online",
+        description: "Reach us by phone or schedule online for fast, responsive service.",
+      },
+      {
+        step: 2,
+        title: "Fast Diagnosis",
+        description:
+          "A technician arrives ready to diagnose your system and explain what's wrong in plain terms.",
+      },
+      {
+        step: 3,
+        title: "Clear Quote",
+        description: "We provide written pricing before starting — honest and upfront with no hidden charges.",
+      },
+      {
+        step: 4,
+        title: "Repair & Verify",
+        description: "We complete the repair and confirm your system is running correctly before we leave.",
+      },
+    ],
+
+    whyChooseUs: [
+      {
+        title: "Fast Response Times",
+        description: "We prioritize quick scheduling so you're not left waiting in discomfort.",
+      },
+      {
+        title: "Honest Pricing",
+        description: "Fair, upfront quotes — the price you're given is the price you pay.",
+      },
+      {
+        title: "Reliable Repairs",
+        description: "We fix it right the first time and stand behind our work on every job.",
+      },
+      {
+        title: "Clear Communication",
+        description: "We keep you informed from the first call through the final invoice — no surprises.",
+      },
+    ],
+
+    statsBar: [
+      { value: "10+", label: "Years in Business" },
+      { value: "500+", label: "Jobs Completed" },
+      { value: "100%", label: "Satisfaction Guarantee" },
+      { value: "24/7", label: "Emergency Service" },
+    ],
+
+    serviceAreas: ["san-antonio", "boerne", "helotes", "stone-oak", "spring-branch", "live-oak"],
+
+    certifications: [
+      "Licensed HVAC Technicians",
+      "EPA Certified",
+      "Fully Insured",
+      "Residential & Commercial Service",
+    ],
+
+    serviceCategories: ["cooling", "heating", "air-quality", "commercial"],
+  },
 };
