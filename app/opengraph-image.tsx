@@ -18,12 +18,27 @@ export default async function Image() {
 
   // Build absolute URLs — ImageResponse cannot resolve relative paths
   const host = headersList.get("host") ?? "localhost:3000";
-  const protocol = host.startsWith("localhost") ? "http" : "https";
+  const protocol = host.includes("localhost") ? "http" : "https";
   const baseUrl = `${protocol}://${host}`;
 
   const bgUrl = `${baseUrl}${BG_IMAGE}`;
   const logoUrl = company.logo ? `${baseUrl}${company.logo}` : null;
   const primaryColor = company.primaryColor ?? FALLBACK_PRIMARY_COLOR;
+
+  // ── DEBUG ─────────────────────────────────────────────────────────────────
+  // const rawSlugHeader = headersList.get("x-company-slug");
+  // const allHeaders: Record<string, string> = {};
+  // headersList.forEach((value, key) => { allHeaders[key] = value; });
+  // const debugLines = [
+  //   `host: ${host}`,
+  //   `x-company-slug header: ${rawSlugHeader ?? "(not set — using fallback)"}`,
+  //   `resolved slug: ${slug}`,
+  //   `company.name: ${company.name}`,
+  //   `company.logo: ${company.logo ?? "(none)"}`,
+  //   `logoUrl: ${logoUrl ?? "(none)"}`,
+  // ];
+  // console.log("[OG DEBUG]", JSON.stringify({ host, rawSlugHeader, slug, companyName: company.name, logoUrl }, null, 2));
+  // ── END DEBUG ──────────────────────────────────────────────────────────────
 
   return new ImageResponse(
     (
@@ -42,6 +57,8 @@ export default async function Image() {
         <img
           src={bgUrl}
           alt=""
+          width={1200}
+          height={630}
           style={{
             position: "absolute",
             top: 0,
@@ -97,9 +114,9 @@ export default async function Image() {
             <img
               src={logoUrl}
               alt={company.name}
+              width={420}
+              height={280}
               style={{
-                maxWidth: 420,
-                maxHeight: 280,
                 objectFit: "contain",
               }}
             />
@@ -116,6 +133,31 @@ export default async function Image() {
             </span>
           )}
         </div>
+
+        {/* ── DEBUG BANNER ── remove before going to production ── */}
+        {/* <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            backgroundColor: "rgba(0,0,0,0.82)",
+            padding: "14px 24px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "4px",
+          }}
+        >
+          {debugLines.map((line) => (
+            <span
+              key={line}
+              style={{ fontSize: 16, color: "#00ff99", fontFamily: "monospace" }}
+            >
+              {line}
+            </span>
+          ))}
+        </div> */}
+        {/* ── END DEBUG BANNER ── */}
       </div>
     ),
     { ...size }
