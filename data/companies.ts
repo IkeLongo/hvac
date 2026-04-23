@@ -252,7 +252,7 @@ export const companies: Record<string, Company> = {
     ],
   },
 
-  "cool-breeze": {
+  "cool-breeze-out": {
     name: "Cool Breeze HVAC",
     phone: "(210) 730-6232",
     city: "San Antonio",
@@ -369,7 +369,7 @@ export const companies: Record<string, Company> = {
     ],
   },
 
-  "allstarairconditioning": {
+  "allstarairconditioning-out": {
     name: "All Star Air Conditioning",
     phone: "(210) 361-4020",
     city: "San Antonio",
@@ -485,7 +485,7 @@ export const companies: Record<string, Company> = {
     ],
   },
 
-  "conquer-all-mechanical": {
+  "conquer-all-mechanical-out": {
     name: "Conquer All Mechanical Services",
     phone: "(210) 438-4558",
     city: "San Antonio",
@@ -597,7 +597,7 @@ export const companies: Record<string, Company> = {
     serviceCategories: ["cooling", "heating", "air-quality", "commercial"],
   },
 
-  "flo-aire-service": {
+  "flo-aire-service-out": {
     name: "Flo-Aire Service Inc",
     phone: "(210) 655-1738",
     city: "San Antonio",
@@ -697,7 +697,7 @@ export const companies: Record<string, Company> = {
     serviceCategories: ["cooling", "heating", "air-quality", "commercial"],
   },
 
-  "air-dynamics-mechanical": {
+  "air-dynamics-mechanical-out": {
     name: "Air Dynamics Mechanical",
     phone: "(210) 852-3535",
     city: "San Antonio",
@@ -796,7 +796,7 @@ export const companies: Record<string, Company> = {
     serviceCategories: ["cooling", "heating", "air-quality", "commercial"],
   },
 
-  "felix-air-services": {
+  "felix-air-services-out": {
     name: "Felix Air Services",
     phone: "(726) 249-5961",
     city: "San Antonio",
@@ -899,7 +899,7 @@ export const companies: Record<string, Company> = {
     serviceCategories: ["cooling", "heating", "air-quality", "commercial"],
   },
 
-  "toughac": {
+  "toughac-out": {
     name: "Tough AC & Heating",
     phone: "830-212-2892",
     city: "San Antonio",
@@ -1020,7 +1020,7 @@ export const companies: Record<string, Company> = {
     ],
   },
 
-  "jbaire": {
+  "jbaire-out": {
     name: "JB Aire Heating & Air Conditioning",
     phone: "830-885-6640",
     city: "San Antonio",
